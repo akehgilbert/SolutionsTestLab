@@ -1,0 +1,174 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% translate "Careers" %} | SolutionsTestLab
+{% endblock %}
+
+{% block content %}
+<style>
+    /* ===== GLOBAL LAYOUT PANES ===== */
+    body { background-color: #ffffff; overflow-x: hidden; }
+    .side-pane-left {
+        position: fixed; left: 0; top: 0; width: 60px; height: 100vh;
+        background: linear-gradient(180deg, #0056b3 0%, #00acee 100%);
+        z-index: 100; display: flex; align-items: center; justify-content: center;
+    }
+    .side-pane-left .vertical-text {
+        transform: rotate(-90deg); white-space: nowrap;
+        color: rgba(255, 255, 255, 0.6); font-weight: 800;
+        letter-spacing: 4px; text-transform: uppercase; font-size: 0.8rem;
+    }
+    .side-pane-right {
+        position: fixed; right: 0; top: 0; width: 60px; height: 100vh;
+        border-left: 1px solid #eee; z-index: 100; background: #fff;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    }
+    .dot { width: 6px; height: 6px; background: #ddd; border-radius: 50%; }
+    .dot.active { background: #00acee; transform: scale(1.5); }
+
+    .main-wrapper { margin: 0 60px; background: #ffffff; min-height: 100vh; position: relative; }
+
+    /* ===== NAVIGATION & DECOR ===== */
+    .back-nav { padding: 40px 0 0 40px; }
+    .btn-back {
+        text-decoration: none; color: #64748b; font-weight: 700; font-size: 0.85rem;
+        text-transform: uppercase; letter-spacing: 1.5px; transition: 0.3s;
+    }
+    .btn-back:hover { color: #00acee; transform: translateX(-5px); display: inline-block; }
+
+    .careers-hero-img {
+        width: 100%; max-width: 1000px; height: 350px; object-fit: cover;
+        border-radius: 20px; margin: 40px auto; display: block;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    /* ===== CONTENT STYLING ===== */
+    .careers-hero { padding: 40px 40px 60px; text-align: center; }
+    .careers-hero h1 { font-size: 3.5rem; color: #0056b3; font-weight: 800; margin-bottom: 20px; }
+    .careers-hero p { font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.6; }
+
+    .openings-section { max-width: 900px; margin: 0 auto 60px; padding: 0 20px; }
+    .job-card {
+        background: #fff; border: 1px solid #eee; border-left: 5px solid #00acee;
+        padding: 30px; border-radius: 12px; margin-bottom: 30px; transition: 0.3s ease;
+    }
+
+    /* ===== FORM STYLING ===== */
+    .application-form-wrapper {
+        background: #f8fbff; padding: 60px; border-radius: 20px;
+        max-width: 900px; margin: 0 auto 100px;
+    }
+    .form-group { margin-bottom: 25px; }
+    .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #1e293b; }
+    .form-control {
+        width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0; 
+        font-family: inherit; font-size: 1rem; transition: border 0.3s;
+    }
+    .form-control:focus { outline: none; border-color: #00acee; }
+    textarea.form-control { resize: vertical; min-height: 120px; }
+
+    .submit-btn {
+        background: #0056b3; color: white; padding: 16px 30px; border: none;
+        border-radius: 12px; font-weight: 700; width: 100%; cursor: pointer;
+        transition: 0.3s; text-transform: uppercase;
+    }
+    .submit-btn:hover { background: #00acee; }
+
+    .messages { list-style: none; padding: 0; max-width: 900px; margin: 20px auto; }
+    .alert { padding: 15px; border-radius: 10px; text-align: center; font-weight: 600; }
+    .alert-success { background: #dcfce7; color: #166534; }
+    .alert-error { background: #fee2e2; color: #991b1b; }
+
+    @media (max-width: 992px) {
+        .side-pane-left, .side-pane-right { display: none; }
+        .main-wrapper { margin: 0; }
+        .careers-hero h1 { font-size: 2.5rem; }
+    }
+</style>
+
+<div class="side-pane-left">
+    <div class="vertical-text">SolutionsTestLab — Join Our Team</div>
+</div>
+
+<div class="side-pane-right">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot active"></div><div class="dot"></div>
+</div>
+
+<div class="main-wrapper">
+    <div class="back-nav">
+        <a href="{% url 'home' %}" class="btn-back">← {% translate "Back to Lab" %}</a>
+    </div>
+
+    <section class="careers-hero">
+        <h1>{% translate "Careers at SolutionsTestLab" %}</h1>
+        <p>{% translate "Join a team that values quality and precision. Help us build software that soars." %}</p>
+    </section>
+
+    <img src="{% static 'images/careers.jpg' %}" alt="Our Engineering Lab" class="careers-hero-img">
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li class="alert alert-{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <section class="openings-section">
+        <h2 style="color: #0056b3; margin-bottom: 40px; text-align: center;">{% translate "Current Openings" %}</h2>
+        <div class="job-card">
+            <h3>{% translate "QA Engineer" %}</h3>
+            <h3>{% translate "Software Tester" %}</h3>
+            <p>{% translate "Expert in Selenium or Playwright wanted." %}</p>
+        </div>
+        <div class="job-card">
+            <h3>{% translate "Full-Stack Developer (Python/Django)" %}</h3>
+            <p>{% translate "Clean code and high-performance applications." %}</p>
+        </div>
+    </section>
+
+    <section class="application-form-wrapper">
+        <h2 style="text-align: center; color: #0056b3; margin-bottom: 30px;">{% translate "Quick Application" %}</h2>
+        
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label>{% translate "Full Name" %}</label>
+                <input type="text" name="name" required class="form-control" placeholder="Jane Doe">
+            </div>
+
+            <div class="form-group">
+                <label>{% translate "Email Address" %}</label>
+                <input type="email" name="email" required class="form-control" placeholder="jane.doe@example.com">
+            </div>
+            
+            <div class="form-group">
+                <label>{% translate "Position" %}</label>
+                <select name="position" required class="form-control">
+                    <option value="QA">{% translate "QA Engineer" %}</option>
+                    <option value="QA">{% translate "Software Tester" %}</option>
+                    <option value="Dev">{% translate "Full-Stack Developer" %}</option>
+                    <option value="Dev">{% translate "Backend Developer" %}</option>
+                    <option value="Other">{% translate "Initiative Application" %}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>{% translate "Cover Letter" %} ({% translate "Optional" %})</label>
+                <textarea name="cover_letter" class="form-control" 
+                          placeholder="{% translate 'Tell us why you are a great fit for SolutionsTestLab...' %}"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>{% translate "Upload CV (PDF)" %}</label>
+                <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+            </div>
+
+            <button type="submit" class="submit-btn">{% translate "Submit Application" %}</button>
+        </form>
+    </section>
+</div>
+{% endblock %}

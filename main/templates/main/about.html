@@ -1,0 +1,190 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% translate "About Us" %} | SolutionsTestLab
+{% endblock %}
+
+{% block content %}
+
+<style>
+    body { background-color: #ffffff; overflow-x: hidden; }
+
+    .side-pane-left {
+        position: fixed; left: 0; top: 0; width: 60px; height: 100vh;
+        background: linear-gradient(180deg, #0056b3 0%, #00acee 100%);
+        z-index: 100; display: flex; align-items: center; justify-content: center;
+    }
+
+    .side-pane-left .vertical-text {
+        transform: rotate(-90deg);
+        color: rgba(255,255,255,0.6);
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+
+    .side-pane-right {
+        position: fixed; right: 0; top: 0; width: 60px; height: 100vh;
+        border-left: 1px solid #eee; background: #fff; z-index: 100;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    }
+
+    .dot { width: 6px; height: 6px; background: #ddd; border-radius: 50%; }
+    .dot.active { background: #00acee; transform: scale(1.5); }
+
+    .main-wrapper { margin: 0 60px; min-height: 100vh; }
+
+    .about-wrapper {
+        padding: 180px 40px 80px;
+        max-width: 1100px;
+        margin: auto;
+    }
+
+    h1, h2 { color: #0056b3; }
+    h1 { font-size: 3rem; text-align: center; margin-bottom: 40px; }
+    h2 { font-size: 2.2rem; text-align: center; margin: 70px 0 30px; }
+
+    p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 22px;
+        text-align: justify;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+
+    .card {
+        background: #ffffff;
+        padding: 25px;
+        border-radius: 12px;
+        border-top: 4px solid #00acee;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        transition: transform 0.3s;
+    }
+
+    .card:hover { transform: translateY(-6px); }
+
+    .card h3 { margin-bottom: 12px; color: #0056b3; }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 8px; }
+
+    @media (max-width: 992px) {
+        .side-pane-left, .side-pane-right { display: none; }
+        .main-wrapper { margin: 0; }
+    }
+</style>
+
+<div class="side-pane-left">
+    <div class="vertical-text">SolutionsTestLab — Precision Engineering</div>
+</div>
+
+<div class="side-pane-right">
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<div class="main-wrapper">
+<div class="about-wrapper">
+
+<h1>{% translate "About SolutionsTestLab" %}</h1>
+
+<p>
+{% translate "SolutionsTestLab is a Software Development, Software Testing, and Quality Assurance company committed to delivering reliable, secure, and scalable software solutions." %}
+</p>
+
+<p>
+{% translate "Our consultants collaborate across the full software lifecycle — from requirements and architecture to implementation, testing, deployment, and long-term maintenance." %}
+</p>
+
+<!-- WHY US -->
+<h2>{% translate "Why SolutionsTestLab?" %}</h2>
+
+<div class="grid">
+    <div class="card">
+        <h3>{% translate "Quality-First Culture" %}</h3>
+        <p>{% translate "Quality is embedded in every decision, not added at the end." %}</p>
+    </div>
+    <div class="card">
+        <h3>{% translate "Consulting Mindset" %}</h3>
+        <p>{% translate "We act as advisors and partners, not just implementers." %}</p>
+    </div>
+    <div class="card">
+        <h3>{% translate "Early Risk Detection" %}</h3>
+        <p>{% translate "We identify performance, security, and design risks before they reach production." %}</p>
+    </div>
+</div>
+
+<!-- CORE VALUES -->
+<h2>{% translate "Our Core Values" %}</h2>
+
+<div class="grid">
+    <div class="card"><strong>{% translate "Precision" %}</strong><br>{% translate "Attention to detail drives quality." %}</div>
+    <div class="card"><strong>{% translate "Accountability" %}</strong><br>{% translate "We stand behind our work." %}</div>
+    <div class="card"><strong>{% translate "Transparency" %}</strong><br>{% translate "Clear communication at all times." %}</div>
+    <div class="card"><strong>{% translate "Continuous Improvement" %}</strong><br>{% translate "We evolve with technology." %}</div>
+</div>
+
+<!-- INDUSTRIES -->
+<h2>{% translate "Industries We Support" %}</h2>
+
+<div class="grid">
+    <div class="card">FinTech</div>
+    <div class="card">Healthcare</div>
+    <div class="card">SaaS & Startups</div>
+    <div class="card">E-Commerce</div>
+    <div class="card">Enterprise Applications</div>
+</div>
+
+<!-- STANDARDS -->
+<h2>{% translate "Standards & Best Practices" %}</h2>
+
+<div class="grid">
+    <div class="card">
+        <ul>
+            <li>ISTQB-aligned QA principles</li>
+            <li>Agile / Scrum / Kanban</li>
+            <li>OWASP security best practices</li>
+            <li>CI/CD & DevOps pipelines</li>
+            <li>ISO-inspired quality processes</li>
+        </ul>
+    </div>
+</div>
+
+<!-- CTA -->
+<h2>{% translate "Let’s Build Quality Together" %}</h2>
+<p style="text-align:center;">
+{% translate "Whether you need development expertise, testing support, or quality assurance consulting — SolutionsTestLab is ready." %}
+</p>
+
+<p style="text-align:center;">
+<a href="{% url 'contact' %}" style="
+    display:inline-block;
+    margin-top:20px;
+    padding:14px 28px;
+    background:#0056b3;
+    color:white;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:700;
+">
+{% translate "Contact Our Experts" %}
+</a>
+</p>
+
+</div>
+</div>
+
+{% endblock %}

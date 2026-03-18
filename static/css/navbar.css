@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* Prevents unwanted horizontal scrolling */
+}
+
+/* 1. The main Navbar - now Solid Grey */
+.navbar {
+    background-color: #333333; /* Dark grey to match your body background */
+    /* If you want a lighter grey, use: background-color: #f4f4f4; */
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+/* 2. Container to push items to the edges */
+.nav-content {
+    display: flex;
+    justify-content: space-between; /* Pushes logo LEFT and menu RIGHT */
+    align-items: center;
+    width: 100%;
+    padding: 0 50px;
+    box-sizing: border-box;
+}
+
+/* 3. Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap; /* Keeps everything on one line */
+}
+
+/* 4. Link Styling - adjusted for dark grey background */
+.nav-links li a {
+    text-decoration: none;
+    color: #ffffff; /* White text looks better on dark grey */
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: #0056b3; /* Blue highlight on hover */
+}
+
+/* 5. Services Dropdown Logic */
+.menu-item.services {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    display: none;
+    list-style: none;
+    padding: 10px 0 0 15px;
+    flex-direction: column;
+}
+
+.menu-item {
+    position: relative;
+}
+
+.menu-item.services.active .dropdown-menu {
+    display: flex;
+    position: static;
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    min-width: 220px;
+    padding: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    display: none;
+    z-index: 9999;
+}
+
+.dropdown-menu a {
+    color: #cccccc !important; /* Lighter grey for dropdown items */
+    font-size: 1rem;
+    padding: 5px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-menu a:hover {
+    background: #f4f6f8;
+}

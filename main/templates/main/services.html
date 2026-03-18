@@ -1,0 +1,249 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% translate "Services" %} | SolutionsTestLab
+{% endblock %}
+
+{% block content %}
+
+<style>
+    /* ===== GLOBAL LAYOUT PANES (Consistent with Home) ===== */
+    body {
+        background-color: #ffffff;
+        overflow-x: hidden;
+    }
+
+    /* Left Pane: Vertical Branding */
+    .side-pane-left {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 60px;
+        height: 100vh;
+        background: linear-gradient(180deg, #0056b3 0%, #00acee 100%);
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .side-pane-left .vertical-text {
+        transform: rotate(-90deg);
+        white-space: nowrap;
+        color: rgba(255, 255, 255, 0.6);
+        font-weight: 800;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+
+    /* Right Pane: Geometric Decor */
+    .side-pane-right {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 100vh;
+        border-left: 1px solid #eee;
+        z-index: 100;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .dot { width: 6px; height: 6px; background: #ddd; border-radius: 50%; }
+    .dot.active { background: #00acee; transform: scale(1.5); }
+
+    /* Adjust main content to fit between panes */
+    .main-wrapper {
+        margin: 0 60px;
+        background: #ffffff;
+        min-height: 100vh;
+    }
+
+    /* ===== SERVICES CONTENT STYLING ===== */
+    .intro-header-container {
+        padding: 180px 20px 60px;
+        text-align: center;      
+        width: 100%;
+        background: #f8fbff;
+    }
+
+    .intro-header-container h1 { 
+        font-size: 3.5rem; 
+        color: #0056b3; 
+        font-weight: 800; 
+        margin-bottom: 20px; 
+    }
+
+    .intro-header-container p { 
+        font-size: 1.2rem; 
+        color: #555; 
+        max-width: 800px; 
+        margin: auto; 
+        line-height: 1.6;
+    }
+
+    /* 3-Column Grid Layout */
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: 60px auto 100px;
+        padding: 0 20px;
+        align-items: start;
+    }
+
+    .service-card {
+        background: #ffffff;
+        padding: 35px;
+        border-radius: 16px;
+        border-top: 6px solid #0056b3;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+    }
+
+    .service-card h2 { color: #0056b3; font-size: 1.8rem; margin-bottom: 20px; }
+
+    /* --- Read More Logic --- */
+    .content-toggle { display: none; } 
+
+    .card-content {
+        max-height: 180px; /* Initial visible height */
+        overflow: hidden;
+        position: relative;
+        transition: max-height 0.5s ease;
+        margin-bottom: 20px;
+        font-size: 1rem;
+        line-height: 1.7;
+        color: #444;
+    }
+
+    /* Gradient fade at bottom of collapsed text */
+    .card-content::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background: linear-gradient(transparent, #ffffff);
+        transition: 0.3s;
+    }
+
+    /* When expanded */
+    .content-toggle:checked + .card-content {
+        max-height: 2000px; 
+    }
+
+    .content-toggle:checked + .card-content::after {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .read-more-btn {
+        display: inline-block;
+        padding: 10px 25px;
+        background: #0056b3;
+        color: #fff;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .read-more-btn:hover { background: #00acee; }
+
+    .content-toggle:checked ~ .read-more-btn::before { content: "{% translate 'Read Less' %}"; }
+    .content-toggle:not(:checked) ~ .read-more-btn::before { content: "{% translate 'Read More' %}"; }
+
+    /* RESPONSIVE */
+    @media (max-width: 992px) {
+        .side-pane-left, .side-pane-right { display: none; }
+        .main-wrapper { margin: 0; }
+        .intro-header-container h1 { font-size: 2.8rem; }
+    }
+
+    @media (max-width: 768px) {
+        .services-grid { grid-template-columns: 1fr; }
+    }
+</style>
+
+<div class="side-pane-left">
+    <div class="vertical-text">SolutionsTestLab — Expert Services</div>
+</div>
+
+<div class="side-pane-right">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div> <div class="dot"></div>
+    <div class="dot"></div>
+</div>
+
+<div class="main-wrapper">
+    <div class="intro-header-container">
+        <h1>{% translate "Our Services" %}</h1>
+        <p>{% translate "At SolutionsTestLab, we combine eagle-eye precision with technical excellence to build, test, and perfect reliable software solutions." %}</p>
+    </div>
+
+    <div class="services-grid">
+        
+        <div class="service-card">
+            <h2>{% translate "Software Development" %}</h2>
+            
+            <input type="checkbox" id="dev-toggle" class="content-toggle">
+            <div class="card-content">
+                <p>At SolutionsTestLab, we don't view software development as a simple linear task. For our consultants, it is a high-stakes engineering process where every line of code impacts the reliability and security of your business.</p>
+                
+                <h3 style="font-size:1.1rem; color:#00acee; margin-top:20px;">{% translate "Core Pillars" %}</h3>
+                <p><strong>1. Requirements:</strong> Bridge business goals and technical reality.</p>
+                <p><strong>2. Architecture:</strong> Robust "Digital Skeletons" designed for longevity.</p>
+                <p><strong>3. Implementation:</strong> Clean Code philosophy to reduce technical debt.</p>
+                <p><strong>4. Integrated QA:</strong> Shift-Left Testing from day one.</p>
+                <p><strong>5. DevOps:</strong> CI/CD pipelines for seamless deployment.</p>
+                <p><strong>6. Evolution:</strong> Continuous security patching and scaling.</p>
+            </div>
+            <label for="dev-toggle" class="read-more-btn"></label>
+        </div>
+
+        <div class="service-card" style="border-top-color: #00acee;">
+            <h2>{% translate "Software Testing" %}</h2>
+            
+            <input type="checkbox" id="test-toggle" class="content-toggle">
+            <div class="card-content">
+                <p>Software testing is a core consulting discipline designed to ensure reliability, performance, and confidence in every solution we support.</p>
+                <p>Our consultants apply a structured, risk-based testing approach to identify defects early, validate business requirements, and safeguard system stability throughout the development lifecycle.</p>
+                <p>By integrating testing into CI/CD pipelines and agile delivery models, we help organizations reduce defects, improve software quality, and accelerate time-to-market.</p>
+            </div>
+            <label for="test-toggle" class="read-more-btn"></label>
+        </div>
+
+        <div class="service-card">
+            <h2>{% translate "Quality Assurance" %}</h2>
+            
+            <input type="checkbox" id="qa-toggle" class="content-toggle">
+            <div class="card-content">
+                <p>Quality Assurance is more than testing — it is a strategic consulting service embedded throughout the entire software lifecycle.</p>
+                <p>Our QA consultants apply an eagle-eye approach to identify risks early, establish robust processes, and ensure software quality is built in from day one.</p>
+                <p>We define clear defect management processes, oversee test execution quality, and provide transparent reporting that enables data-driven decisions for your business growth.</p>
+            </div>
+            <label for="qa-toggle" class="read-more-btn"></label>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,133 @@
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:'en' }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SolutionsTestLab{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    
+    <style>
+        /* Compact Footer Layout */
+        .site-footer {
+            background-color: #111111;
+            color: #ffffff;
+            /* Reduced vertical padding: 30px top, 15px bottom */
+            padding: 30px 40px 15px; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin-top: 30px; /* Reduced margin from content */
+            border-top: 3px solid #0056b3;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px; /* Reduced gap between sections */
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 200px; /* Slightly narrower min-width */
+        }
+
+        .footer-section h4 {
+            color: #00acee;
+            margin-bottom: 12px; /* Reduced from 20px */
+            font-size: 1.1rem;    /* Slightly smaller font */
+            letter-spacing: 1px;
+        }
+
+        .footer-section p, .footer-section a {
+            color: #bbbbbb;
+            text-decoration: none;
+            line-height: 1.6;    /* Tighter line height from 1.8 */
+            font-size: 0.9rem;   /* Slightly smaller font from 0.95 */
+            display: block;
+            margin-bottom: 5px;  /* Reduced from 8px */
+            transition: 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #00acee;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            margin-top: 15px;    /* Reduced from 40px */
+            padding-top: 10px;   /* Reduced from 20px */
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .footer-container { flex-direction: column; gap: 25px; }
+            .footer-section { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    {% include "main/navbar.html" %}
+
+    <main class="main-content-area">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>{% translate "Contact Us" %}</h4>
+                <p><strong>SolutionsTestLab</strong></p>
+                <p>Sample Street 123, 12345 Berlin</p>
+                <p><strong>{% translate "Tel" %}:</strong> +49 30 123456</p>
+                <p><strong>{% translate "Email" %}:</strong> info@solutionstestlab.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>{% translate "Quick Navigation" %}</h4>
+                <a href="{% url 'home' %}">{% translate "Home" %}</a>
+                <a href="{% url 'about' %}">{% translate "About Us" %}</a>
+                <a href="{% url 'services' %}">{% translate "Services" %}</a>
+                <a href="{% url 'careers' %}">{% translate "Careers" %}</a>
+                <a href="{% url 'contact' %}">{% translate "Contact" %}</a>
+            </div>
+
+            <div class="footer-section">
+                <h4>{% translate "Legal & Social" %}</h4>
+                <a href="#">{% translate "Imprint" %}</a>
+                <a href="#">{% translate "Privacy" %}</a>
+                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+                <a href="https://github.com" target="_blank">XING</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 SolutionsTestLab. {% translate "Precision Engineering. Quality Assured." %}</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const servicesMenu = document.querySelector('.services');
+            if (servicesMenu) {
+                servicesMenu.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    this.classList.toggle('active');
+                });
+            }
+            document.addEventListener('click', function () {
+                if (servicesMenu) { servicesMenu.classList.remove('active'); }
+            });
+        });
+    </script>
+
+</body>
+</html>

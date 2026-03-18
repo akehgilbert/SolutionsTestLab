@@ -1,0 +1,337 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+SolutionsTestLab | {% translate "Home" %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+    /* ===== HERO SECTION ===== */
+    .hero-image-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100vh; 
+        overflow: hidden;
+    }
+
+    .extended-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        z-index: 1;
+    }
+
+    .hero-text {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ffffff;
+        z-index: 2;
+        width: 90%;
+        max-width: 800px;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        color: #00acee;
+        text-align: center;
+    }
+
+    .hero-text p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        font-weight: 300;
+        text-align: justify;
+        text-justify: inter-word;
+        text-align-last: center;
+    }
+
+    /* ===== WEB TECH STACK SECTION ===== */
+    .tech-stack-section {
+        background: #fafafa;
+        padding: 80px 20px 40px;
+        text-align: center;
+    }
+
+    .tech-category {
+        margin-bottom: 50px;
+    }
+
+    .tech-category h4 {
+        color: #0056b3;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 25px;
+        font-weight: 800;
+    }
+
+    .tech-logos {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .tech-logos span {
+        background: #ffffff;
+        color: #444;
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        border: 1px solid #e0e0e0;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .tech-logos span.highlight-qa {
+        border-left: 4px solid #00acee;
+    }
+
+    .tech-logos span.highlight-manual {
+        border-left: 4px solid #f39c12; /* Distinct color for manual expertise */
+    }
+
+    .tech-logos span:hover {
+        background: #00acee;
+        color: white;
+        border-color: #00acee;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,172,238,0.2);
+    }
+
+    /* ===== CORE EXPERTISE ===== */
+    .section-padding {
+        padding: 40px 20px 100px;
+        background: #ffffff;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        color: #0056b3;
+        margin-bottom: 40px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+    }
+
+    .card {
+        padding: 40px;
+        background: #f9f9f9;
+        border-radius: 15px;
+        border-bottom: 5px solid #00acee;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+
+    .card h3 {
+        color: #0056b3;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    /* ===== METHODOLOGY ===== */
+    .method-section {
+        background: #f0f7ff;
+        padding: 100px 20px;
+    }
+
+    .method-flex {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .method-text {
+        flex: 1;
+        min-width: 300px;
+    }
+
+    .method-text h2 {
+        color: #0056b3;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    /* ===== CTA STRIP ===== */
+    .cta-strip {
+        background: #0056b3;
+        color: white;
+        padding: 80px 20px;
+        text-align: center;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 18px 45px;
+        background: #00acee;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: 0.3s;
+    }
+
+    .cta-btn:hover {
+        background: #ffffff;
+        color: #0056b3;
+        transform: scale(1.05);
+    }
+
+    @media (max-width: 768px) {
+        .hero-text h1 { font-size: 2.5rem; }
+        .hero-text p { font-size: 1.1rem; }
+    }
+</style>
+
+<section class="hero-image-wrapper">
+    <video class="extended-video" autoplay muted loop playsinline>
+        <source src="{% static 'videos/website_video.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+        <h1>SolutionsTestLab</h1>
+        <p>{% translate "Your Competent Partner for Software Development, Software Testing and Quality Assurance." %}</p>
+        <p><strong>{% translate "Eagle-Eye Precision in every line of code." %}</strong></p>
+        <p><strong>{% translate "We spot bugs before they take flight — and build software that soars." %}</strong></p>
+    </div>
+</section>
+
+<section class="tech-stack-section">
+    <div class="container">
+        <h2 class="section-title">{% translate "Our Web Application & QA Ecosystem" %}</h2>
+
+        <div class="tech-category">
+            <h4>{% translate "Modern Web Frontend" %}</h4>
+            <div class="tech-logos">
+                <span>React</span><span>TypeScript</span><span>Vue.js</span><span>Next.js</span><span>Tailwind CSS</span>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h4>{% translate "Scalable Backend & Databases" %}</h4>
+            <div class="tech-logos">
+                <span>Python / Django</span><span>Node.js</span><span>PostgreSQL</span><span>FastAPI</span><span>Redis</span>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h4>{% translate "Web Testing & QA Automation" %}</h4>
+            <div class="tech-logos">
+                <span class="highlight-qa">Selenium</span>
+                <span class="highlight-qa">Cypress</span>
+                <span class="highlight-qa">Playwright</span>
+                <span class="highlight-qa">Pytest</span>
+                <span class="highlight-qa">Postman</span>
+                <span class="highlight-qa">JMeter</span>
+                <span class="highlight-qa">SoapUI</span>
+            </div>
+        </div>
+
+        <div class="tech-category">
+            <h4>{% translate "Manual & Exploratory Testing" %}</h4>
+            <div class="tech-logos">
+                <span class="highlight-manual">Exploratory Testing</span>
+                <span class="highlight-manual">Usability Testing</span>
+                <span class="highlight-manual">UAT (User Acceptance)</span>
+                <span class="highlight-manual">Regression Testing</span>
+                <span class="highlight-manual">Smoke & Sanity Testing</span>
+            </div>
+        </div>
+
+        <div class="tech-category" style="margin-bottom: 0;">
+            <h4>{% translate "Cloud & Web Infrastructure" %}</h4>
+            <div class="tech-logos">
+                <span>AWS / Azure</span><span>Docker</span><span>Kubernetes</span><span>Ansible</span><span>GitHub Actions</span><span>Jira</span><span>VS Code</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-padding">
+    <div class="container">
+        <h2 class="section-title">{% translate "Our Core Expertise" %}</h2>
+        <div class="services-grid">
+            <div class="card">
+                <h3>{% translate "Web Development" %}</h3>
+                <p>{% translate "Architecting scalable web applications with a focus on high-performance backend logic and responsive frontend design." %}</p>
+            </div>
+            <div class="card">
+                <h3>{% translate "QA Automation" %}</h3>
+                <p>{% translate "Building robust automation frameworks that provide rapid feedback and ensure long-term web software stability." %}</p>
+            </div>
+            <div class="card">
+                <h3>{% translate "Manual Testing" %}</h3>
+                <p>{% translate "Human-centric exploratory testing to uncover usability flaws and complex edge cases that automation might miss." %}</p>
+            </div>
+            <div class="card">
+                <h3>{% translate "Quality Strategy" %}</h3>
+                <p>{% translate "Strategic consulting to integrate quality standards throughout your entire web development lifecycle." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="method-section">
+    <div class="container">
+        <div class="method-flex">
+            <div class="method-text">
+                <h2>{% translate "The 'Eagle-Eye' Methodology" %}</h2>
+                <p>{% translate "We don't just find bugs; we prevent them. By implementing 'Shift-Left' testing, our consultants engage early in the design phase to catch architectural flaws when they are cheapest to fix." %}</p>
+                
+                <p>{% translate "Our approach combines technical excellence with business-focused risk management, ensuring your software is not just functional, but a competitive advantage." %}</p>
+            </div>
+            <div class="method-image">
+                </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-strip">
+    <div class="container">
+        <h2>{% translate "Ready to Build Web Software That Soars or Test Web Applications to Perfection?" %}</h2>
+        <p>{% translate "Our consultants are ready to help you perfect your next digital solution." %}</p>
+        <a href="{% url 'contact' %}" class="cta-btn">{% translate "Get a Free Consultation" %}</a>
+    </div>
+</section>
+
+{% endblock %}

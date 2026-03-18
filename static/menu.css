@@ -1,0 +1,27 @@
+/* Initially hide the dropdown menu */
+.language-dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    padding: 10px;
+    min-width: 160px;
+}
+
+/* Show the dropdown menu when the parent has 'active' class */
+.language-dropdown.active .dropdown-menu {
+    display: block;
+}
+
+/* Styling for the dropdown items */
+.language-dropdown .dropdown-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    display: block;
+}
+
+.language-dropdown .dropdown-menu a:hover {
+    background-color: #555;
+}

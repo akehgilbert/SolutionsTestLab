@@ -1,0 +1,31 @@
+{% load static i18n %}
+<nav class="navbar">
+    <div class="nav-content">
+
+        <div class="logo">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo.jpg' %}" alt="Logo" height="80">
+            </a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">{% translate "Home" %}</a></li>
+            <li><a href="{% url 'about' %}">{% translate "About" %}</a></li>
+
+            <li class="menu-item services">
+                <a href="javascript:void(0)">
+                    {% translate "Services" %} ▾
+                </a>
+                <div class="dropdown-menu">
+                    <a href="{% url 'services' %}#development">Software Development</a>
+                    <a href="{% url 'services' %}#testing">Software Testing</a>
+                    <a href="{% url 'services' %}#qa">Quality Assurance</a>
+                </div>
+            </li>
+
+            <li><a href="{% url 'careers' %}">{% translate "Careers" %}</a></li>
+            <li><a href="{% url 'contact' %}">{% translate "Contact" %}</a></li>
+        </ul>
+
+    </div>
+</nav>

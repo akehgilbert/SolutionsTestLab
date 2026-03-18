@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Menu Dropdown Example{% endblock %}</title>
+    <style>
+        /* Your CSS from the original code goes here */
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li class="menu-item"><a href="#">{% trans "Accueil" %}</a></li>
+            <li class="menu-item"><a href="#">{% trans "À propos" %}</a></li>
+            <li class="menu-item services">
+                <a href="#">{% trans "Services" %}</a>
+                <div class="dropdown-menu">
+                    <a href="#">{% trans "Software development" %}</a>
+                    <a href="#">{% trans "Software testing" %}</a>
+                    <a href="#">{% trans "Quality assurance" %}</a>
+                </div>
+            </li>
+            <li class="menu-item"><a href="#">{% trans "Carrières" %}</a></li>
+            <li class="menu-item"><a href="#">{% trans "Contact" %}</a></li>
+
+            <!-- Language Dropdown -->
+            <li class="menu-item language-dropdown">
+                <a href="javascript:void(0);">{% trans "Language" %}</a>
+                <div class="dropdown-menu">
+                    <a href="{% url 'set_language' %}?language=de">{% trans "Deutsch" %}</a>
+                    <a href="{% url 'set_language' %}?language=en">{% trans "English" %}</a>
+                    <a href="{% url 'set_language' %}?language=fr">{% trans "Français" %}</a>
+                    <a href="{% url 'set_language' %}?language=nl">{% trans "Nederlands" %}</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+    // Toggle Services dropdown on click
+    document.querySelector('.services').addEventListener('click', function () {
+        this.classList.toggle('active');
+    });
+
+    // Toggle Language dropdown on click
+    document.querySelector('.language-dropdown').addEventListener('click', function (e) {
+        // Prevent click event from bubbling up to the parent elements
+        e.stopPropagation();
+        this.classList.toggle('active');
+    });
+
+    // Close the language dropdown when clicking anywhere outside of the dropdown
+    document.addEventListener('click', function (e) {
+        const languageDropdown = document.querySelector('.language-dropdown');
+        if (!languageDropdown.contains(e.target)) {
+            languageDropdown.classList.remove('active');
+        }
+    });
+});
+
+    </script>
+
+</body>
+</html>
