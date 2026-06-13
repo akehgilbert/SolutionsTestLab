@@ -7,331 +7,815 @@ SolutionsTestLab | {% translate "Home" %}
 
 {% block content %}
 
+<section class="hero-section">
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="{% static 'videos/website_video.mp4' %}" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>SolutionsTestLab - Precision Software Testing</h1>
+        <h2>{% translate "Precision Software Testing That Protects Your Business" %}</h2>
+
+        <p>
+            {% translate "We help companies release stable, secure, and high-performing software by detecting problems before customers do." %}
+        </p>
+
+        <p class="hero-tagline">
+            {% translate "Eagle-Eye Precision in every line of code." %}
+        </p>
+
+        <div class="hero-buttons">
+            <a href="{% url 'contact' %}" class="btn-primary">
+                {% translate "Book a Free Consultation" %}
+            </a>
+
+            <a href="{% url 'software_testing' %}" class="btn-secondary">
+                {% translate "Explore Services" %}
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="problem-section">
+    <div class="problem-container">
+
+        <div class="problem-left">
+            <h2>{% translate "We Solve the Software Quality Problems Companies Cannot Afford" %}</h2>
+
+            <p class="problem-intro">
+                {% translate "Bugs, unstable releases, poor performance, and weak user experience can damage trust. SolutionsTestLab helps you reduce risk, improve reliability, and launch with confidence." %}
+            </p>
+
+            <div class="solution-grid">
+                <div class="solution-card">
+                    <h3>{% translate "Find Bugs Early" %}</h3>
+                    <p>{% translate "We detect issues before they reach your customers, saving time, money, and brand reputation." %}</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>{% translate "Release Faster" %}</h3>
+                    <p>{% translate "Structured QA helps your development team move faster without sacrificing software quality." %}</p>
+                </div>
+
+                <div class="solution-card">
+                    <h3>{% translate "Protect Your Brand" %}</h3>
+                    <p>{% translate "Reliable software creates better customer trust, fewer complaints, and stronger digital experiences." %}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="problem-right">
+            <img src="{% static 'images/IT_2.jpg' %}"
+                 alt="{% translate 'Software quality team meeting' %}"
+                 class="problem-photo">
+        </div>
+
+    </div>
+</section>
+
+<section class="showcase-section">
+    <div class="showcase-container">
+
+        <div class="showcase-image">
+            <img src="{% static 'images/IT-picture-1.jpg' %}"
+                 alt="{% translate 'QA planning meeting' %}">
+        </div>
+
+        <div class="showcase-text">
+            <h2>{% translate "Quality Through Collaboration" %}</h2>
+
+            <p>
+                {% translate "Successful software quality is built through strong collaboration between testers, developers, business stakeholders, and project managers. At SolutionsTestLab, we help organizations create structured testing processes that improve communication, reduce risks, and deliver reliable software products." %}
+            </p>
+
+            <p>
+                {% translate "Our approach combines Quality Assurance, Software Testing, and Test Management to ensure that every release meets business goals and user expectations." %}
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="services-preview">
+    <div class="section-container">
+        <h2>{% translate "Our Core QA Services" %}</h2>
+
+        <p class="section-intro">
+            {% translate "From quality strategy to test execution and governance, SolutionsTestLab provides end-to-end software quality services that help organizations release with confidence." %}
+        </p>
+
+        <div class="preview-grid">
+
+            <div class="preview-card">
+                <span>01</span>
+                <h3>{% translate "Quality Assurance" %}</h3>
+
+                <p>
+                    {% translate "Build quality into every stage of software delivery through QA strategy, process improvement, defect prevention, and release readiness." %}
+                </p>
+
+                <a href="{% url 'quality_assurance' %}" class="preview-link">
+                    {% translate "Learn More" %}
+                </a>
+            </div>
+
+            <div class="preview-card">
+                <span>02</span>
+                <h3>{% translate "Software Testing" %}</h3>
+
+                <p>
+                    {% translate "Comprehensive manual and test automation services including functional, regression, exploratory, API, and user acceptance testing." %}
+                </p>
+
+                <a href="{% url 'software_testing' %}" class="preview-link">
+                    {% translate "Learn More" %}
+                </a>
+            </div>
+
+            <div class="preview-card">
+                <span>03</span>
+                <h3>{% translate "Test Management" %}</h3>
+
+                <p>
+                    {% translate "Structured test planning, coordination, reporting, and quality governance to ensure successful software releases." %}
+                </p>
+
+                <a href="{% url 'test_management' %}" class="preview-link">
+                    {% translate "Learn More" %}
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="process-section">
+    <div class="section-container">
+        <h2>{% translate "Our QA Process" %}</h2>
+
+        <div class="process-grid">
+            <div class="process-step">
+                <div>1</div>
+                <h4>{% translate "Analyze" %}</h4>
+                <p>{% translate "We understand your business goals, requirements, and risk areas." %}</p>
+            </div>
+
+            <div class="process-step">
+                <div>2</div>
+                <h4>{% translate "Plan" %}</h4>
+                <p>{% translate "We define the test strategy, scope, timeline, and quality priorities." %}</p>
+            </div>
+
+            <div class="process-step">
+                <div>3</div>
+                <h4>{% translate "Test" %}</h4>
+                <p>{% translate "We execute structured tests and identify defects with precision." %}</p>
+            </div>
+
+            <div class="process-step">
+                <div>4</div>
+                <h4>{% translate "Report" %}</h4>
+                <p>{% translate "We provide clear, actionable bug reports and quality insights." %}</p>
+            </div>
+
+            <div class="process-step">
+                <div>5</div>
+                <h4>{% translate "Validate" %}</h4>
+                <p>{% translate "We retest fixes and confirm your software is ready for release." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="competitive-edge-section">
+    <div class="section-container">
+        <h2>{% translate "Why Businesses Choose SolutionsTestLab" %}</h2>
+
+        <p class="section-intro">
+            {% translate "We combine software testing, quality assurance, and test management expertise to help organizations release reliable software with confidence." %}
+        </p>
+
+        <div class="edge-grid">
+            <div class="edge-card">
+                <div class="edge-icon">🔍</div>
+                <h3>{% translate "Free QA Assessment" %}</h3>
+                <p>{% translate "Receive a complimentary assessment of your testing practices, quality risks, and release readiness." %}</p>
+                <a href="{% url 'contact' %}">
+                    {% translate "Request Free Assessment" %}
+                </a>
+            </div>
+
+            <div class="edge-card">
+                <div class="edge-icon">🦅</div>
+                <h3>{% translate "Eagle-Eye Precision Framework™" %}</h3>
+                <p>{% translate "Our proprietary framework helps discover risks early, strengthen quality processes, and improve release confidence." %}</p>
+            </div>
+
+            <div class="edge-card">
+                <div class="edge-icon">📊</div>
+                <h3>{% translate "QA Audit Service" %}</h3>
+                <p>{% translate "We evaluate your QA maturity, test coverage, automation readiness, defect management process, and release quality." %}</p>
+            </div>
+
+            <div class="edge-card">
+                <div class="edge-icon">🏢</div>
+                <h3>{% translate "Industry-Specific Testing" %}</h3>
+                <p>{% translate "Specialized quality assurance services for FinTech, Healthcare, SaaS, E-Commerce, Education, and Enterprise platforms." %}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="tech-section">
+    <div class="section-container">
+        <h2>{% translate "Our QA Tech Ecosystem" %}</h2>
+
+        <div class="tech-grid">
+            <div class="tech-card">
+                <h3>{% translate "Test Automation" %}</h3>
+                <p>Selenium, Playwright, Cypress, Cucumber, TOSCA, Pytest</p>
+            </div>
+
+            <div class="tech-card">
+                <h3>{% translate "API Testing" %}</h3>
+                <p>Postman, REST Assured, Swagger, FastAPI</p>
+            </div>
+
+            <div class="tech-card">
+                <h3>{% translate "Test Management" %}</h3>
+                <p>Jira, TestRail, Xray, Zephyr, and many more</p>
+            </div>
+
+            <div class="tech-card">
+                <h3>{% translate "Manual Testing" %}</h3>
+                <p>Exploratory Testing, UAT, Regression Testing, Usability Testing</p>
+            </div>
+
+            <div class="tech-card">
+                <h3>{% translate "CI/CD Pipeline" %}</h3>
+                <p>GitHub Actions, Jenkins, GitLab CI</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="cta-section">
+    <div class="section-container">
+        <h2>{% translate "Ready to Improve Your Software Quality?" %}</h2>
+
+        <p>
+            {% translate "Let us help you release software with confidence, stability, and precision." %}
+        </p>
+
+        <a href="{% url 'contact' %}">
+            {% translate "Request a QA Consultation" %}
+        </a>
+    </div>
+</section>
+
 <style>
-    /* ===== HERO SECTION ===== */
-    .hero-image-wrapper {
+    .hero-section {
         position: relative;
-        width: 100%;
-        height: 100vh; 
+        height: 100vh;
         overflow: hidden;
     }
 
-    .extended-video {
-        position: absolute;
-        top: 0;
-        left: 0;
+    .hero-video {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        z-index: 0;
     }
 
     .hero-overlay {
         position: absolute;
         inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: 1;
+        background: rgba(0, 0, 0, 0.68);
     }
 
-    .hero-text {
+    .hero-content {
         position: absolute;
-        top: 30%;
+        top: 52%;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: #ffffff;
-        z-index: 2;
         width: 90%;
-        max-width: 800px;
+        max-width: 980px;
+        color: #ffffff;
+        text-align: center;
     }
 
-    .hero-text h1 {
-        font-size: 3.5rem;
-        font-weight: 800;
-        margin-bottom: 25px;
+    .hero-content h1 {
+        font-size: 3.8rem;
         color: #00acee;
-        text-align: center;
-    }
-
-    .hero-text p {
-        font-size: 1.4rem;
-        line-height: 1.8;
-        margin-bottom: 15px;
-        font-weight: 300;
-        text-align: justify;
-        text-justify: inter-word;
-        text-align-last: center;
-    }
-
-    /* ===== WEB TECH STACK SECTION ===== */
-    .tech-stack-section {
-        background: #fafafa;
-        padding: 80px 20px 40px;
-        text-align: center;
-    }
-
-    .tech-category {
-        margin-bottom: 50px;
-    }
-
-    .tech-category h4 {
-        color: #0056b3;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-        font-weight: 800;
-    }
-
-    .tech-logos {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 12px;
-        flex-wrap: wrap;
-        max-width: 1100px;
-        margin: 0 auto;
-    }
-
-    .tech-logos span {
-        background: #ffffff;
-        color: #444;
-        padding: 10px 22px;
-        border-radius: 8px;
-        font-weight: 700;
-        font-size: 0.95rem;
-        transition: all 0.3s ease;
-        border: 1px solid #e0e0e0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-
-    .tech-logos span.highlight-qa {
-        border-left: 4px solid #00acee;
-    }
-
-    .tech-logos span.highlight-manual {
-        border-left: 4px solid #f39c12; /* Distinct color for manual expertise */
-    }
-
-    .tech-logos span:hover {
-        background: #00acee;
-        color: white;
-        border-color: #00acee;
-        transform: translateY(-5px);
-        box-shadow: 0 8px 20px rgba(0,172,238,0.2);
-    }
-
-    /* ===== CORE EXPERTISE ===== */
-    .section-padding {
-        padding: 40px 20px 100px;
-        background: #ffffff;
-    }
-
-    .container {
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .section-title {
-        font-size: 2.5rem;
-        color: #0056b3;
-        margin-bottom: 40px;
-        text-align: center;
-        font-weight: 700;
-    }
-
-    .services-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
-    }
-
-    .card {
-        padding: 40px;
-        background: #f9f9f9;
-        border-radius: 15px;
-        border-bottom: 5px solid #00acee;
-        transition: all 0.3s ease;
-        text-align: center;
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
-    }
-
-    .card h3 {
-        color: #0056b3;
-        margin-bottom: 15px;
-        font-size: 1.5rem;
-    }
-
-    /* ===== METHODOLOGY ===== */
-    .method-section {
-        background: #f0f7ff;
-        padding: 100px 20px;
-    }
-
-    .method-flex {
-        display: flex;
-        align-items: center;
-        gap: 50px;
-        flex-wrap: wrap;
-    }
-
-    .method-text {
-        flex: 1;
-        min-width: 300px;
-    }
-
-    .method-text h2 {
-        color: #0056b3;
-        font-size: 2.2rem;
         margin-bottom: 20px;
     }
 
-    /* ===== CTA STRIP ===== */
-    .cta-strip {
+    .hero-content h2 {
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+        color: #ffffff;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+        line-height: 1.7;
+        max-width: 850px;
+        margin: 0 auto 15px;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .hero-tagline {
+        font-weight: 800;
+        color: #ffffff;
+        text-align: center !important;
+    }
+
+    .hero-buttons {
+        margin-top: 30px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        display: inline-block;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+        margin: 8px;
+        transition: 0.3s;
+    }
+
+    .btn-primary {
+        background: #00acee;
+        color: #ffffff;
+    }
+
+    .btn-primary:hover {
         background: #0056b3;
-        color: white;
+    }
+
+    .btn-secondary {
+        border: 2px solid #ffffff;
+        color: #ffffff;
+    }
+
+    .btn-secondary:hover {
+        background: #ffffff;
+        color: #0056b3;
+    }
+
+    .section-container {
+        max-width: 1200px;
+        margin: auto;
         padding: 80px 20px;
         text-align: center;
     }
 
-    .cta-btn {
-        display: inline-block;
-        margin-top: 30px;
-        padding: 18px 45px;
-        background: #00acee;
-        color: white;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: 700;
+    .section-container h2 {
+        color: #0056b3;
+        font-size: 2.4rem;
+        margin-bottom: 20px;
+    }
+
+    .section-intro {
+        max-width: 850px;
+        margin: 0 auto 45px;
+        color: #555555;
         font-size: 1.1rem;
+        line-height: 1.7;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .problem-section {
+        background: #ffffff;
+        padding: 45px 0 35px;
+    }
+
+    .problem-container {
+        max-width: 1400px;
+        margin: auto;
+        padding: 0 60px;
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .problem-left {
+        text-align: left;
+    }
+
+    .problem-left h2 {
+        color: #003b7a;
+        font-size: 2.1rem;
+        font-weight: 800;
+        margin-bottom: 12px;
+    }
+
+    .problem-intro {
+        color: #555555;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin: 0 0 35px;
+        max-width: 850px;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .problem-left .solution-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+
+    .problem-left .solution-card {
+        background: #ffffff;
+        border: 1px solid rgba(0, 172, 238, 0.12);
+        border-radius: 18px;
+        box-shadow: 0 12px 30px rgba(0, 86, 179, 0.08);
+        padding: 30px 25px;
+        min-height: 240px;
+        text-align: left;
+        transition: all 0.3s ease;
+    }
+
+    .problem-left .solution-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 42px rgba(0, 86, 179, 0.15);
+    }
+
+    .problem-left .solution-card h3 {
+        color: #003b7a;
+        font-size: 1.35rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+    }
+
+    .problem-left .solution-card p {
+        color: #444444;
+        font-size: 1rem;
+        line-height: 1.75;
+        margin: 0;
+        text-align: left;
+    }
+    .problem-right {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .problem-photo {
+        width: 420px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .showcase-section {
+        background: #f8fbff;
+        padding: 70px 0;
+    }
+
+    .showcase-container {
+        max-width: 1400px;
+        margin: auto;
+        padding: 0 60px;
+        display: grid;
+        grid-template-columns: 420px 1fr;
+        gap: 50px;
+        align-items: center;
+    }
+
+    .showcase-image img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+    }
+
+    .showcase-text {
+        text-align: left;
+    }
+
+    .showcase-text h2 {
+        color: #003b7a;
+        font-size: 2rem;
+        margin-bottom: 18px;
+    }
+
+    .showcase-text p {
+        color: #555555;
+        line-height: 1.8;
+        margin-bottom: 18px;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .services-preview,
+    .tech-section {
+        background: #f8fbff;
+    }
+
+    .solution-grid,
+    .preview-grid,
+    .process-grid,
+    .tech-grid,
+    .edge-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 25px;
+    }
+
+    .preview-card,
+    .process-step,
+    .tech-card,
+    .edge-card {
+        background: #ffffff;
+        padding: 30px;
+        border-radius: 18px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.06);
         transition: 0.3s;
     }
 
-    .cta-btn:hover {
-        background: #ffffff;
+    .preview-card:hover,
+    .process-step:hover,
+    .tech-card:hover,
+    .edge-card:hover {
+        transform: translateY(-6px);
+    }
+
+    .preview-card h3,
+    .process-step h4,
+    .tech-card h3,
+    .edge-card h3 {
         color: #0056b3;
-        transform: scale(1.05);
+    }
+
+    .preview-card p,
+    .process-step p,
+    .tech-card p,
+    .edge-card p {
+        color: #555555;
+        line-height: 1.6;
+        text-align: left;
+    }
+
+    .preview-card span {
+        color: #00acee;
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+
+    .preview-link {
+        display: inline-block;
+        margin-top: 18px;
+        color: #0056b3;
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .preview-link:hover {
+        color: #00acee;
+    }
+
+    .process-step div {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #00acee;
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        font-weight: 900;
+    }
+
+    .competitive-edge-section {
+        background: #ffffff;
+    }
+
+    .edge-grid {
+        margin-top: 50px;
+    }
+
+    .edge-card {
+        border-top: 5px solid #00acee;
+    }
+
+    .edge-card:hover {
+        box-shadow: 0 18px 45px rgba(0,86,179,0.15);
+    }
+
+    .edge-icon {
+        font-size: 2.4rem;
+        margin-bottom: 15px;
+    }
+
+    .edge-card a {
+        display: inline-block;
+        margin-top: 18px;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #0056b3, #00acee);
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .edge-card a:hover {
+        transform: translateY(-2px);
+    }
+
+    .cta-section {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(
+            135deg,
+            #003b7a 0%,
+            #0056b3 50%,
+            #00acee 100%
+        );
+    }
+
+    .cta-section .section-container {
+        padding: 100px 20px;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .cta-section .section-container h2 {
+        color: #ffffff !important;
+        font-size: 3.2rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        line-height: 1.2;
+        text-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .cta-section .section-container p {
+        color: rgba(255,255,255,0.95) !important;
+        font-size: 1.25rem;
+        line-height: 1.8;
+        max-width: 750px;
+        margin: 0 auto 40px;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .cta-section .section-container a {
+        display: inline-block;
+        text-decoration: none;
+        background: #ffffff;
+        color: #0056b3 !important;
+        padding: 18px 42px;
+        border-radius: 50px;
+        font-weight: 800;
+        font-size: 1rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        transition: all 0.3s ease;
+    }
+
+    .cta-section .section-container a:hover {
+        background: #0056b3;
+        color: #ffffff !important;
+        transform: translateY(-4px);
+    }
+
+    .cta-section::before {
+        content: "";
+        position: absolute;
+        width: 350px;
+        height: 350px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        top: -120px;
+        left: -120px;
+    }
+
+    .cta-section::after {
+        content: "";
+        position: absolute;
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.08);
+        bottom: -100px;
+        right: -100px;
+    }
+
+    @media (max-width: 1100px) {
+        .problem-container {
+            grid-template-columns: 1fr;
+            padding: 0 25px;
+        }
+
+        .problem-left {
+            text-align: center;
+        }
+
+        .problem-intro {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .problem-left .solution-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .problem-left .solution-card {
+            text-align: left;
+            min-height: auto;
+        }
+
+        .problem-right {
+            justify-content: center;
+        }
+
+        .problem-photo {
+            width: 100%;
+            max-width: 520px;
+            height: 300px;
+        }
+
+        .showcase-container {
+            grid-template-columns: 1fr;
+            padding: 0 25px;
+        }
+
+        .showcase-text {
+            text-align: center;
+        }
+
+        .showcase-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .showcase-image img {
+            max-width: 520px;
+        }
     }
 
     @media (max-width: 768px) {
-        .hero-text h1 { font-size: 2.5rem; }
-        .hero-text p { font-size: 1.1rem; }
+        .hero-content h1 {
+            font-size: 2.6rem;
+        }
+
+        .hero-content h2 {
+            font-size: 1.6rem;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .section-container h2 {
+            font-size: 2rem;
+        }
+
+        .problem-left h2 {
+            font-size: 1.8rem;
+        }
+
+        .problem-photo {
+            height: 230px;
+        }
+
+        .showcase-image img {
+            height: 230px;
+        }
+
+        .cta-section .section-container {
+            padding: 70px 20px;
+        }
+
+        .cta-section .section-container h2 {
+            font-size: 2.2rem;
+        }
+
+        .cta-section .section-container p {
+            font-size: 1rem;
+        }
+
+        .cta-section .section-container a {
+            padding: 15px 30px;
+            font-size: 0.95rem;
+        }
     }
 </style>
-
-<section class="hero-image-wrapper">
-    <video class="extended-video" autoplay muted loop playsinline>
-        <source src="{% static 'videos/website_video.mp4' %}" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    <div class="hero-overlay"></div>
-    <div class="hero-text">
-        <h1>SolutionsTestLab</h1>
-        <p>{% translate "Your Competent Partner for Software Development, Software Testing and Quality Assurance." %}</p>
-        <p><strong>{% translate "Eagle-Eye Precision in every line of code." %}</strong></p>
-        <p><strong>{% translate "We spot bugs before they take flight — and build software that soars." %}</strong></p>
-    </div>
-</section>
-
-<section class="tech-stack-section">
-    <div class="container">
-        <h2 class="section-title">{% translate "Our Web Application & QA Ecosystem" %}</h2>
-
-        <div class="tech-category">
-            <h4>{% translate "Modern Web Frontend" %}</h4>
-            <div class="tech-logos">
-                <span>React</span><span>TypeScript</span><span>Vue.js</span><span>Next.js</span><span>Tailwind CSS</span>
-            </div>
-        </div>
-
-        <div class="tech-category">
-            <h4>{% translate "Scalable Backend & Databases" %}</h4>
-            <div class="tech-logos">
-                <span>Python / Django</span><span>Node.js</span><span>PostgreSQL</span><span>FastAPI</span><span>Redis</span>
-            </div>
-        </div>
-
-        <div class="tech-category">
-            <h4>{% translate "Web Testing & QA Automation" %}</h4>
-            <div class="tech-logos">
-                <span class="highlight-qa">Selenium</span>
-                <span class="highlight-qa">Cypress</span>
-                <span class="highlight-qa">Playwright</span>
-                <span class="highlight-qa">Pytest</span>
-                <span class="highlight-qa">Postman</span>
-                <span class="highlight-qa">JMeter</span>
-                <span class="highlight-qa">SoapUI</span>
-            </div>
-        </div>
-
-        <div class="tech-category">
-            <h4>{% translate "Manual & Exploratory Testing" %}</h4>
-            <div class="tech-logos">
-                <span class="highlight-manual">Exploratory Testing</span>
-                <span class="highlight-manual">Usability Testing</span>
-                <span class="highlight-manual">UAT (User Acceptance)</span>
-                <span class="highlight-manual">Regression Testing</span>
-                <span class="highlight-manual">Smoke & Sanity Testing</span>
-            </div>
-        </div>
-
-        <div class="tech-category" style="margin-bottom: 0;">
-            <h4>{% translate "Cloud & Web Infrastructure" %}</h4>
-            <div class="tech-logos">
-                <span>AWS / Azure</span><span>Docker</span><span>Kubernetes</span><span>Ansible</span><span>GitHub Actions</span><span>Jira</span><span>VS Code</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="section-padding">
-    <div class="container">
-        <h2 class="section-title">{% translate "Our Core Expertise" %}</h2>
-        <div class="services-grid">
-            <div class="card">
-                <h3>{% translate "Web Development" %}</h3>
-                <p>{% translate "Architecting scalable web applications with a focus on high-performance backend logic and responsive frontend design." %}</p>
-            </div>
-            <div class="card">
-                <h3>{% translate "QA Automation" %}</h3>
-                <p>{% translate "Building robust automation frameworks that provide rapid feedback and ensure long-term web software stability." %}</p>
-            </div>
-            <div class="card">
-                <h3>{% translate "Manual Testing" %}</h3>
-                <p>{% translate "Human-centric exploratory testing to uncover usability flaws and complex edge cases that automation might miss." %}</p>
-            </div>
-            <div class="card">
-                <h3>{% translate "Quality Strategy" %}</h3>
-                <p>{% translate "Strategic consulting to integrate quality standards throughout your entire web development lifecycle." %}</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="method-section">
-    <div class="container">
-        <div class="method-flex">
-            <div class="method-text">
-                <h2>{% translate "The 'Eagle-Eye' Methodology" %}</h2>
-                <p>{% translate "We don't just find bugs; we prevent them. By implementing 'Shift-Left' testing, our consultants engage early in the design phase to catch architectural flaws when they are cheapest to fix." %}</p>
-                
-                <p>{% translate "Our approach combines technical excellence with business-focused risk management, ensuring your software is not just functional, but a competitive advantage." %}</p>
-            </div>
-            <div class="method-image">
-                </div>
-        </div>
-    </div>
-</section>
-
-<section class="cta-strip">
-    <div class="container">
-        <h2>{% translate "Ready to Build Web Software That Soars or Test Web Applications to Perfection?" %}</h2>
-        <p>{% translate "Our consultants are ready to help you perfect your next digital solution." %}</p>
-        <a href="{% url 'contact' %}" class="cta-btn">{% translate "Get a Free Consultation" %}</a>
-    </div>
-</section>
 
 {% endblock %}

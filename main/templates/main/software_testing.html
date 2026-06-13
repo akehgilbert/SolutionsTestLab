@@ -1,0 +1,425 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% translate "Software Testing" %} | SolutionsTestLab
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .st-hero {
+        padding: 170px 20px 80px;
+        background: #f8fbff;
+        text-align: center;
+    }
+
+    .st-hero h1 {
+        color: #0056b3;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .st-hero h2 {
+        color: #00acee;
+        font-size: 1.7rem;
+        margin-bottom: 25px;
+    }
+
+    .st-hero p {
+    max-width: 950px;
+    margin: auto;
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: left;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+    .st-section {
+        padding: 80px 20px;
+        background: #ffffff;
+    }
+
+    .st-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .st-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 35px;
+        box-shadow: 0 12px 35px rgba(0,86,179,0.09);
+        border-top: 6px solid #00acee;
+        transition: 0.3s;
+    }
+
+    .st-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0,86,179,0.14);
+    }
+
+    .st-card h3 {
+        color: #0056b3;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+
+    .st-card h4 {
+        color: #0056b3;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .st-card p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    text-align: left;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+    .st-card strong {
+        color: #003b7a;
+    }
+
+    .st-full-card {
+        grid-column: 1 / -1;
+    }
+
+    .st-image-card {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .st-image-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .st-image-content {
+        padding: 35px;
+    }
+
+    .st-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+    }
+
+    .st-list li {
+        color: #1e293b;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .st-list li::before {
+        content: "✓";
+        color: #00acee;
+        font-weight: 900;
+        margin-right: 8px;
+    }
+
+    .st-services-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 20px;
+    }
+
+    .st-services-list li {
+        color: #1e293b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .st-services-list li::before {
+        content: "◆";
+        color: #00acee;
+        font-size: 0.75rem;
+        margin-right: 8px;
+    }
+
+    .st-compare-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .st-mini-card {
+        background: #f8fbff;
+        padding: 25px;
+        border-radius: 18px;
+        border-left: 5px solid #00acee;
+    }
+
+    .st-cta {
+        max-width: 1100px;
+        margin: 70px auto 0;
+        background: linear-gradient(135deg, #0056b3, #00acee);
+        color: white;
+        padding: 55px 35px;
+        border-radius: 26px;
+        text-align: center;
+    }
+
+    .st-cta h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .st-cta p {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+    text-align: left;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
+    .st-cta a {
+        display: inline-block;
+        background: #ffffff;
+        color: #0056b3;
+        padding: 15px 34px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .st-cta a:hover {
+        background: #0056b3;
+        color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+        .st-grid,
+        .st-compare-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .st-hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .st-services-list {
+            grid-template-columns: 1fr;
+        }
+
+        .st-image-card img {
+            height: 240px;
+        }
+    }
+</style>
+
+<section class="st-hero">
+    <h1>{% translate "Software Testing" %}</h1>
+    <h2>{% translate "Manual Testing. Test Automation. Reliable Releases." %}</h2>
+
+    <p>
+        {% translate "We help organizations verify that their software works correctly, performs reliably, and delivers a smooth user experience before it reaches customers. Our Software Testing services combine human insight with automation efficiency to detect defects early, reduce risk, and support confident releases." %}
+    </p>
+</section>
+
+<section class="st-section">
+    <div class="st-grid">
+
+        <div class="st-card st-full-card">
+            <h3>{% translate "What is Software Testing?" %}</h3>
+
+            <p>
+                {% translate "Software Testing is the process of evaluating a software application to confirm that it meets business requirements, works as expected, and is ready for real users." %}
+            </p>
+
+            <p>
+                {% translate "It helps identify defects, usability problems, integration issues, performance concerns, and quality risks before they affect customers or business operations." %}
+            </p>
+
+            <ul class="st-list">
+                <li>{% translate "Validate business requirements" %}</li>
+                <li>{% translate "Detect defects early" %}</li>
+                <li>{% translate "Improve reliability" %}</li>
+                <li>{% translate "Protect user experience" %}</li>
+                <li>{% translate "Support release confidence" %}</li>
+            </ul>
+        </div>
+
+        <div class="st-card st-image-card">
+            <img src="{% static 'images/software_testing.webp' %}"
+                 alt="{% translate 'Manual Testing Team' %}">
+
+            <div class="st-image-content">
+                <h3>{% translate "Manual Testing" %}</h3>
+
+                <p>
+                    {% translate "Manual Testing is performed by human testers who interact with the software like real users. It is especially valuable for validating business workflows, usability, design behavior, content, accessibility, and unexpected user scenarios." %}
+                </p>
+
+                <p><strong>{% translate "Manual testing is best for:" %}</strong></p>
+
+                <ul class="st-list">
+                    <li>{% translate "Exploratory testing" %}</li>
+                    <li>{% translate "User acceptance testing" %}</li>
+                    <li>{% translate "Usability testing" %}</li>
+                    <li>{% translate "Visual and layout checks" %}</li>
+                    <li>{% translate "New or frequently changing features" %}</li>
+                    <li>{% translate "Real-world user journey validation" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="st-card st-image-card">
+            <img src="{% static 'images/software_testing_1.jpg' %}"
+                 alt="{% translate 'Test Automation Interface' %}">
+
+            <div class="st-image-content">
+                <h3>{% translate "Test Automation" %}</h3>
+
+                <p>
+                    {% translate "Test Automation uses scripts, tools, and frameworks to execute repeated tests automatically. It is ideal for stable, repetitive, and high-value test cases that need to run frequently across releases." %}
+                </p>
+
+                <p><strong>{% translate "Test automation is best for:" %}</strong></p>
+
+                <ul class="st-list">
+                    <li>{% translate "Regression testing" %}</li>
+                    <li>{% translate "API testing" %}</li>
+                    <li>{% translate "Smoke testing" %}</li>
+                    <li>{% translate "Repeated test execution" %}</li>
+                    <li>{% translate "CI/CD pipeline validation" %}</li>
+                    <li>{% translate "Large applications with frequent releases" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="st-card st-full-card">
+            <h3>{% translate "Manual Testing vs Test Automation" %}</h3>
+
+            <p>
+                {% translate "Manual Testing and Test Automation are not competitors — they work best together. Manual testing provides human judgment, creativity, and business understanding. Test automation provides speed, repeatability, and consistency." %}
+            </p>
+
+            <div class="st-compare-grid">
+                <div class="st-mini-card">
+                    <h4>{% translate "Manual Testing helps when:" %}</h4>
+                    <ul class="st-list">
+                        <li>{% translate "The feature is new" %}</li>
+                        <li>{% translate "Requirements are changing" %}</li>
+                        <li>{% translate "User experience matters" %}</li>
+                        <li>{% translate "Human observation is needed" %}</li>
+                    </ul>
+                </div>
+
+                <div class="st-mini-card">
+                    <h4>{% translate "Test Automation helps when:" %}</h4>
+                    <ul class="st-list">
+                        <li>{% translate "Tests are repeated often" %}</li>
+                        <li>{% translate "The application is stable" %}</li>
+                        <li>{% translate "Regression coverage is required" %}</li>
+                        <li>{% translate "Fast release cycles are needed" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="st-card">
+            <h3>{% translate "Why Manual Testing?" %}</h3>
+
+            <p>
+                {% translate "Manual Testing brings human insight into the quality process. It helps uncover issues that automated scripts may miss, especially problems related to usability, visual design, confusing workflows, unclear content, accessibility, and real-world behavior." %}
+            </p>
+
+            <ul class="st-list">
+                <li>{% translate "Finds user experience issues" %}</li>
+                <li>{% translate "Validates real business workflows" %}</li>
+                <li>{% translate "Supports exploratory discovery" %}</li>
+                <li>{% translate "Adapts quickly to changes" %}</li>
+                <li>{% translate "Provides human judgment and context" %}</li>
+            </ul>
+        </div>
+
+        <div class="st-card">
+            <h3>{% translate "Why Test Automation?" %}</h3>
+
+            <p>
+                {% translate "Test Automation improves speed, consistency, and long-term testing efficiency. It helps teams detect regressions earlier, run frequent checks, and support agile or DevOps delivery models." %}
+            </p>
+
+            <ul class="st-list">
+                <li>{% translate "Speeds up repeated testing" %}</li>
+                <li>{% translate "Reduces regression risk" %}</li>
+                <li>{% translate "Improves test consistency" %}</li>
+                <li>{% translate "Supports CI/CD pipelines" %}</li>
+                <li>{% translate "Enables faster release validation" %}</li>
+                <li>{% translate "Saves time on repetitive test execution" %}</li>
+            </ul>
+        </div>
+
+        <div class="st-card">
+            <h3>{% translate "Our Manual Testing Services" %}</h3>
+
+            <p>
+                {% translate "SolutionsTestLab provides structured manual testing services for web, mobile, SaaS, and business applications." %}
+            </p>
+
+            <ul class="st-services-list">
+                <li>{% translate "Functional Testing" %}</li>
+                <li>{% translate "Exploratory Testing" %}</li>
+                <li>{% translate "Regression Testing" %}</li>
+                <li>{% translate "User Acceptance Testing" %}</li>
+                <li>{% translate "Usability Testing" %}</li>
+                <li>{% translate "Cross-Browser Testing" %}</li>
+                <li>{% translate "Mobile & Web Testing" %}</li>
+                <li>{% translate "Bug Reporting & Retesting" %}</li>
+            </ul>
+        </div>
+
+        <div class="st-card">
+            <h3>{% translate "Our Test Automation Services" %}</h3>
+
+            <p>
+                {% translate "We help teams design and implement automated testing solutions that improve release speed, regression coverage, and long-term quality control." %}
+            </p>
+
+            <ul class="st-services-list">
+                <li>{% translate "Automation Strategy" %}</li>
+                <li>{% translate "Regression Automation" %}</li>
+                <li>{% translate "API Test Automation" %}</li>
+                <li>{% translate "UI Test Automation" %}</li>
+                <li>{% translate "Smoke Test Automation" %}</li>
+                <li>{% translate "CI/CD Test Integration" %}</li>
+                <li>{% translate "Test Script Maintenance" %}</li>
+                <li>{% translate "Selenium, Playwright & Cypress Support" %}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="st-cta">
+        <h2>{% translate "Need Manual Testing or Test Automation?" %}</h2>
+
+        <p>
+            {% translate "SolutionsTestLab helps you choose the right testing approach for your product, team, and release goals." %}
+        </p>
+
+        <a href="{% url 'contact' %}">
+            {% translate "Request a Software Testing Consultation" %}
+        </a>
+    </div>
+</section>
+
+{% endblock %}

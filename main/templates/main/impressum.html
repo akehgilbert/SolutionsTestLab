@@ -1,0 +1,71 @@
+{% extends "main/base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Impressum" %}{% endblock %}
+
+{% block content %}
+<div style="max-width:1000px;margin:60px auto;padding:40px;line-height:1.8;">
+
+    <h1>{% translate "Impressum (Legal Notice)" %}</h1>
+
+    <h2>{% translate "Information according to § 5 TDDDG" %}</h2>
+
+    <p>
+        <strong>SolutionsTestLab GbR</strong><br>
+        Breslauer Straße 19<br>
+        45145 Essen<br>
+        Germany
+    </p>
+
+    <p>
+        <strong>{% translate "Represented by the Managing Partners" %}:</strong><br>
+        Gilbert Esambili Akeh<br>
+        Jan Wolfgang Sickinger
+    </p>
+
+    <h2>{% translate "Contact" %}</h2>
+
+    <p>
+        {% translate "Telephone" %}: +49 (0) XXX XXXXXXX<br>
+        {% translate "Email" %}: info@solutionstestlab.com<br>
+        {% translate "Website" %}: www.solutionstestlab.com
+    </p>
+
+    <h2>{% translate "VAT ID / Tax Details" %}</h2>
+
+    <p>
+        {% translate "VAT Identification Number according to § 27a UStG" %}:<br>
+        {% translate "Applied for" %}
+    </p>
+
+    <h2>{% translate "Responsible for content according to § 18 Abs. 2 MStV" %}</h2>
+
+    <p>
+        Gilbert Esambili Akeh<br>
+        Jan Wolfgang Sickinger<br>
+        Breslauer Straße 19<br>
+        45145 Essen<br>
+        Germany
+    </p>
+
+    <hr style="margin:40px 0;border:0;border-top:1px solid #eee;">
+
+    <h2>{% translate "Legal Disclaimers" %}</h2>
+
+    <h3>{% translate "Liability for Content" %}</h3>
+    <p>
+        {% translate "The contents of this website have been created with the greatest care. However, we cannot guarantee the accuracy, completeness, or timeliness of the information provided." %}
+    </p>
+
+    <h3>{% translate "Liability for Links" %}</h3>
+    <p>
+        {% translate "Our website contains links to external third-party websites over whose content we have no influence. Therefore, we cannot assume any liability for these external contents." %}
+    </p>
+
+    <h3>{% translate "Copyright" %}</h3>
+    <p>
+        {% translate "The content and works published on this website are subject to German copyright law. Any reproduction, editing, distribution, or use outside the limits of copyright law requires prior written consent." %}
+    </p>
+
+</div>
+{% endblock %}

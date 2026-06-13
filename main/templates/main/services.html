@@ -1,3 +1,4 @@
+```html
 {% extends "main/base.html" %}
 {% load static i18n %}
 
@@ -8,13 +9,11 @@
 {% block content %}
 
 <style>
-    /* ===== GLOBAL LAYOUT PANES (Consistent with Home) ===== */
     body {
         background-color: #ffffff;
         overflow-x: hidden;
     }
 
-    /* Left Pane: Vertical Branding */
     .side-pane-left {
         position: fixed;
         left: 0;
@@ -38,7 +37,6 @@
         font-size: 0.8rem;
     }
 
-    /* Right Pane: Geometric Decor */
     .side-pane-right {
         position: fixed;
         right: 0;
@@ -55,46 +53,52 @@
         gap: 20px;
     }
 
-    .dot { width: 6px; height: 6px; background: #ddd; border-radius: 50%; }
-    .dot.active { background: #00acee; transform: scale(1.5); }
+    .dot {
+        width: 6px;
+        height: 6px;
+        background: #ddd;
+        border-radius: 50%;
+    }
 
-    /* Adjust main content to fit between panes */
+    .dot.active {
+        background: #00acee;
+        transform: scale(1.5);
+    }
+
     .main-wrapper {
         margin: 0 60px;
         background: #ffffff;
         min-height: 100vh;
     }
 
-    /* ===== SERVICES CONTENT STYLING ===== */
     .intro-header-container {
         padding: 180px 20px 60px;
-        text-align: center;      
+        text-align: center;
         width: 100%;
         background: #f8fbff;
     }
 
-    .intro-header-container h1 { 
-        font-size: 3.5rem; 
-        color: #0056b3; 
-        font-weight: 800; 
-        margin-bottom: 20px; 
+    .intro-header-container h1 {
+        font-size: 3.5rem;
+        color: #0056b3;
+        font-weight: 800;
+        margin-bottom: 20px;
     }
 
-    .intro-header-container p { 
-        font-size: 1.2rem; 
-        color: #555; 
-        max-width: 800px; 
-        margin: auto; 
+    .intro-header-container p {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 850px;
+        margin: auto;
         line-height: 1.6;
     }
 
-    /* 3-Column Grid Layout */
     .services-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 25px;
         max-width: 1200px;
-        margin: 60px auto 100px;
+        margin: 60px auto 60px;
         padding: 0 20px;
         align-items: start;
     }
@@ -115,13 +119,30 @@
         box-shadow: 0 12px 30px rgba(0,0,0,0.1);
     }
 
-    .service-card h2 { color: #0056b3; font-size: 1.8rem; margin-bottom: 20px; }
+    .service-card h2 {
+        color: #0056b3;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
 
-    /* --- Read More Logic --- */
-    .content-toggle { display: none; } 
+    .service-card h3 {
+        color: #00acee;
+        font-size: 1.1rem;
+        margin-top: 20px;
+    }
+
+    .service-card p,
+    .service-card li {
+        color: #444;
+        line-height: 1.7;
+    }
+
+    .content-toggle {
+        display: none;
+    }
 
     .card-content {
-        max-height: 180px; /* Initial visible height */
+        max-height: 210px;
         overflow: hidden;
         position: relative;
         transition: max-height 0.5s ease;
@@ -131,7 +152,6 @@
         color: #444;
     }
 
-    /* Gradient fade at bottom of collapsed text */
     .card-content::after {
         content: "";
         position: absolute;
@@ -143,9 +163,8 @@
         transition: 0.3s;
     }
 
-    /* When expanded */
     .content-toggle:checked + .card-content {
-        max-height: 2000px; 
+        max-height: 3000px;
     }
 
     .content-toggle:checked + .card-content::after {
@@ -165,20 +184,239 @@
         transition: 0.3s;
     }
 
-    .read-more-btn:hover { background: #00acee; }
+    .read-more-btn:hover {
+        background: #00acee;
+    }
 
-    .content-toggle:checked ~ .read-more-btn::before { content: "{% translate 'Read Less' %}"; }
-    .content-toggle:not(:checked) ~ .read-more-btn::before { content: "{% translate 'Read More' %}"; }
+    .content-toggle:checked ~ .read-more-btn::before {
+        content: "{% translate 'Read Less' %}";
+    }
 
-    /* RESPONSIVE */
+    .content-toggle:not(:checked) ~ .read-more-btn::before {
+        content: "{% translate 'Read More' %}";
+    }
+
+    .test-management-section {
+        background: #f8fbff;
+        padding: 90px 20px;
+    }
+
+    .test-management-header {
+        max-width: 950px;
+        margin: 0 auto 50px;
+        text-align: center;
+    }
+
+    .test-management-label {
+        color: #00acee;
+        font-weight: 900;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    .test-management-header h2 {
+        color: #0056b3;
+        font-size: 3rem;
+        font-weight: 900;
+        margin-bottom: 20px;
+    }
+
+    .test-management-header p {
+        color: #555;
+        font-size: 1.15rem;
+        line-height: 1.8;
+    }
+
+    .test-management-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px;
+    }
+
+    .tm-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 35px;
+        box-shadow: 0 12px 35px rgba(0,86,179,0.09);
+        border: 1px solid rgba(0,86,179,0.08);
+    }
+
+    .tm-card-image {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .tm-card-image img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .tm-card-image-content {
+        padding: 30px 35px 35px;
+    }
+
+    .tm-card h3,
+    .tm-card-image-content h3 {
+        color: #0056b3;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+
+    .tm-card p,
+    .tm-card-image-content p {
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 16px;
+    }
+
+    .tm-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 20px;
+    }
+
+    .tm-list li {
+        color: #1e293b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .tm-list li::before {
+        content: "✓";
+        color: #00acee;
+        font-weight: 900;
+        margin-right: 8px;
+    }
+
+    .tm-services-list {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 22px;
+    }
+
+    .tm-services-list li {
+        color: #1e293b;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .tm-services-list li::before {
+        content: "◆";
+        color: #00acee;
+        margin-right: 8px;
+        font-size: 0.75rem;
+    }
+
+    .tm-cta-card {
+        max-width: 1200px;
+        margin: 28px auto 0;
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 35px;
+        box-shadow: 0 12px 35px rgba(0,86,179,0.09);
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 30px;
+        align-items: center;
+    }
+
+    .tm-cta-card h3 {
+        color: #0056b3;
+        font-size: 1.7rem;
+        margin-bottom: 10px;
+    }
+
+    .tm-cta-card p {
+        color: #444;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    .tm-cta-card a {
+        background: linear-gradient(135deg, #0056b3, #00acee);
+        color: #ffffff;
+        text-decoration: none;
+        padding: 15px 28px;
+        border-radius: 50px;
+        font-weight: 800;
+        white-space: nowrap;
+    }
+
+    .tm-cta-card a:hover {
+        background: #00acee;
+    }
+
+    .cta-area {
+        text-align: center;
+        padding: 70px 20px 100px;
+    }
+
+    .cta-area a {
+        display: inline-block;
+        background: #0056b3;
+        color: white;
+        padding: 15px 35px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .cta-area a:hover {
+        background: #00acee;
+    }
+
     @media (max-width: 992px) {
-        .side-pane-left, .side-pane-right { display: none; }
-        .main-wrapper { margin: 0; }
-        .intro-header-container h1 { font-size: 2.8rem; }
+        .side-pane-left,
+        .side-pane-right {
+            display: none;
+        }
+
+        .main-wrapper {
+            margin: 0;
+        }
+
+        .intro-header-container h1 {
+            font-size: 2.8rem;
+        }
+
+        .test-management-grid,
+        .tm-cta-card {
+            grid-template-columns: 1fr;
+        }
+
+        .tm-cta-card {
+            text-align: center;
+        }
+
+        .test-management-header h2 {
+            font-size: 2.3rem;
+        }
     }
 
     @media (max-width: 768px) {
-        .services-grid { grid-template-columns: 1fr; }
+        .services-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .tm-list,
+        .tm-services-list {
+            grid-template-columns: 1fr;
+        }
+
+        .tm-card-image img {
+            height: 230px;
+        }
     }
 </style>
 
@@ -189,61 +427,233 @@
 <div class="side-pane-right">
     <div class="dot"></div>
     <div class="dot"></div>
-    <div class="dot active"></div> <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
     <div class="dot"></div>
 </div>
 
 <div class="main-wrapper">
+
     <div class="intro-header-container">
         <h1>{% translate "Our Services" %}</h1>
-        <p>{% translate "At SolutionsTestLab, we combine eagle-eye precision with technical excellence to build, test, and perfect reliable software solutions." %}</p>
+        <p>
+            {% translate "At SolutionsTestLab, we combine eagle-eye precision with technical excellence to build, test, and perfect reliable software solutions." %}
+        </p>
     </div>
 
     <div class="services-grid">
-        
-        <div class="service-card">
+
+        <div class="service-card" id="development">
             <h2>{% translate "Software Development" %}</h2>
-            
+
             <input type="checkbox" id="dev-toggle" class="content-toggle">
+
             <div class="card-content">
-                <p>At SolutionsTestLab, we don't view software development as a simple linear task. For our consultants, it is a high-stakes engineering process where every line of code impacts the reliability and security of your business.</p>
-                
-                <h3 style="font-size:1.1rem; color:#00acee; margin-top:20px;">{% translate "Core Pillars" %}</h3>
-                <p><strong>1. Requirements:</strong> Bridge business goals and technical reality.</p>
-                <p><strong>2. Architecture:</strong> Robust "Digital Skeletons" designed for longevity.</p>
-                <p><strong>3. Implementation:</strong> Clean Code philosophy to reduce technical debt.</p>
-                <p><strong>4. Integrated QA:</strong> Shift-Left Testing from day one.</p>
-                <p><strong>5. DevOps:</strong> CI/CD pipelines for seamless deployment.</p>
-                <p><strong>6. Evolution:</strong> Continuous security patching and scaling.</p>
+                <p>
+                    {% translate "At SolutionsTestLab, we do not view software development as a simple linear task. We see it as a high-stakes engineering process where every line of code impacts the reliability, usability, and security of your business." %}
+                </p>
+
+                <h3>{% translate "Core Pillars" %}</h3>
+
+                <p><strong>1. {% translate "Requirements:" %}</strong> {% translate "We bridge business goals and technical reality." %}</p>
+                <p><strong>2. {% translate "Architecture:" %}</strong> {% translate "We design robust digital foundations built for longevity." %}</p>
+                <p><strong>3. {% translate "Implementation:" %}</strong> {% translate "We follow clean-code principles to reduce technical debt." %}</p>
+                <p><strong>4. {% translate "Integrated QA:" %}</strong> {% translate "We apply shift-left testing from day one." %}</p>
+                <p><strong>5. {% translate "DevOps:" %}</strong> {% translate "We support CI/CD pipelines for reliable deployment." %}</p>
+                <p><strong>6. {% translate "Evolution:" %}</strong> {% translate "We support maintenance, security patching, and scaling." %}</p>
             </div>
+
             <label for="dev-toggle" class="read-more-btn"></label>
         </div>
 
-        <div class="service-card" style="border-top-color: #00acee;">
+        <div class="service-card" id="testing" style="border-top-color: #00acee;">
             <h2>{% translate "Software Testing" %}</h2>
-            
+
             <input type="checkbox" id="test-toggle" class="content-toggle">
+
             <div class="card-content">
-                <p>Software testing is a core consulting discipline designed to ensure reliability, performance, and confidence in every solution we support.</p>
-                <p>Our consultants apply a structured, risk-based testing approach to identify defects early, validate business requirements, and safeguard system stability throughout the development lifecycle.</p>
-                <p>By integrating testing into CI/CD pipelines and agile delivery models, we help organizations reduce defects, improve software quality, and accelerate time-to-market.</p>
+                <p>
+                    {% translate "Software testing is a core consulting discipline designed to ensure reliability, performance, and confidence in every solution we support." %}
+                </p>
+
+                <p>
+                    {% translate "Our consultants apply a structured, risk-based testing approach to identify defects early, validate business requirements, and safeguard system stability throughout the development lifecycle." %}
+                </p>
+
+                <h3>{% translate "Testing Services Include" %}</h3>
+                <ul>
+                    <li>{% translate "Functional testing" %}</li>
+                    <li>{% translate "Regression testing" %}</li>
+                    <li>{% translate "Manual testing" %}</li>
+                    <li>{% translate "User acceptance testing" %}</li>
+                    <li>{% translate "Cross-browser testing" %}</li>
+                    <li>{% translate "Mobile and web application testing" %}</li>
+                    <li>{% translate "API testing" %}</li>
+                    <li>{% translate "Bug reporting and retesting" %}</li>
+                </ul>
+
+                <p>
+                    {% translate "By integrating testing into agile delivery models and CI/CD pipelines, we help organizations reduce defects, improve software quality, and accelerate time-to-market." %}
+                </p>
             </div>
+
             <label for="test-toggle" class="read-more-btn"></label>
         </div>
 
-        <div class="service-card">
+        <div class="service-card" id="qa">
             <h2>{% translate "Quality Assurance" %}</h2>
-            
+
             <input type="checkbox" id="qa-toggle" class="content-toggle">
+
             <div class="card-content">
-                <p>Quality Assurance is more than testing — it is a strategic consulting service embedded throughout the entire software lifecycle.</p>
-                <p>Our QA consultants apply an eagle-eye approach to identify risks early, establish robust processes, and ensure software quality is built in from day one.</p>
-                <p>We define clear defect management processes, oversee test execution quality, and provide transparent reporting that enables data-driven decisions for your business growth.</p>
+                <p>
+                    {% translate "Quality Assurance is more than testing — it is a strategic consulting service embedded throughout the entire software lifecycle." %}
+                </p>
+
+                <p>
+                    {% translate "Our QA consultants apply an eagle-eye approach to identify risks early, establish robust processes, and ensure software quality is built in from day one." %}
+                </p>
+
+                <h3>{% translate "QA Support Includes" %}</h3>
+                <ul>
+                    <li>{% translate "QA strategy and planning" %}</li>
+                    <li>{% translate "Test case design" %}</li>
+                    <li>{% translate "Defect management process" %}</li>
+                    <li>{% translate "Quality metrics and reporting" %}</li>
+                    <li>{% translate "Release readiness assessment" %}</li>
+                    <li>{% translate "Process improvement consulting" %}</li>
+                </ul>
+
+                <p>
+                    {% translate "We define clear defect management processes, oversee test execution quality, and provide transparent reporting that enables data-driven decisions for business growth." %}
+                </p>
             </div>
+
             <label for="qa-toggle" class="read-more-btn"></label>
         </div>
 
     </div>
+
+    <section class="test-management-section" id="test-management">
+
+        <div class="test-management-header">
+            <div class="test-management-label">{% translate "Test Management" %}</div>
+
+            <h2>{% translate "Plan. Coordinate. Deliver Quality." %}</h2>
+
+            <p>
+                {% translate "We help organizations establish structured testing processes that improve visibility, reduce risks, and ensure successful software releases. Our Test Management services provide planning, coordination, reporting, and quality governance across the entire testing lifecycle." %}
+            </p>
+        </div>
+
+        <div class="test-management-grid">
+
+            <div class="tm-card tm-card-image">
+                <img src="{% static 'images/test_management.png' %}"
+                     alt="{% translate 'Test Management Overview' %}">
+
+                <div class="tm-card-image-content">
+                    <h3>{% translate "What is Test Management?" %}</h3>
+
+                    <p>
+                        {% translate "Planning and controlling the entire software testing process to ensure quality, efficiency, and successful releases." %}
+                    </p>
+
+                    <p>
+                        {% translate "We organize testing activities, coordinate teams, manage test cases and defects, and provide clear visibility into the quality of your software throughout the development lifecycle." %}
+                    </p>
+
+                    <ul class="tm-list">
+                        <li>{% translate "Test Strategy" %}</li>
+                        <li>{% translate "Test Planning" %}</li>
+                        <li>{% translate "Test Coordination" %}</li>
+                        <li>{% translate "Test Monitoring" %}</li>
+                        <li>{% translate "Quality Reporting" %}</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tm-card">
+                <h3>{% translate "Why Test Management?" %}</h3>
+
+                <p>
+                    {% translate "Without proper test management, projects often suffer from missed defects, unclear responsibilities, delayed releases, and increased costs." %}
+                </p>
+
+                <p><strong>{% translate "Our Test Management service helps you:" %}</strong></p>
+
+                <ul class="tm-list">
+                    <li>{% translate "Reduce project risks" %}</li>
+                    <li>{% translate "Improve software quality" %}</li>
+                    <li>{% translate "Increase release confidence" %}</li>
+                    <li>{% translate "Enhance collaboration between developers and testers" %}</li>
+                    <li>{% translate "Deliver projects on time and within budget" %}</li>
+                </ul>
+            </div>
+
+            <div class="tm-card">
+                <h3>{% translate "Responsibilities of a Test Manager" %}</h3>
+
+                <p>
+                    {% translate "A Test Manager ensures that testing activities are properly planned, executed, and monitored." %}
+                </p>
+
+                <ul class="tm-list">
+                    <li>{% translate "Developing the test strategy" %}</li>
+                    <li>{% translate "Creating test plans" %}</li>
+                    <li>{% translate "Managing testing schedules" %}</li>
+                    <li>{% translate "Coordinating QA teams" %}</li>
+                    <li>{% translate "Monitoring test execution" %}</li>
+                    <li>{% translate "Managing defects and bug triage" %}</li>
+                    <li>{% translate "Reporting quality metrics" %}</li>
+                    <li>{% translate "Supporting release decisions" %}</li>
+                </ul>
+            </div>
+
+            <div class="tm-card">
+                <h3>{% translate "Our Test Management Services" %}</h3>
+
+                <p>
+                    {% translate "SolutionsTestLab provides end-to-end Test Management support for organizations of all sizes." %}
+                </p>
+
+                <ul class="tm-services-list">
+                    <li>{% translate "Test Strategy & Planning" %}</li>
+                    <li>{% translate "Test Case Management" %}</li>
+                    <li>{% translate "Defect & Bug Management" %}</li>
+                    <li>{% translate "QA Governance" %}</li>
+                    <li>{% translate "Release Readiness Assessment" %}</li>
+                    <li>{% translate "Risk-Based Testing" %}</li>
+                    <li>{% translate "Requirements Traceability" %}</li>
+                    <li>{% translate "Test Reporting & Dashboards" %}</li>
+                    <li>{% translate "Jira, Azure DevOps & TestRail Administration" %}</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="tm-cta-card">
+            <div>
+                <h3>{% translate "Need a Dedicated Test Manager?" %}</h3>
+                <p>
+                    {% translate "Many organizations have development teams but lack dedicated QA leadership. SolutionsTestLab can act as your external Test Management partner, helping you establish structured QA processes and deliver software with confidence." %}
+                </p>
+            </div>
+
+            <a href="{% url 'contact' %}">
+                {% translate "Request a Test Management Consultation" %}
+            </a>
+        </div>
+
+    </section>
+
+    <div class="cta-area">
+        <h2 style="color:#0056b3;">{% translate "Need a Custom QA Plan?" %}</h2>
+        <p>{% translate "Tell us about your software and we will recommend the right testing approach." %}</p>
+        <a href="{% url 'contact' %}">{% translate "Request a Consultation" %}</a>
+    </div>
+
 </div>
 
 {% endblock %}
+```

@@ -1,23 +1,126 @@
 {% load static i18n %}
 <!DOCTYPE html>
-<html lang="{{ LANGUAGE_CODE|default:'en' }}">
+<html lang="{{ LANGUAGE_CODE|default:'de' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SolutionsTestLab{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=100">
+
     <style>
-        /* Compact Footer Layout */
+        :root {
+            --primary-blue: #0056b3;
+            --sky-blue: #00acee;
+            --dark-navy: #071827;
+            --deep-navy: #001f3f;
+            --soft-bg: #f4f9ff;
+            --text-dark: #1e293b;
+            --muted-text: #64748b;
+            --white: #ffffff;
+            --card-shadow: 0 12px 35px rgba(0, 86, 179, 0.10);
+            --site-font: Arial, Helvetica, sans-serif;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            font-family: var(--site-font) !important;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-family: var(--site-font) !important;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--site-font) !important;
+            color: var(--text-dark);
+            background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            letter-spacing: -0.5px;
+        }
+
+        button,
+        input,
+        textarea,
+        select {
+            font-family: var(--site-font) !important;
+        }
+
+        .main-content-area {
+            min-height: 70vh;
+            background:
+                radial-gradient(circle at top right, rgba(0,172,238,0.10), transparent 30%),
+                radial-gradient(circle at bottom left, rgba(0,86,179,0.08), transparent 35%);
+        }
+
+        .card,
+        .solution-card,
+        .preview-card,
+        .process-step,
+        .tech-card,
+        .service-card,
+        .price-card,
+        .job-card,
+        .contact-page {
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(0, 172, 238, 0.12);
+        }
+
+        .card:hover,
+        .solution-card:hover,
+        .preview-card:hover,
+        .process-step:hover,
+        .tech-card:hover,
+        .service-card:hover,
+        .price-card:hover,
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 45px rgba(0, 86, 179, 0.16);
+        }
+
+        .btn-primary,
+        .submit-btn,
+        .cta-link,
+        .cta-area a,
+        .cta-section a,
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue)) !important;
+            box-shadow: 0 10px 25px rgba(0, 86, 179, 0.25);
+        }
+
+        .btn-primary:hover,
+        .submit-btn:hover,
+        .cta-link:hover,
+        .cta-area a:hover,
+        .cta-section a:hover,
+        .nav-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(0, 172, 238, 0.35);
+        }
+
+        .section-container h2,
+        .intro-header-container h1,
+        .careers-hero h1,
+        .contact-page h2,
+        .about-wrapper h1,
+        .about-wrapper h2 {
+            background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
         .site-footer {
-            background-color: #111111;
+            background: linear-gradient(135deg, #071827, #001f3f);
             color: #ffffff;
-            /* Reduced vertical padding: 30px top, 15px bottom */
-            padding: 30px 40px 15px; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin-top: 30px; /* Reduced margin from content */
-            border-top: 3px solid #0056b3;
+            padding: 45px 40px 18px;
+            border-top: 4px solid #00acee;
         }
 
         .footer-container {
@@ -26,108 +129,315 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
-            gap: 20px; /* Reduced gap between sections */
+            gap: 25px;
         }
 
         .footer-section {
             flex: 1;
-            min-width: 200px; /* Slightly narrower min-width */
+            min-width: 220px;
+            background: rgba(255,255,255,0.04);
+            padding: 22px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         .footer-section h4 {
             color: #00acee;
-            margin-bottom: 12px; /* Reduced from 20px */
-            font-size: 1.1rem;    /* Slightly smaller font */
+            margin-bottom: 12px;
+            font-size: 1.1rem;
             letter-spacing: 1px;
         }
 
-        .footer-section p, .footer-section a {
-            color: #bbbbbb;
+        .footer-section p,
+        .footer-section a {
+            color: #d1d5db;
             text-decoration: none;
-            line-height: 1.6;    /* Tighter line height from 1.8 */
-            font-size: 0.9rem;   /* Slightly smaller font from 0.95 */
+            line-height: 1.6;
+            font-size: 0.9rem;
             display: block;
-            margin-bottom: 5px;  /* Reduced from 8px */
-            transition: 0.3s;
+            margin-bottom: 6px;
         }
 
         .footer-section a:hover {
             color: #00acee;
-            padding-left: 5px;
         }
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            margin-top: 15px;    /* Reduced from 40px */
-            padding-top: 10px;   /* Reduced from 20px */
+            border-top: 1px solid rgba(255,255,255,0.12);
+            margin-top: 25px;
+            padding-top: 14px;
             text-align: center;
             font-size: 0.8rem;
-            color: #666;
+            color: #9ca3af;
         }
 
-        /* Responsive */
+        .cookie-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.65);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            padding: 20px;
+        }
+
+        .cookie-overlay.show {
+            display: flex;
+        }
+
+        .cookie-modal {
+            background: #ffffff;
+            width: 100%;
+            max-width: 720px;
+            border-radius: 22px;
+            padding: 35px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.30);
+            border-top: 6px solid #00acee;
+        }
+
+        .cookie-modal h2 {
+            color: #0056b3;
+            margin: 0 0 15px;
+            font-size: 2rem;
+        }
+
+        .cookie-modal-intro {
+            color: #475569;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .cookie-option {
+            margin-top: 15px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 14px;
+            border: 1px solid rgba(0, 172, 238, 0.12);
+        }
+
+        .cookie-option label {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            font-size: 1rem;
+            color: #1e293b;
+            cursor: pointer;
+        }
+
+        .cookie-option input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        .cookie-option p {
+            margin: 8px 0 0 28px;
+            color: #64748b;
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .cookie-buttons {
+            margin-top: 28px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .cookie-buttons button {
+            border: none;
+            padding: 12px 24px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .cookie-btn-primary {
+            background: linear-gradient(135deg,#0056b3,#00acee);
+            color: white;
+        }
+
+        .cookie-btn-secondary {
+            background: #e5e7eb;
+            color: #1e293b;
+        }
+
+        .cookie-buttons button:hover {
+            transform: translateY(-2px);
+        }
+
         @media (max-width: 768px) {
-            .footer-container { flex-direction: column; gap: 25px; }
-            .footer-section { text-align: center; }
+            .footer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .cookie-modal {
+                padding: 25px;
+            }
+
+            .cookie-modal h2 {
+                font-size: 1.6rem;
+            }
+
+            .cookie-buttons {
+                justify-content: center;
+            }
+
+            .cookie-buttons button {
+                width: 100%;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    {% include "main/navbar.html" %}
+{% include "main/navbar.html" %}
 
-    <main class="main-content-area">
-        {% block content %}
-        {% endblock %}
-    </main>
+<main class="main-content-area">
+    {% block content %}
+    {% endblock %}
+</main>
 
-    <footer class="site-footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>{% translate "Contact Us" %}</h4>
-                <p><strong>SolutionsTestLab</strong></p>
-                <p>Sample Street 123, 12345 Berlin</p>
-                <p><strong>{% translate "Tel" %}:</strong> +49 30 123456</p>
-                <p><strong>{% translate "Email" %}:</strong> info@solutionstestlab.com</p>
-            </div>
+<footer class="site-footer">
+    <div class="footer-container">
 
-            <div class="footer-section">
-                <h4>{% translate "Quick Navigation" %}</h4>
-                <a href="{% url 'home' %}">{% translate "Home" %}</a>
-                <a href="{% url 'about' %}">{% translate "About Us" %}</a>
-                <a href="{% url 'services' %}">{% translate "Services" %}</a>
-                <a href="{% url 'careers' %}">{% translate "Careers" %}</a>
-                <a href="{% url 'contact' %}">{% translate "Contact" %}</a>
-            </div>
-
-            <div class="footer-section">
-                <h4>{% translate "Legal & Social" %}</h4>
-                <a href="#">{% translate "Imprint" %}</a>
-                <a href="#">{% translate "Privacy" %}</a>
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com" target="_blank">XING</a>
-            </div>
+        <div class="footer-section">
+            <h4>{% translate "Contact Us" %}</h4>
+            <p><strong>SolutionsTestLab</strong></p>
+            <p>{% translate "Essen, Germany" %}</p>
+            <p><strong>{% translate "Email" %}:</strong> info@solutionstestlab.com</p>
+            <p><strong>{% translate "Careers" %}:</strong> careers@solutionstestlab.com</p>
         </div>
 
-        <div class="footer-bottom">
-            <p>&copy; 2026 SolutionsTestLab. {% translate "Precision Engineering. Quality Assured." %}</p>
+        <div class="footer-section">
+            <h4>{% translate "Quick Navigation" %}</h4>
+            <a href="{% url 'home' %}">{% translate "Home" %}</a>
+            <a href="{% url 'about' %}">{% translate "About Us" %}</a>
+            <a href="{% url 'services' %}">{% translate "Services" %}</a>
+            <a href="{% url 'careers' %}">{% translate "Careers" %}</a>
+            <a href="{% url 'contact' %}">{% translate "Contact" %}</a>
+            <a href="{% url 'impressum' %}">{% translate "Impressum" %}</a>
+            <a href="{% url 'privacy_policy' %}">{% translate "Privacy Policy" %}</a>
         </div>
-    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const servicesMenu = document.querySelector('.services');
-            if (servicesMenu) {
-                servicesMenu.addEventListener('click', function (e) {
-                    e.stopPropagation();
-                    this.classList.toggle('active');
-                });
-            }
-            document.addEventListener('click', function () {
-                if (servicesMenu) { servicesMenu.classList.remove('active'); }
-            });
-        });
-    </script>
+        <div class="footer-section">
+            <h4>{% translate "Our Promise" %}</h4>
+            <p>{% translate "We help companies release secure, reliable, and high-performing software with confidence." %}</p>
+            <p><strong>{% translate "Eagle-Eye Precision in every line of code." %}</strong></p>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 SolutionsTestLab. {% translate "Precision Engineering. Quality Assured." %}</p>
+    </div>
+</footer>
+
+<div id="cookie-overlay" class="cookie-overlay">
+    <div class="cookie-modal">
+
+        <h2>{% translate "Cookie Preferences" %}</h2>
+
+        <p class="cookie-modal-intro">
+            {% translate "We use cookies to ensure the proper functioning of our website and to improve your browsing experience. You can choose which cookies you allow." %}
+        </p>
+
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" checked disabled>
+                <strong>{% translate "Essential Cookies" %}</strong>
+            </label>
+            <p>
+                {% translate "Required for security, language preferences, and website functionality. These cookies cannot be disabled." %}
+            </p>
+        </div>
+
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" id="analytics-cookies">
+                <strong>{% translate "Analytics Cookies" %}</strong>
+            </label>
+            <p>
+                {% translate "Help us understand how visitors use the website." %}
+            </p>
+        </div>
+
+        <div class="cookie-option">
+            <label>
+                <input type="checkbox" id="marketing-cookies">
+                <strong>{% translate "Marketing Cookies" %}</strong>
+            </label>
+            <p>
+                {% translate "Used to improve marketing and measure campaign performance." %}
+            </p>
+        </div>
+
+        <div class="cookie-buttons">
+            <button type="button" id="reject-cookies" class="cookie-btn-secondary">
+                {% translate "Reject Non-Essential" %}
+            </button>
+
+            <button type="button" id="save-cookies" class="cookie-btn-secondary">
+                {% translate "Save Preferences" %}
+            </button>
+
+            <button type="button" id="accept-cookies" class="cookie-btn-primary">
+                {% translate "Accept All" %}
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.getElementById("cookie-overlay");
+    const acceptButton = document.getElementById("accept-cookies");
+    const rejectButton = document.getElementById("reject-cookies");
+    const saveButton = document.getElementById("save-cookies");
+    const analyticsCheckbox = document.getElementById("analytics-cookies");
+    const marketingCheckbox = document.getElementById("marketing-cookies");
+
+    const consent = localStorage.getItem("solutionstestlabCookieConsent");
+
+    if (!consent) {
+        overlay.classList.add("show");
+    }
+
+    acceptButton.addEventListener("click", function () {
+        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
+            essential: true,
+            analytics: true,
+            marketing: true
+        }));
+        overlay.classList.remove("show");
+    });
+
+    rejectButton.addEventListener("click", function () {
+        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
+            essential: true,
+            analytics: false,
+            marketing: false
+        }));
+        overlay.classList.remove("show");
+    });
+
+    saveButton.addEventListener("click", function () {
+        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
+            essential: true,
+            analytics: analyticsCheckbox.checked,
+            marketing: marketingCheckbox.checked
+        }));
+        overlay.classList.remove("show");
+    });
+});
+</script>
 
 </body>
 </html>

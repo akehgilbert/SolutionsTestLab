@@ -1,0 +1,107 @@
+{% extends "main/base.html" %}
+{% load i18n %}
+
+{% block title %}{% translate "Privacy Policy" %}{% endblock %}
+
+{% block content %}
+<div style="max-width:1000px;margin:60px auto;padding:40px;line-height:1.8;">
+
+    <h1>{% translate "Privacy Policy" %}</h1>
+
+    <p>
+        {% translate "This Privacy Policy explains how SolutionsTestLab collects, processes, and protects personal data when you visit our website." %}
+    </p>
+
+    <hr style="margin:30px 0;border:0;border-top:1px solid #eee;">
+
+    <h2>{% translate "1. Controller" %}</h2>
+
+    <p>
+        {% translate "The controller responsible for processing your personal data on this website within the meaning of the General Data Protection Regulation (GDPR) is:" %}
+    </p>
+
+    <p>
+        <strong>SolutionsTestLab GbR</strong><br>
+        Breslauer Straße 19<br>
+        45145 Essen<br>
+        Germany
+    </p>
+
+    <p>
+        <strong>{% translate "Represented by the Managing Partners" %}:</strong><br>
+        Gilbert Esambili Akeh<br>
+        Jan Wolfgang Sickinger
+    </p>
+
+    <p>
+        {% translate "Email" %}: info@solutionstestlab.com<br>
+        {% translate "Telephone" %}: +49 (0) XXX XXXXXXX
+    </p>
+
+    <h2>{% translate "2. Collection of General Information (Log Files)" %}</h2>
+
+    <p>
+        {% translate "When you access our website, technical information is automatically collected and stored in server log files by our hosting provider." %}
+    </p>
+
+    <ul>
+        <li>{% translate "IP address" %}</li>
+        <li>{% translate "Browser type and version" %}</li>
+        <li>{% translate "Operating system used" %}</li>
+        <li>{% translate "Date and time of access" %}</li>
+        <li>{% translate "Referring website" %}</li>
+    </ul>
+
+    <h2>{% translate "3. Contact Form and Email Contact" %}</h2>
+
+    <p>
+        {% translate "If you contact us through our contact form or by email, we process the information you provide in order to respond to your inquiry." %}
+    </p>
+
+    <h2>{% translate "4. Cookies and Local Storage" %}</h2>
+
+    <p>
+        {% translate "Our website uses cookies and local storage to ensure proper website functionality and to improve the user experience." %}
+    </p>
+
+    <ul>
+        <li>{% translate "Essential cookies are required for basic website operations, security features, language preferences, and cookie consent preferences." %}</li>
+        <li>{% translate "Optional cookies such as analytics, performance, or marketing cookies are only used with your consent." %}</li>
+    </ul>
+
+    <h2>{% translate "5. Your Rights Under the GDPR" %}</h2>
+
+    <ul>
+        <li>{% translate "Right of access" %}</li>
+        <li>{% translate "Right to rectification" %}</li>
+        <li>{% translate "Right to erasure" %}</li>
+        <li>{% translate "Right to restriction of processing" %}</li>
+        <li>{% translate "Right to data portability" %}</li>
+        <li>{% translate "Right to object" %}</li>
+        <li>{% translate "Right to withdraw consent at any time" %}</li>
+    </ul>
+
+    <h2>{% translate "6. Right to Lodge a Complaint" %}</h2>
+
+    <p>
+        Landesbeauftragte für Datenschutz und Informationsfreiheit Nordrhein-Westfalen (LDI NRW)<br>
+        Kavalleriestraße 2-4<br>
+        40213 Düsseldorf<br>
+        Germany<br>
+        <a href="https://www.ldi.nrw.de" target="_blank" rel="noopener">www.ldi.nrw.de</a>
+    </p>
+
+    <h2>{% translate "7. Data Security and Encryption" %}</h2>
+
+    <p>
+        {% translate "We use appropriate technical and organizational measures, including SSL/TLS encryption, to protect personal data." %}
+    </p>
+
+    <h2>{% translate "8. Changes to this Privacy Policy" %}</h2>
+
+    <p>
+        {% translate "Last updated: June 2026" %}
+    </p>
+
+</div>
+{% endblock %}

@@ -1,144 +1,179 @@
+from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
-from django.contrib import messages
-from django.core.mail import EmailMultiAlternatives
-from django.template.loader import render_to_string
-from django.utils.html import strip_tags
+from django.core.mail import EmailMessage, send_mail
 from django.conf import settings
 
-from .models import ContactInquiry, JobApplication
+
+def home(request):
+    return render(request, "main/home.html")
 
 
-# ===============================
-# HOME
-# ===============================
-def home_view(request):
-    return render(request, 'main/home.html', {
-        "title": _("Home")
-    })
+def about(request):
+    return render(request, "main/about.html")
 
 
-# ===============================
-# ABOUT
-# ===============================
-def about_view(request):
-    return render(request, 'main/about.html', {
-        "title": _("About Us")
-    })
+def services(request):
+    return render(request, "main/services.html")
 
 
-# ===============================
-# SERVICES
-# ===============================
-def services_view(request):
-    return render(request, 'main/services.html', {
-        "title": _("Our Services")
-    })
+def quality_assurance(request):
+    return render(request, "main/quality_assurance.html")
 
 
-# ===============================
-# CAREERS
-# ===============================
-def careers_view(request):
+def software_testing(request):
+    return render(request, "main/software_testing.html")
+
+
+def test_management(request):
+    return render(request, "main/test_management.html")
+
+
+def careers(request):
     if request.method == "POST":
-        full_name = request.POST.get('name')
-        email = request.POST.get('email')
-        position = request.POST.get('position')
-        cover_letter = request.POST.get('cover_letter')
-        resume = request.FILES.get('resume')
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        position = request.POST.get("position")
+        cover_letter = request.POST.get("cover_letter")
+        resume = request.FILES.get("resume")
 
-        try:
-            JobApplication.objects.create(
-                full_name=full_name,
-                email=email,
-                position=position,
-                cover_letter=cover_letter,
-                resume=resume
+        company_subject = f"New Job Application - {position}"
+
+        company_message = f"""
+New application received.
+
+Name: {name}
+Email: {email}
+Position: {position}
+
+Cover Letter:
+{cover_letter}
+"""
+
+        company_email = EmailMessage(
+            subject=company_subject,
+            body=company_message,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=["careers@solutionstestlab.com"],
+            reply_to=[email],
+        )
+
+        if resume:
+            company_email.attach(
+                resume.name,
+                resume.read(),
+                resume.content_type
             )
-            messages.success(
-                request,
-                _("Application submitted successfully. Our HR team will contact you.")
-            )
-        except Exception as e:
-            print(f"Career application error: {e}")
-            messages.error(
-                request,
-                _("There was an error submitting your application. Please try again.")
-            )
 
-        return redirect('careers')
+        company_email.send(fail_silently=False)
 
-    return render(request, 'main/careers.html', {
-        "title": _("Careers")
-    })
+        applicant_subject = "Application Received | SolutionsTestLab"
+
+        applicant_message = f"""
+Dear {name},
+
+Thank you for applying to SolutionsTestLab.
+
+We have successfully received your application for the position of:
+
+{position}
+
+Our recruitment team will carefully review your profile and contact you if your qualifications match our current needs.
+
+We appreciate your interest in joining SolutionsTestLab.
+
+Best regards,
+SolutionsTestLab Recruitment Team
+
+Eagle-Eye Precision in every line of code.
+"""
+
+        send_mail(
+            applicant_subject,
+            applicant_message,
+            settings.DEFAULT_FROM_EMAIL,
+            [email],
+            fail_silently=False,
+        )
+
+        messages.success(
+            request,
+            _("Your application has been submitted successfully.")
+        )
+
+        return redirect("careers")
+
+    return render(request, "main/careers.html")
 
 
-# ===============================
-# CONTACT
-# ===============================
-def contact_view(request):
+def contact(request):
     if request.method == "POST":
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        subject_category = request.POST.get('subject')
-        message = request.POST.get('message')
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        subject = request.POST.get("subject")
+        message = request.POST.get("message")
+        consent = request.POST.get("consent")
 
-        try:
-            # Save inquiry
-            ContactInquiry.objects.create(
-                name=name,
-                email=email,
-                subject=subject_category,
-                message=message
-            )
+        company_subject = f"New Contact Message - {subject}"
 
-            context = {
-                "name": name,
-                "email": email,
-                "subject": subject_category,
-                "message": message
-            }
+        company_message = f"""
+New contact message received.
 
-            # -------- Admin Email --------
-            admin_html = render_to_string('emails/contact_admin.html', context)
-            admin_text = strip_tags(admin_html)
+Name: {name}
+Email: {email}
+Subject: {subject}
+Consent: {consent}
 
-            admin_email = EmailMultiAlternatives(
-                subject=f"New Contact Inquiry: {subject_category}",
-                body=admin_text,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[settings.CONTACT_EMAIL]
-            )
-            admin_email.attach_alternative(admin_html, "text/html")
-            admin_email.send()
+Message:
+{message}
+"""
 
-            # -------- User Confirmation --------
-            user_html = render_to_string('emails/contact_confirmation.html', context)
-            user_text = strip_tags(user_html)
+        send_mail(
+            company_subject,
+            company_message,
+            settings.DEFAULT_FROM_EMAIL,
+            ["info@solutionstestlab.com"],
+            fail_silently=False,
+        )
 
-            user_email = EmailMultiAlternatives(
-                subject=_("Thank you for contacting SolutionsTestLab"),
-                body=user_text,
-                from_email=settings.DEFAULT_FROM_EMAIL,
-                to=[email]
-            )
-            user_email.attach_alternative(user_html, "text/html")
-            user_email.send()
+        applicant_subject = "Message Received | SolutionsTestLab"
 
-            messages.success(
-                request,
-                _("Your message has been sent successfully. We will get back to you shortly.")
-            )
+        applicant_message = f"""
+Dear {name},
 
-        except Exception as e:
-            print(f"Contact form error: {e}")
-            messages.error(
-                request,
-                _("An error occurred while sending your message. Please try again later.")
-            )
+Thank you for contacting SolutionsTestLab.
 
-        return redirect('contact')
+We have successfully received your message regarding:
 
-    return render(request, 'main/contact.html', {
-        "title": _("Contact Us")
-    })
+{subject}
+
+Our team will review your inquiry and get back to you shortly.
+
+Best regards,
+SolutionsTestLab Team
+
+Eagle-Eye Precision in every line of code.
+"""
+
+        send_mail(
+            applicant_subject,
+            applicant_message,
+            settings.DEFAULT_FROM_EMAIL,
+            [email],
+            fail_silently=False,
+        )
+
+        messages.success(
+            request,
+            _("Your message was sent successfully.")
+        )
+
+        return redirect("contact")
+
+    return render(request, "main/contact.html")
+
+def impressum(request):
+    return render(request, "main/impressum.html")
+
+def privacy_policy(request):
+    return render(request, "main/privacy_policy.html")

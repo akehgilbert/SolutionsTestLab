@@ -1,10 +1,16 @@
 from django.urls import path
-from .views import home_view, about_view, services_view, careers_view, contact_view
+from . import views
 
 urlpatterns = [
-    path('', home_view, name='home'),           # root page
-    path('about/', about_view, name='about'),
-    path('services/', services_view, name='services'),
-    path('careers/', careers_view, name='careers'),
-    path('contact/', contact_view, name='contact'),
+    path("", views.home, name="home"),
+    path("about/", views.about, name="about"),
+    path("services/", views.services, name="services"),
+    path("services/quality-assurance/", views.quality_assurance, name="quality_assurance"),
+    path("services/software-testing/", views.software_testing, name="software_testing"),
+    path("services/test-management/", views.test_management, name="test_management"),
+    path("careers/", views.careers, name="careers"),
+    path("contact/", views.contact, name="contact"),
+
+    path("impressum/", views.impressum, name="impressum"),
+    path("privacy-policy/", views.privacy_policy, name="privacy_policy"),
 ]

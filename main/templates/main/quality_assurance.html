@@ -1,0 +1,436 @@
+{% extends "main/base.html" %}
+{% load static i18n %}
+
+{% block title %}
+{% translate "Quality Assurance" %} | SolutionsTestLab
+{% endblock %}
+
+{% block content %}
+
+<style>
+    .qa-hero {
+        padding: 170px 20px 80px;
+        background: #f8fbff;
+        text-align: center;
+    }
+
+    .qa-hero h1 {
+        color: #0056b3;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 15px;
+    }
+
+    .qa-hero h2 {
+        color: #00acee;
+        font-size: 1.7rem;
+        margin-bottom: 25px;
+    }
+
+    .qa-hero p {
+    max-width: 950px;
+    margin: auto;
+    color: #555;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    text-align: left;
+}
+
+    .qa-section {
+        padding: 80px 20px;
+        background: #ffffff;
+    }
+
+    .qa-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .qa-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 35px;
+        box-shadow: 0 12px 35px rgba(0,86,179,0.09);
+        border-top: 6px solid #00acee;
+        transition: 0.3s;
+    }
+
+    .qa-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0,86,179,0.14);
+    }
+
+    .qa-card h3 {
+        color: #0056b3;
+        font-size: 1.6rem;
+        margin-bottom: 18px;
+    }
+
+    .qa-card h4 {
+        color: #0056b3;
+        font-size: 1.25rem;
+        margin-bottom: 12px;
+    }
+
+    .qa-card p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 16px;
+    text-align: left;
+}
+
+    .qa-card strong {
+        color: #003b7a;
+    }
+
+    .qa-full-card {
+        grid-column: 1 / -1;
+    }
+
+    .qa-image-card {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .qa-image-card img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .qa-image-content {
+        padding: 35px;
+    }
+
+    .qa-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+    }
+
+    .qa-list li {
+        color: #1e293b;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        font-weight: 600;
+    }
+
+    .qa-list li::before {
+        content: "✓";
+        color: #00acee;
+        font-weight: 900;
+        margin-right: 8px;
+    }
+
+    .qa-services-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 20px;
+    }
+
+    .qa-services-list li {
+        color: #1e293b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .qa-services-list li::before {
+        content: "◆";
+        color: #00acee;
+        font-size: 0.75rem;
+        margin-right: 8px;
+    }
+
+    .qa-compare-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        margin-top: 20px;
+    }
+
+    .qa-mini-card {
+        background: #f8fbff;
+        padding: 25px;
+        border-radius: 18px;
+        border-left: 5px solid #00acee;
+    }
+
+    .qa-cta {
+        max-width: 1100px;
+        margin: 70px auto 0;
+        background: linear-gradient(135deg, #0056b3, #00acee);
+        color: white;
+        padding: 55px 35px;
+        border-radius: 26px;
+        text-align: center;
+    }
+
+    .qa-cta h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .qa-cta p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
+
+    .qa-cta a {
+        display: inline-block;
+        background: #ffffff;
+        color: #0056b3;
+        padding: 15px 34px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .qa-cta a:hover {
+        background: #0056b3;
+        color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+        .qa-grid,
+        .qa-compare-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .qa-hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .qa-services-list {
+            grid-template-columns: 1fr;
+        }
+
+        .qa-image-card img {
+            height: 240px;
+        }
+    }
+</style>
+
+<section class="qa-hero">
+    <h1>{% translate "Quality Assurance" %}</h1>
+    <h2>{% translate "Build Quality Into Every Stage of Software Delivery." %}</h2>
+
+    <p>
+        {% translate "Quality Assurance is more than finding bugs. It is a structured approach to preventing defects, improving development processes, reducing release risks, and ensuring that software meets business, technical, and user expectations. At SolutionsTestLab, we genuinely care about the quality of your software. By integrating quality into every stage of development, we help you reduce risk, accelerate delivery, and create products your users can trust." %}
+    </p>
+</section>
+
+<section class="qa-section">
+    <div class="qa-grid">
+
+        <div class="qa-card">
+            <h3>{% translate "What is Quality Assurance?" %}</h3>
+
+            <p>
+                {% translate "Quality Assurance is the process of defining, monitoring, and improving the activities used to build and deliver software." %}
+            </p>
+
+            <p>
+                {% translate "Unlike software testing, which focuses on finding defects in the product, Quality Assurance focuses on improving the process that creates the product." %}
+            </p>
+
+            <ul class="qa-list">
+                <li>{% translate "Clear quality standards" %}</li>
+                <li>{% translate "Strong testing processes" %}</li>
+                <li>{% translate "Early risk detection" %}</li>
+                <li>{% translate "Better communication" %}</li>
+                <li>{% translate "Reliable release decisions" %}</li>
+                <li>{% translate "Continuous improvement" %}</li>
+            </ul>
+        </div>
+
+        <div class="qa-card">
+            <h3>{% translate "Quality Assurance vs Software Testing" %}</h3>
+
+            <p>
+                {% translate "Quality Assurance and Software Testing are connected, but they are not the same." %}
+            </p>
+
+            <div class="qa-compare-grid">
+                <div class="qa-mini-card">
+                    <h4>{% translate "Quality Assurance" %}</h4>
+                    <p>
+                        {% translate "QA focuses on preventing problems before they happen by improving processes, standards, planning, and quality controls." %}
+                    </p>
+                    <ul class="qa-list">
+                        <li>{% translate "Process improvement" %}</li>
+                        <li>{% translate "Quality standards" %}</li>
+                        <li>{% translate "Test strategy" %}</li>
+                        <li>{% translate "Risk prevention" %}</li>
+                        <li>{% translate "Release governance" %}</li>
+                    </ul>
+                </div>
+
+                <div class="qa-mini-card">
+                    <h4>{% translate "Software Testing" %}</h4>
+                    <p>
+                        {% translate "Testing focuses on detecting problems in the application by executing tests and reporting defects." %}
+                    </p>
+                    <ul class="qa-list">
+                        <li>{% translate "Test execution" %}</li>
+                        <li>{% translate "Defect discovery" %}</li>
+                        <li>{% translate "Functional validation" %}</li>
+                        <li>{% translate "Retesting" %}</li>
+                        <li>{% translate "Test reports" %}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="qa-card qa-image-card">
+            <img src="{% static 'images/Quality-assurance1.jpg' %}"
+                 alt="{% translate 'Quality Assurance Strategy Meeting' %}">
+
+            <div class="qa-image-content">
+                <h3>{% translate "Why Quality Assurance?" %}</h3>
+
+                <p>
+                    {% translate "Without proper QA, companies often face unstable releases, unclear requirements, repeated defects, poor communication, and expensive production fixes." %}
+                </p>
+
+                <p>
+                    {% translate "Quality Assurance helps organizations build reliable software by introducing structure, visibility, and control into the development lifecycle." %}
+                </p>
+
+                <ul class="qa-list">
+                    <li>{% translate "Reduce software defects" %}</li>
+                    <li>{% translate "Prevent repeated mistakes" %}</li>
+                    <li>{% translate "Improve team collaboration" %}</li>
+                    <li>{% translate "Increase release confidence" %}</li>
+                    <li>{% translate "Lower the cost of fixing issues" %}</li>
+                    <li>{% translate "Build trust with users and stakeholders" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <h3>{% translate "QA Strategy & Planning" %}</h3>
+
+            <p>
+                {% translate "A strong QA process begins with a clear strategy. We help define how quality will be managed across your project, including what needs to be tested, how testing will be performed, who is responsible, and when the software is ready for release." %}
+            </p>
+
+            <ul class="qa-list">
+                <li>{% translate "QA strategy definition" %}</li>
+                <li>{% translate "Test planning" %}</li>
+                <li>{% translate "Risk-based testing approach" %}</li>
+                <li>{% translate "Entry and exit criteria" %}</li>
+                <li>{% translate "Test coverage planning" %}</li>
+                <li>{% translate "Release quality goals" %}</li>
+            </ul>
+        </div>
+
+        <div class="qa-card qa-image-card">
+            <img src="{% static 'images/Quality_assurance.jpg' %}"
+                 alt="{% translate 'QA Process Improvement Workflow' %}">
+
+            <div class="qa-image-content">
+                <h3>{% translate "QA Process Improvement" %}</h3>
+
+                <p>
+                    {% translate "Quality Assurance is not only about one release. It is about improving how your organization builds software over time." %}
+                </p>
+
+                <p>
+                    {% translate "We assess existing QA practices, identify gaps, and recommend practical improvements that increase efficiency, visibility, and product reliability." %}
+                </p>
+
+                <ul class="qa-list">
+                    <li>{% translate "QA process assessment" %}</li>
+                    <li>{% translate "Gap analysis" %}</li>
+                    <li>{% translate "Workflow improvement" %}</li>
+                    <li>{% translate "Defect prevention practices" %}</li>
+                    <li>{% translate "Quality metrics" %}</li>
+                    <li>{% translate "Continuous improvement roadmap" %}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="qa-card">
+            <h3>{% translate "Defect Prevention & Quality Control" %}</h3>
+
+            <p>
+                {% translate "Good QA helps prevent defects before they reach testing or production. We support teams with structured reviews, better requirements validation, improved test coverage, and quality checkpoints throughout the software lifecycle." %}
+            </p>
+
+            <ul class="qa-list">
+                <li>{% translate "Requirement review" %}</li>
+                <li>{% translate "Acceptance criteria review" %}</li>
+                <li>{% translate "Test case review" %}</li>
+                <li>{% translate "Quality checkpoints" %}</li>
+                <li>{% translate "Defect trend analysis" %}</li>
+                <li>{% translate "Root cause analysis" %}</li>
+            </ul>
+        </div>
+
+        <div class="qa-card">
+            <h3>{% translate "Release Readiness & Quality Reporting" %}</h3>
+
+            <p>
+                {% translate "Before software is released, business leaders need clear answers: Is the product stable? What risks remain? Are defects under control? Is the release ready?" %}
+            </p>
+
+            <p>
+                {% translate "We provide transparent quality reporting and release readiness insights to support informed go/no-go decisions." %}
+            </p>
+
+            <ul class="qa-list">
+                <li>{% translate "Release readiness assessment" %}</li>
+                <li>{% translate "Quality dashboards" %}</li>
+                <li>{% translate "Defect summary reports" %}</li>
+                <li>{% translate "Test coverage reports" %}</li>
+                <li>{% translate "Risk status reporting" %}</li>
+                <li>{% translate "Go / No-Go recommendations" %}</li>
+            </ul>
+        </div>
+
+        <div class="qa-card">
+            <h3>{% translate "Our Quality Assurance Services" %}</h3>
+
+            <p>
+                {% translate "SolutionsTestLab provides practical QA consulting and process support for organizations that want stronger quality control across their software lifecycle." %}
+            </p>
+
+            <ul class="qa-services-list">
+                <li>{% translate "QA Strategy & Planning" %}</li>
+                <li>{% translate "QA Process Assessment" %}</li>
+                <li>{% translate "Test Strategy Development" %}</li>
+                <li>{% translate "Quality Governance" %}</li>
+                <li>{% translate "Release Readiness Assessment" %}</li>
+                <li>{% translate "Defect Management Process" %}</li>
+                <li>{% translate "Requirements Review" %}</li>
+                <li>{% translate "Test Coverage Analysis" %}</li>
+                <li>{% translate "Quality Metrics & Reporting" %}</li>
+                <li>{% translate "QA Process Improvement Consulting" %}</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="qa-cta">
+        <h2>{% translate "Need a Stronger QA Process?" %}</h2>
+
+        <p>
+            {% translate "SolutionsTestLab helps you prevent defects, improve software delivery processes, and release products with greater confidence." %}
+        </p>
+
+        <a href="{% url 'contact' %}">
+            {% translate "Request a QA Consultation" %}
+        </a>
+    </div>
+</section>
+
+{% endblock %}
