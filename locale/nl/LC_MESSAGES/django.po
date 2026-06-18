@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: SolutionsTestLab\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-06-13 18:31+0200\n"
+"POT-Creation-Date: 2026-06-18 16:10+0200\n"
 "PO-Revision-Date: 2026-05-25 00:51+0200\n"
 "Last-Translator: SolutionsTestLab\n"
 "Language-Team: Dutch\n"
@@ -1366,35 +1366,56 @@ msgstr "Sollicitaties"
 msgid "About Us"
 msgstr "Over ons"
 
-#: main/templates/main/about.html:188
+#: main/templates/main/about.html:311
 msgid "About SolutionsTestLab"
 msgstr "Over SolutionsTestLab"
 
-#: main/templates/main/about.html:191
+#: main/templates/main/about.html:314
+#| msgid ""
+#| "SolutionsTestLab is a Quality Assurance, Software Testing and Test "
+#| "Management company committed to delivering reliable, secure, and scalable "
+#| "software solutions."
 msgid ""
-"SolutionsTestLab is a Quality Assurance, Software Testing and Test "
-"Management company committed to delivering reliable, secure, and scalable "
-"software solutions."
+"SolutionsTestLab is a specialized Quality Assurance, Software Testing, and "
+"Test Management company committed to delivering reliable, secure, and "
+"scalable software solutions."
 msgstr ""
-"SolutionsTestLab is een bedrijf voor softwareontwikkeling, softwaretesten en "
-"kwaliteitsborging dat zich inzet voor betrouwbare, veilige en schaalbare "
-"softwareoplossingen."
+"SolutionsTestLab is een gespecialiseerd bedrijf voor kwaliteitsborging, "
+"softwaretesten en testmanagement dat zich inzet voor het leveren van "
+"betrouwbare, veilige en schaalbare softwareoplossingen."
 
-#: main/templates/main/about.html:195
+#: main/templates/main/about.html:318
+msgid ""
+"Our team of qualified Software Testers, Quality Assurance Engineers, Test "
+"Analysts, and QA Consultants combines technical expertise with industry best "
+"practices to help organizations achieve measurable improvements in software "
+"quality."
+msgstr ""
+"Ons team van gekwalificeerde softwaretesters, Quality Assurance Engineers, "
+"Test Analysts en QA Consultants combineert technische expertise met best "
+"practices uit de sector om organisaties te helpen meetbare verbeteringen in "
+"softwarekwaliteit te bereiken."
+
+#: main/templates/main/about.html:322
+#| msgid ""
+#| "We help companies prevent costly software failures by identifying hidden "
+#| "defects, improving system reliability, and strengthening quality across "
+#| "the full software lifecycle."
 msgid ""
 "We help companies prevent costly software failures by identifying hidden "
-"defects, improving system reliability, and strengthening quality across the "
-"full software lifecycle."
+"defects, improving system reliability, reducing operational risk, and "
+"strengthening quality throughout the entire software development lifecycle."
 msgstr ""
-"Wij helpen bedrijven kostbare softwarestoringen te voorkomen door verborgen "
-"defecten te identificeren, systeembetrouwbaarheid te verbeteren en kwaliteit "
-"gedurende de volledige softwarelevenscyclus te versterken."
+"Wij helpen bedrijven kostbare softwarefouten te voorkomen door verborgen "
+"defecten te identificeren, de systeembetrouwbaarheid te verbeteren, "
+"operationele risico’s te verminderen en de kwaliteit gedurende de volledige "
+"softwareontwikkelingscyclus te versterken."
 
-#: main/templates/main/about.html:198
+#: main/templates/main/about.html:325
 msgid "Our Mission"
 msgstr "Onze missie"
 
-#: main/templates/main/about.html:200
+#: main/templates/main/about.html:328
 msgid ""
 "To help businesses release software with confidence through precision-driven "
 "testing, reliable development practices, and quality assurance expertise."
@@ -1403,33 +1424,124 @@ msgstr ""
 "precisiegedreven testen, betrouwbare ontwikkelpraktijken en expertise in "
 "kwaliteitsborging."
 
-#: main/templates/main/about.html:203
+#: main/templates/main/about.html:331
+msgid "Leadership Team"
+msgstr "Directieteam"
+
+#: main/templates/main/about.html:346
+msgid "Managing Director & Founder"
+msgstr "Algemeen directeur en oprichter"
+
+#: main/templates/main/about.html:350
+msgid ""
+"Gilbert Esambili Akeh is an experienced Software Engineer with a strong "
+"track record of delivering reliable, secure, and scalable software "
+"solutions. His expertise spans the entire Software Development Lifecycle, "
+"combining software engineering, quality assurance, and DevOps practices to "
+"help organizations build high-performing digital products."
+msgstr ""
+"Gilbert Esambili Akeh is een ervaren Software Engineer met een sterke staat "
+"van dienst in het leveren van betrouwbare, veilige en schaalbare "
+"softwareoplossingen. Zijn expertise omvat de volledige "
+"softwareontwikkelingscyclus en combineert software engineering, "
+"kwaliteitsborging en DevOps-praktijken om organisaties te helpen krachtige "
+"digitale producten te bouwen."
+
+#: main/templates/main/about.html:354
+msgid ""
+"As a Certified Python Programmer and skilled DevOps Engineer, Gilbert "
+"specializes in software quality, automation, CI/CD pipeline optimization, "
+"and modern development practices. His focus is on ensuring that software is "
+"not only innovative but also maintainable, stable, and production-ready."
+msgstr ""
+"Als gecertificeerd Python-programmeur en ervaren DevOps Engineer is Gilbert "
+"gespecialiseerd in softwarekwaliteit, automatisering, optimalisatie van "
+"CI/CD-pipelines en moderne ontwikkelpraktijken. Zijn focus ligt op het "
+"waarborgen dat software niet alleen innovatief is, maar ook onderhoudbaar, "
+"stabiel en productiegereed."
+
+#: main/templates/main/about.html:358
+msgid ""
+"By bridging the gap between development, testing, and operations, he helps "
+"organizations accelerate delivery while maintaining high standards of "
+"quality, security, and operational excellence."
+msgstr ""
+"Door ontwikkeling, testen en operations met elkaar te verbinden, helpt hij "
+"organisaties hun levering te versnellen terwijl hoge normen voor kwaliteit, "
+"veiligheid en operationele uitmuntendheid behouden blijven."
+
+#: main/templates/main/about.html:374
+msgid "Managing Director"
+msgstr "Algemeen directeur"
+
+#: main/templates/main/about.html:378
+msgid ""
+"Jan Wolfgang Sickinger has been active in software testing and quality "
+"assurance since 2007. Throughout his career, he has worked as a Test Analyst "
+"and Test Consultant on national and international projects for leading "
+"consulting firms across the public sector, telecommunications, "
+"manufacturing, and healthcare industries."
+msgstr ""
+"Jan Wolfgang Sickinger is sinds 2007 actief op het gebied van softwaretesten "
+"en kwaliteitsborging. Gedurende zijn carrière werkte hij als Test Analyst en "
+"Test Consultant aan nationale en internationale projecten voor "
+"toonaangevende adviesbureaus binnen de publieke sector, telecommunicatie, "
+"productie en gezondheidszorg."
+
+#: main/templates/main/about.html:382
+msgid ""
+"His expertise lies in analysing, structuring, and continuously improving "
+"testing processes to achieve measurable increases in software quality. "
+"Through his extensive practical experience and methodological expertise, he "
+"helps organizations establish sustainable quality assurance frameworks."
+msgstr ""
+"Zijn expertise ligt in het analyseren, structureren en continu verbeteren "
+"van testprocessen om meetbare verbeteringen in softwarekwaliteit te "
+"realiseren. Met zijn uitgebreide praktijkervaring en methodologische "
+"expertise helpt hij organisaties duurzame kaders voor kwaliteitsborging op "
+"te zetten."
+
+#: main/templates/main/about.html:386
+msgid ""
+"Jan holds multiple ISTQB certifications and is also certified in "
+"Requirements Engineering through IREB. His holistic perspective on "
+"processes, business requirements, technology, and stakeholder collaboration "
+"enables him to deliver lasting improvements in software quality and project "
+"success."
+msgstr ""
+"Jan beschikt over meerdere ISTQB-certificeringen en is daarnaast "
+"gecertificeerd in Requirements Engineering via IREB. Zijn holistische kijk "
+"op processen, bedrijfsvereisten, technologie en samenwerking met "
+"stakeholders stelt hem in staat blijvende verbeteringen in softwarekwaliteit "
+"en projectsucces te realiseren."
+
+#: main/templates/main/about.html:393
 msgid "Why SolutionsTestLab?"
 msgstr "Waarom SolutionsTestLab?"
 
-#: main/templates/main/about.html:207
+#: main/templates/main/about.html:397
 msgid "Quality-First Culture"
 msgstr "Kwaliteit-eerst-cultuur"
 
-#: main/templates/main/about.html:208
+#: main/templates/main/about.html:398
 msgid "Quality is embedded in every decision, not added at the end."
 msgstr ""
 "Kwaliteit is ingebed in elke beslissing en wordt niet pas aan het einde "
 "toegevoegd."
 
-#: main/templates/main/about.html:212
+#: main/templates/main/about.html:402
 msgid "Consulting Mindset"
 msgstr "Consultancymentaliteit"
 
-#: main/templates/main/about.html:213
+#: main/templates/main/about.html:403
 msgid "We act as advisors and partners, not just implementers."
 msgstr "Wij handelen als adviseurs en partners, niet alleen als uitvoerders."
 
-#: main/templates/main/about.html:217
+#: main/templates/main/about.html:407
 msgid "Early Risk Detection"
 msgstr "Vroegtijdige risicodetectie"
 
-#: main/templates/main/about.html:218
+#: main/templates/main/about.html:408
 msgid ""
 "We identify performance, security, usability, and design risks before they "
 "reach production."
@@ -1437,63 +1549,67 @@ msgstr ""
 "Wij identificeren prestatie-, beveiligings-, bruikbaarheids- en "
 "ontwerprisico’s voordat ze productie bereiken."
 
-#: main/templates/main/about.html:222
+#: main/templates/main/about.html:412
 msgid "Our Core Values"
 msgstr "Onze kernwaarden"
 
-#: main/templates/main/about.html:226
+#: main/templates/main/about.html:416
 msgid "Precision"
 msgstr "Precisie"
 
-#: main/templates/main/about.html:227
+#: main/templates/main/about.html:417
 msgid "Attention to detail drives quality."
 msgstr "Aandacht voor detail stimuleert kwaliteit."
 
-#: main/templates/main/about.html:231
+#: main/templates/main/about.html:421
 msgid "Accountability"
 msgstr "Verantwoordelijkheid"
 
-#: main/templates/main/about.html:232
+#: main/templates/main/about.html:422
 msgid "We stand behind our work."
 msgstr "Wij staan achter ons werk."
 
-#: main/templates/main/about.html:236
+#: main/templates/main/about.html:426
 msgid "Transparency"
 msgstr "Transparantie"
 
-#: main/templates/main/about.html:237
+#: main/templates/main/about.html:427
 msgid "Clear communication at all times."
 msgstr "Altijd duidelijke communicatie."
 
-#: main/templates/main/about.html:241
+#: main/templates/main/about.html:431
 msgid "Continuous Improvement"
 msgstr "Continue verbetering"
 
-#: main/templates/main/about.html:242
+#: main/templates/main/about.html:432
 msgid "We evolve with technology."
 msgstr "Wij evolueren mee met technologie."
 
-#: main/templates/main/about.html:246
+#: main/templates/main/about.html:436
 msgid "Industries We Support"
 msgstr "Sectoren die wij ondersteunen"
 
-#: main/templates/main/about.html:257
+#: main/templates/main/about.html:447
 msgid "Standards & Best Practices"
 msgstr "Normen en best practices"
 
-#: main/templates/main/about.html:271
+#: main/templates/main/about.html:461
 msgid "Let’s Build Quality Together"
 msgstr "Laten we samen kwaliteit bouwen"
 
-#: main/templates/main/about.html:274
+#: main/templates/main/about.html:464
+#| msgid ""
+#| "Whether you need development expertise, testing support, or quality "
+#| "assurance consulting — SolutionsTestLab is ready."
 msgid ""
-"Whether you need development expertise, testing support, or quality "
-"assurance consulting — SolutionsTestLab is ready."
+"Whether you need Software Testing support, Quality Assurance consulting or "
+"Test Management services — SolutionsTestLab is ready."
 msgstr ""
-"Of u nu ontwikkelkennis, testondersteuning of advies over kwaliteitsborging "
-"nodig hebt — SolutionsTestLab staat klaar."
+"Of u nu ondersteuning bij softwaretesten, advies op het gebied van "
+"kwaliteitsborging of testmanagementdiensten nodig hebt — SolutionsTestLab "
+"staat klaar."
 
-#: main/templates/main/about.html:279
+#: main/templates/main/about.html:469
 msgid "Contact Our Experts"
 msgstr "Neem contact op met onze experts"
 
@@ -1611,6 +1727,370 @@ msgstr ""
 #: main/templates/main/base.html:391
 msgid "Accept All"
 msgstr ""
+
+#: main/templates/main/blog.html:4 main/templates/main/navbar.html:125
+msgid "Blog"
+msgstr "Blog"
+
+#: main/templates/main/blog.html:10
+msgid "SolutionsTestLab Blog"
+msgstr "SolutionsTestLab-logo"
+
+#: main/templates/main/blog.html:13
+msgid ""
+"Insights on software testing, quality assurance, test management, and "
+"reliable software delivery."
+msgstr ""
+"Inzichten over softwaretesten, kwaliteitsborging, testmanagement en "
+"betrouwbare softwarelevering."
+
+#: main/templates/main/blog.html:21
+#: main/templates/main/blog_software_testing.html:5
+#: main/templates/main/blog_software_testing.html:158
+msgid "Why Software Testing Is No Longer Optional for Modern Businesses"
+msgstr ""
+"Waarom softwaretesten niet langer optioneel zijn voor moderne bedrijven"
+
+#: main/templates/main/blog.html:25
+#: main/templates/main/blog_software_testing.html:160
+msgid ""
+"Software quality can determine whether customers trust your business or "
+"leave for a competitor. Testing is no longer optional — it is a business "
+"necessity."
+msgstr ""
+"Softwarekwaliteit kan bepalen of klanten uw bedrijf vertrouwen of naar een "
+"concurrent gaan. Testen is niet langer optioneel — het is een zakelijke "
+"noodzaak."
+
+#: main/templates/main/blog.html:29
+msgid "Read Article"
+msgstr "Lees meer"
+
+#: main/templates/main/blog_software_testing.html:167
+msgid "Published by SolutionsTestLab"
+msgstr "Waarom SolutionsTestLab?"
+
+#: main/templates/main/blog_software_testing.html:167
+#: main/templates/main/home.html:126 main/templates/main/navbar.html:48
+#: main/templates/main/quality_assurance.html:278
+#: main/templates/main/services.html:470
+#: main/templates/main/software_testing.html:5
+#: main/templates/main/software_testing.html:230
+msgid "Software Testing"
+msgstr "Softwaretesten"
+
+#: main/templates/main/blog_software_testing.html:167
+#: main/templates/main/home.html:113 main/templates/main/navbar.html:44
+#: main/templates/main/quality_assurance.html:5
+#: main/templates/main/quality_assurance.html:223
+#: main/templates/main/quality_assurance.html:264
+#: main/templates/main/services.html:504
+msgid "Quality Assurance"
+msgstr "Kwaliteitsborging"
+
+#: main/templates/main/blog_software_testing.html:172
+msgid "Introduction"
+msgstr "Locatie"
+
+#: main/templates/main/blog_software_testing.html:174
+msgid ""
+"In today's digital economy, software quality can determine the success or "
+"failure of a business. Whether you operate an e-commerce platform, financial "
+"application, healthcare system, or SaaS product, customers expect reliable, "
+"secure, and high-performing software."
+msgstr ""
+"In de huidige digitale economie kan softwarekwaliteit het succes of falen "
+"van een bedrijf bepalen. Of u nu een e-commerceplatform, financiële "
+"applicatie, zorgsysteem of SaaS-product beheert, klanten verwachten "
+"betrouwbare, veilige en krachtige software."
+
+#: main/templates/main/blog_software_testing.html:178
+msgid ""
+"Unfortunately, many organizations still treat software testing as an "
+"optional activity performed shortly before release. This approach often "
+"results in costly defects, poor customer experiences, security "
+"vulnerabilities, and damaged brand reputation."
+msgstr ""
+"Helaas behandelen veel organisaties softwaretesten nog steeds als een "
+"optionele activiteit die kort voor de release wordt uitgevoerd. Deze aanpak "
+"leidt vaak tot kostbare fouten, slechte klantervaringen, "
+"beveiligingskwetsbaarheden en reputatieschade."
+
+#: main/templates/main/blog_software_testing.html:183
+msgid ""
+"At SolutionsTestLab, we believe that software testing is not an expense — it "
+"is an investment in business stability, customer trust, and long-term growth."
+msgstr ""
+"Bij SolutionsTestLab geloven we dat softwaretesten geen kostenpost is — het "
+"is een investering in bedrijfsstabiliteit, klantvertrouwen en "
+"langetermijngroei."
+
+#: main/templates/main/blog_software_testing.html:187
+msgid "The Cost of Software Failures"
+msgstr "De kosten van softwarefouten"
+
+#: main/templates/main/blog_software_testing.html:189
+msgid ""
+"Software defects can have serious consequences for businesses of all sizes."
+msgstr ""
+"Softwarefouten kunnen ernstige gevolgen hebben voor bedrijven van elke "
+"omvang."
+
+#: main/templates/main/blog_software_testing.html:193
+msgid "Revenue loss due to downtime"
+msgstr "Omzetverlies door uitval"
+
+#: main/templates/main/blog_software_testing.html:194
+msgid "Customer dissatisfaction"
+msgstr "Ontevreden klanten"
+
+#: main/templates/main/blog_software_testing.html:195
+msgid "Negative online reviews"
+msgstr "Negatieve online beoordelingen"
+
+#: main/templates/main/blog_software_testing.html:196
+msgid "Security breaches"
+msgstr "Beveiligingsinbreuken"
+
+#: main/templates/main/blog_software_testing.html:197
+msgid "Regulatory compliance issues"
+msgstr "Problemen met naleving van regelgeving"
+
+#: main/templates/main/blog_software_testing.html:198
+msgid "Increased maintenance costs"
+msgstr "Verhoogde onderhoudskosten"
+
+#: main/templates/main/blog_software_testing.html:202
+msgid ""
+"Defects identified late in the development lifecycle usually cost "
+"significantly more to fix than those detected early. Preventing defects is "
+"always more cost-effective than repairing them after deployment."
+msgstr ""
+"Fouten die laat in de ontwikkelingscyclus worden ontdekt, kosten meestal "
+"aanzienlijk meer om te herstellen dan fouten die vroeg worden gevonden. "
+"Fouten voorkomen is altijd kosteneffectiever dan ze na implementatie "
+"herstellen."
+
+#: main/templates/main/blog_software_testing.html:205
+msgid "What Is Software Testing?"
+msgstr "Softwaretesten"
+
+#: main/templates/main/blog_software_testing.html:207
+msgid ""
+"Software testing is the process of evaluating an application to identify "
+"defects, verify functionality, and ensure that the software meets business "
+"and user requirements."
+msgstr ""
+"Softwaretesten is het proces waarbij een applicatie wordt geëvalueerd om "
+"fouten te identificeren, functionaliteit te verifiëren en ervoor te zorgen "
+"dat de software voldoet aan zakelijke en gebruikersvereisten."
+
+#: main/templates/main/blog_software_testing.html:210
+msgid "Testing helps answer critical questions:"
+msgstr "Testen helpen belangrijke vragen te beantwoorden:"
+
+#: main/templates/main/blog_software_testing.html:213
+msgid "Does the software work as expected?"
+msgstr "Werkt de software zoals verwacht?"
+
+#: main/templates/main/blog_software_testing.html:214
+msgid "Is it secure?"
+msgstr "Is de software veilig?"
+
+#: main/templates/main/blog_software_testing.html:215
+msgid "Can it handle high user loads?"
+msgstr "Kan de software hoge gebruikersbelasting aan?"
+
+#: main/templates/main/blog_software_testing.html:216
+msgid "Is the user experience reliable?"
+msgstr "Vindt problemen in de gebruikerservaring"
+
+#: main/templates/main/blog_software_testing.html:217
+msgid "Are integrations functioning correctly?"
+msgstr "Werken integraties correct?"
+
+#: main/templates/main/blog_software_testing.html:220
+msgid "Benefits of Professional Software Testing"
+msgstr "Softwaretesten"
+
+#: main/templates/main/blog_software_testing.html:222
+msgid "Improved Product Quality"
+msgstr "Klaar om uw softwarekwaliteit te verbeteren?"
+
+#: main/templates/main/blog_software_testing.html:224
+msgid "Structured testing identifies defects before customers encounter them."
+msgstr ""
+"Gestructureerd testen identificeert fouten voordat klanten ermee te maken "
+"krijgen."
+
+#: main/templates/main/blog_software_testing.html:227
+msgid "Reduced Business Risk"
+msgstr "Vermindert regressierisico"
+
+#: main/templates/main/blog_software_testing.html:229
+msgid ""
+"Testing reduces the likelihood of production failures and unexpected outages."
+msgstr ""
+"Testen verminderen de kans op productieproblemen en onverwachte uitval."
+
+#: main/templates/main/blog_software_testing.html:232
+msgid "Better Customer Satisfaction"
+msgstr "Altijd duidelijke communicatie."
+
+#: main/templates/main/blog_software_testing.html:234
+msgid "Reliable software creates trust and encourages customer retention."
+msgstr ""
+"Betrouwbare software zorgt voor meer klantvertrouwen, minder klachten en "
+"sterkere digitale ervaringen."
+
+#: main/templates/main/blog_software_testing.html:237
+msgid "Faster Development Cycles"
+msgstr "Softwareontwikkeling"
+
+#: main/templates/main/blog_software_testing.html:239
+msgid ""
+"Contrary to common belief, testing often accelerates development by reducing "
+"rework and production incidents."
+msgstr ""
+"In tegenstelling tot wat vaak wordt gedacht, versnelt testen vaak de "
+"ontwikkeling door herwerk en productie-incidenten te verminderen."
+
+#: main/templates/main/blog_software_testing.html:242
+msgid "Increased Release Confidence"
+msgstr "Vertrouwen in releases vergroten"
+
+#: main/templates/main/blog_software_testing.html:244
+msgid "Teams can deploy software knowing it has been thoroughly evaluated."
+msgstr ""
+"Teams kunnen software implementeren in de wetenschap dat deze grondig is "
+"geëvalueerd."
+
+#: main/templates/main/blog_software_testing.html:247
+msgid "Types of Software Testing"
+msgstr "Softwaretesten"
+
+#: main/templates/main/blog_software_testing.html:249
+#: main/templates/main/software_testing.html:380
+msgid "Functional Testing"
+msgstr "Functioneel testen"
+
+#: main/templates/main/blog_software_testing.html:250
+msgid "Verifies that application features behave according to requirements."
+msgstr "Controleert of applicatiefuncties zich gedragen volgens de vereisten."
+
+#: main/templates/main/blog_software_testing.html:252
+#: main/templates/main/software_testing.html:382
+msgid "Regression Testing"
+msgstr "Regressietesten"
+
+#: main/templates/main/blog_software_testing.html:253
+msgid "Ensures that new changes do not break existing functionality."
+msgstr ""
+"Zorgt ervoor dat nieuwe wijzigingen bestaande functionaliteit niet verstoren."
+
+#: main/templates/main/blog_software_testing.html:255
+msgid "Performance Testing"
+msgstr "Prestatietesten"
+
+#: main/templates/main/blog_software_testing.html:256
+msgid "Evaluates speed, responsiveness, and scalability."
+msgstr "Beoordeelt snelheid, responsiviteit en schaalbaarheid."
+
+#: main/templates/main/blog_software_testing.html:258
+msgid "Security Testing"
+msgstr "Handmatig testen"
+
+#: main/templates/main/blog_software_testing.html:259
+msgid "Identifies vulnerabilities that could expose sensitive information."
+msgstr ""
+"Identificeert kwetsbaarheden die gevoelige informatie kunnen blootstellen."
+
+#: main/templates/main/blog_software_testing.html:261
+#: main/templates/main/software_testing.html:383
+msgid "User Acceptance Testing"
+msgstr "Gebruikersacceptatietesten"
+
+#: main/templates/main/blog_software_testing.html:262
+msgid "Confirms that the software meets business expectations and user needs."
+msgstr ""
+"Bevestigt dat de software voldoet aan zakelijke verwachtingen en "
+"gebruikersbehoeften."
+
+#: main/templates/main/blog_software_testing.html:264
+msgid "Automated Testing"
+msgstr "Functioneel testen"
+
+#: main/templates/main/blog_software_testing.html:265
+msgid "Uses tools and scripts to execute tests efficiently and repeatedly."
+msgstr ""
+"Gebruikt tools en scripts om tests efficiënt en herhaaldelijk uit te voeren."
+
+#: main/templates/main/blog_software_testing.html:267
+msgid "Why Quality Assurance Matters"
+msgstr "Kwaliteitsborging"
+
+#: main/templates/main/blog_software_testing.html:269
+msgid ""
+"Software testing is one component of a broader Quality Assurance strategy. "
+"Quality Assurance focuses on preventing defects through process improvement, "
+"standards, risk management, continuous quality monitoring, and release "
+"readiness assessments."
+msgstr ""
+"Softwaretesten is één onderdeel van een bredere kwaliteitsborgingsstrategie. "
+"Kwaliteitsborging richt zich op het voorkomen van fouten door "
+"procesverbetering, standaarden, risicobeheer, voortdurende "
+"kwaliteitsbewaking en beoordelingen van releasegereedheid."
+
+#: main/templates/main/blog_software_testing.html:272
+msgid "How SolutionsTestLab Helps"
+msgstr "Over SolutionsTestLab"
+
+#: main/templates/main/blog_software_testing.html:274
+msgid ""
+"At SolutionsTestLab, we help organizations improve software quality through "
+"structured testing, QA consulting, test management, QA audits, test strategy "
+"development, defect management, and release readiness assessments."
+msgstr ""
+"Bij SolutionsTestLab helpen we organisaties de softwarekwaliteit te "
+"verbeteren door gestructureerd testen, QA-consulting, testmanagement, QA-"
+"audits, ontwikkeling van teststrategieën, defectbeheer en beoordelingen van "
+"releasegereedheid."
+
+#: main/templates/main/blog_software_testing.html:277
+msgid "Conclusion"
+msgstr "Conclusie"
+
+#: main/templates/main/blog_software_testing.html:279
+msgid ""
+"Software quality is no longer optional in a competitive digital marketplace. "
+"Organizations that invest in professional testing and quality assurance "
+"reduce risk, improve customer satisfaction, and strengthen business "
+"performance."
+msgstr ""
+"Softwarekwaliteit is niet langer optioneel in een concurrerende digitale "
+"markt. Organisaties die investeren in professioneel testen en "
+"kwaliteitsborging verminderen risico’s, verbeteren klanttevredenheid en "
+"versterken de bedrijfsprestaties."
+
+#: main/templates/main/blog_software_testing.html:283
+#: main/templates/main/home.html:266
+msgid "Ready to Improve Your Software Quality?"
+msgstr "Klaar om uw softwarekwaliteit te verbeteren?"
+
+#: main/templates/main/blog_software_testing.html:285
+msgid ""
+"If your organization wants to reduce risk, improve reliability, and release "
+"software with confidence, SolutionsTestLab is ready to help."
+msgstr ""
+"Als uw organisatie risico’s wil verminderen, betrouwbaarheid wil verbeteren "
+"en software met vertrouwen wil uitbrengen, staat SolutionsTestLab klaar om "
+"te helpen."
+
+#: main/templates/main/blog_software_testing.html:288
+#: main/templates/main/home.html:273
+#: main/templates/main/quality_assurance.html:431
+msgid "Request a QA Consultation"
+msgstr "Vraag een QA-consultatie aan"
 
 #: main/templates/main/careers.html:264
 msgid "Back to Lab"
@@ -1942,14 +2422,6 @@ msgstr ""
 "SolutionsTestLab complete softwarekwaliteitsdiensten waarmee organisaties "
 "met vertrouwen kunnen releasen."
 
-#: main/templates/main/home.html:113 main/templates/main/navbar.html:44
-#: main/templates/main/quality_assurance.html:5
-#: main/templates/main/quality_assurance.html:223
-#: main/templates/main/quality_assurance.html:264
-#: main/templates/main/services.html:504
-msgid "Quality Assurance"
-msgstr "Kwaliteitsborging"
-
 #: main/templates/main/home.html:116
 msgid ""
 "Build quality into every stage of software delivery through QA strategy, "
@@ -1962,14 +2434,6 @@ msgstr ""
 #: main/templates/main/home.html:146
 msgid "Learn More"
 msgstr "Meer informatie"
-
-#: main/templates/main/home.html:126 main/templates/main/navbar.html:48
-#: main/templates/main/quality_assurance.html:278
-#: main/templates/main/services.html:470
-#: main/templates/main/software_testing.html:5
-#: main/templates/main/software_testing.html:230
-msgid "Software Testing"
-msgstr "Softwaretesten"
 
 #: main/templates/main/home.html:129
 msgid ""
@@ -2124,13 +2588,8 @@ msgid "Manual Testing"
 msgstr "Handmatig testen"
 
 #: main/templates/main/home.html:257
-#| msgid "Supports CI/CD pipelines"
 msgid "CI/CD Pipeline"
 msgstr "Ondersteunt CI/CD-pijplijnen"
-
-#: main/templates/main/home.html:266
-msgid "Ready to Improve Your Software Quality?"
-msgstr "Klaar om uw softwarekwaliteit te verbeteren?"
 
 #: main/templates/main/home.html:269
 msgid ""
@@ -2138,11 +2597,6 @@ msgid ""
 msgstr ""
 "Laat ons u helpen software met vertrouwen, stabiliteit en precisie uit te "
 "brengen."
-
-#: main/templates/main/home.html:273
-#: main/templates/main/quality_assurance.html:431
-msgid "Request a QA Consultation"
-msgstr "Vraag een QA-consult aan"
 
 #: main/templates/main/impressum.html:9
 msgid "Impressum (Legal Notice)"
@@ -2187,7 +2641,6 @@ msgid "Legal Disclaimers"
 msgstr "Juridische disclaimers"
 
 #: main/templates/main/impressum.html:55
-#| msgid "Application Content"
 msgid "Liability for Content"
 msgstr "Sollicitatie-inhoud"
 
@@ -2196,7 +2649,10 @@ msgid ""
 "The contents of this website have been created with the greatest care. "
 "However, we cannot guarantee the accuracy, completeness, or timeliness of "
 "the information provided."
-msgstr "De inhoud van deze website is met de grootste zorg samengesteld. Wij kunnen echter geen garantie geven voor de juistheid, volledigheid of actualiteit van de verstrekte informatie."
+msgstr ""
+"De inhoud van deze website is met de grootste zorg samengesteld. Wij kunnen "
+"echter geen garantie geven voor de juistheid, volledigheid of actualiteit "
+"van de verstrekte informatie."
 
 #: main/templates/main/impressum.html:60
 msgid "Liability for Links"
@@ -2207,7 +2663,10 @@ msgid ""
 "Our website contains links to external third-party websites over whose "
 "content we have no influence. Therefore, we cannot assume any liability for "
 "these external contents."
-msgstr "Onze website bevat links naar externe websites van derden waarop wij geen invloed hebben. Daarom aanvaarden wij geen aansprakelijkheid voor deze externe inhoud."
+msgstr ""
+"Onze website bevat links naar externe websites van derden waarop wij geen "
+"invloed hebben. Daarom aanvaarden wij geen aansprakelijkheid voor deze "
+"externe inhoud."
 
 #: main/templates/main/impressum.html:65
 msgid "Copyright"
@@ -2236,7 +2695,9 @@ msgstr "Taal"
 msgid ""
 "This Privacy Policy explains how SolutionsTestLab collects, processes, and "
 "protects personal data when you visit our website."
-msgstr "Dit privacybeleid legt uit hoe SolutionsTestLab persoonsgegevens verzamelt, verwerkt en beschermt wanneer u onze website bezoekt."
+msgstr ""
+"Dit privacybeleid legt uit hoe SolutionsTestLab persoonsgegevens verzamelt, "
+"verwerkt en beschermt wanneer u onze website bezoekt."
 
 #: main/templates/main/privacy_policy.html:17
 msgid "1. Controller"
@@ -2246,7 +2707,10 @@ msgstr "1. Verwerkingsverantwoordelijke"
 msgid ""
 "The controller responsible for processing your personal data on this website "
 "within the meaning of the General Data Protection Regulation (GDPR) is:"
-msgstr "De verwerkingsverantwoordelijke voor de verwerking van uw persoonsgegevens op deze website in de zin van de Algemene Verordening Gegevensbescherming (AVG) is:"
+msgstr ""
+"De verwerkingsverantwoordelijke voor de verwerking van uw persoonsgegevens "
+"op deze website in de zin van de Algemene Verordening Gegevensbescherming "
+"(AVG) is:"
 
 #: main/templates/main/privacy_policy.html:41
 msgid "2. Collection of General Information (Log Files)"
@@ -2256,7 +2720,9 @@ msgstr "2. Verzameling van algemene informatie (logbestanden)"
 msgid ""
 "When you access our website, technical information is automatically "
 "collected and stored in server log files by our hosting provider."
-msgstr "Wanneer u onze website bezoekt, wordt technische informatie automatisch verzameld en opgeslagen in serverlogbestanden door onze hostingprovider."
+msgstr ""
+"Wanneer u onze website bezoekt, wordt technische informatie automatisch "
+"verzameld en opgeslagen in serverlogbestanden door onze hostingprovider."
 
 #: main/templates/main/privacy_policy.html:49
 msgid "Browser type and version"
@@ -2282,7 +2748,9 @@ msgstr "3. Contactformulier en e-mailcontact"
 msgid ""
 "If you contact us through our contact form or by email, we process the "
 "information you provide in order to respond to your inquiry."
-msgstr "Als u contact met ons opneemt via ons contactformulier of per e-mail, verwerken wij de door u verstrekte informatie om uw aanvraag te beantwoorden."
+msgstr ""
+"Als u contact met ons opneemt via ons contactformulier of per e-mail, "
+"verwerken wij de door u verstrekte informatie om uw aanvraag te beantwoorden."
 
 #: main/templates/main/privacy_policy.html:61
 msgid "4. Cookies and Local Storage"
@@ -2292,7 +2760,9 @@ msgstr "4. Cookies en lokale opslag"
 msgid ""
 "Our website uses cookies and local storage to ensure proper website "
 "functionality and to improve the user experience."
-msgstr "Onze website gebruikt cookies en lokale opslag om de juiste werking van de website te garanderen en de gebruikerservaring te verbeteren."
+msgstr ""
+"Onze website gebruikt cookies en lokale opslag om de juiste werking van de "
+"website te garanderen en de gebruikerservaring te verbeteren."
 
 #: main/templates/main/privacy_policy.html:68
 msgid ""
@@ -2354,7 +2824,9 @@ msgstr "7. Gegevensbeveiliging en versleuteling"
 msgid ""
 "We use appropriate technical and organizational measures, including SSL/TLS "
 "encryption, to protect personal data."
-msgstr "Wij gebruiken passende technische en organisatorische maatregelen, waaronder SSL/TLS-versleuteling, om persoonsgegevens te beschermen."
+msgstr ""
+"Wij gebruiken passende technische en organisatorische maatregelen, waaronder "
+"SSL/TLS-versleuteling, om persoonsgegevens te beschermen."
 
 #: main/templates/main/privacy_policy.html:100
 msgid "8. Changes to this Privacy Policy"
@@ -3550,21 +4022,9 @@ msgstr ""
 "SolutionsTestLab biedt gestructureerde handmatige testdiensten voor web-, "
 "mobiele, SaaS- en bedrijfsapplicaties."
 
-#: main/templates/main/software_testing.html:380
-msgid "Functional Testing"
-msgstr "Functioneel testen"
-
 #: main/templates/main/software_testing.html:381
 msgid "Exploratory Testing"
 msgstr "Softwaretesten"
-
-#: main/templates/main/software_testing.html:382
-msgid "Regression Testing"
-msgstr "Regressietesten"
-
-#: main/templates/main/software_testing.html:383
-msgid "User Acceptance Testing"
-msgstr "Gebruikersacceptatietesten"
 
 #: main/templates/main/software_testing.html:384
 msgid "Usability Testing"
@@ -3727,6 +4187,11 @@ msgstr "Uw sollicitatie is succesvol ingediend."
 msgid "Your message was sent successfully."
 msgstr "Uw bericht is succesvol verzonden."
 
+#, fuzzy
+#~| msgid "Test Monitoring"
+#~ msgid "Test Consulting"
+#~ msgstr "Testautomatisering"
+
 #~ msgid "CI/CD Quality Gates"
 #~ msgstr "CI/CD-kwaliteitscontroles"
 
@@ -3835,9 +4300,6 @@ msgstr "Uw bericht is succesvol verzonden."
 
 #~ msgid "End-to-end QA strategy"
 #~ msgstr "End-to-end QA-strategie"
-
-#~ msgid "Performance testing"
-#~ msgstr "Prestatietesten"
 
 #~ msgid "Dedicated QA support"
 #~ msgstr "Toegewijde QA-ondersteuning"

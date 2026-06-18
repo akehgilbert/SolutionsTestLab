@@ -177,3 +177,11 @@ def impressum(request):
 
 def privacy_policy(request):
     return render(request, "main/privacy_policy.html")
+
+def blog(request):
+    return render(request, "main/blog.html")
+
+
+def blog_software_testing(request):
+    return render(request, "main/blog_software_testing.html")
+
