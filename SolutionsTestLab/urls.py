@@ -11,6 +11,10 @@ urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
 ]
 
+urlpatterns = [
+    path("", lambda request: redirect("/de/")),
+]
+
 urlpatterns += i18n_patterns(
 
     # Main app URLs

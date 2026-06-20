@@ -1,0 +1,9 @@
+.hero-text p {
+    font-size: 3rem;
+    line-height: 1.6;
+}
+
+.hero-text p strong {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
