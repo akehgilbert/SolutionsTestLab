@@ -37,9 +37,10 @@ def careers(request):
         cover_letter = request.POST.get("cover_letter")
         resume = request.FILES.get("resume")
 
-        company_subject = f"New Job Application - {position}"
-
-        company_message = f"""
+        try:
+            company_email = EmailMessage(
+                subject=f"New Job Application - {position}",
+                body=f"""
 New application received.
 
 Name: {name}
@@ -48,28 +49,24 @@ Position: {position}
 
 Cover Letter:
 {cover_letter}
-"""
-
-        company_email = EmailMessage(
-            subject=company_subject,
-            body=company_message,
-            from_email=settings.DEFAULT_FROM_EMAIL,
-            to=["careers@solutionstestlab.com"],
-            reply_to=[email],
-        )
-
-        if resume:
-            company_email.attach(
-                resume.name,
-                resume.read(),
-                resume.content_type
+""",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=["info@solutionstestlab.com"],
+                reply_to=[email],
             )
 
-        company_email.send(fail_silently=False)
+            if resume:
+                company_email.attach(
+                    resume.name,
+                    resume.read(),
+                    resume.content_type
+                )
 
-        applicant_subject = "Application Received | SolutionsTestLab"
+            company_email.send(fail_silently=False)
 
-        applicant_message = f"""
+            send_mail(
+                "Application Received | SolutionsTestLab",
+                f"""
 Dear {name},
 
 Thank you for applying to SolutionsTestLab.
@@ -80,26 +77,21 @@ We have successfully received your application for the position of:
 
 Our recruitment team will carefully review your profile and contact you if your qualifications match our current needs.
 
-We appreciate your interest in joining SolutionsTestLab.
-
 Best regards,
 SolutionsTestLab Recruitment Team
+""",
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
 
-Eagle-Eye Precision in every line of code.
-"""
+            messages.success(
+                request,
+                _("Your application has been submitted successfully.")
+            )
 
-        send_mail(
-            applicant_subject,
-            applicant_message,
-            settings.DEFAULT_FROM_EMAIL,
-            [email],
-            fail_silently=False,
-        )
-
-        messages.success(
-            request,
-            _("Your application has been submitted successfully.")
-        )
+        except Exception as e:
+            messages.error(request, f"Email error: {e}")
 
         return redirect("careers")
 
@@ -114,9 +106,10 @@ def contact(request):
         message = request.POST.get("message")
         consent = request.POST.get("consent")
 
-        company_subject = f"New Contact Message - {subject}"
-
-        company_message = f"""
+        try:
+            send_mail(
+                f"New Contact Message - {subject}",
+                f"""
 New contact message received.
 
 Name: {name}
@@ -126,19 +119,15 @@ Consent: {consent}
 
 Message:
 {message}
-"""
+""",
+                settings.DEFAULT_FROM_EMAIL,
+                ["info@solutionstestlab.com"],
+                fail_silently=False,
+            )
 
-        send_mail(
-            company_subject,
-            company_message,
-            settings.DEFAULT_FROM_EMAIL,
-            ["info@solutionstestlab.com"],
-            fail_silently=False,
-        )
-
-        applicant_subject = "Message Received | SolutionsTestLab"
-
-        applicant_message = f"""
+            send_mail(
+                "Message Received | SolutionsTestLab",
+                f"""
 Dear {name},
 
 Thank you for contacting SolutionsTestLab.
@@ -151,32 +140,32 @@ Our team will review your inquiry and get back to you shortly.
 
 Best regards,
 SolutionsTestLab Team
+""",
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
 
-Eagle-Eye Precision in every line of code.
-"""
+            messages.success(
+                request,
+                _("Your message was sent successfully.")
+            )
 
-        send_mail(
-            applicant_subject,
-            applicant_message,
-            settings.DEFAULT_FROM_EMAIL,
-            [email],
-            fail_silently=False,
-        )
-
-        messages.success(
-            request,
-            _("Your message was sent successfully.")
-        )
+        except Exception as e:
+            messages.error(request, f"Email error: {e}")
 
         return redirect("contact")
 
     return render(request, "main/contact.html")
 
+
 def impressum(request):
     return render(request, "main/impressum.html")
 
+
 def privacy_policy(request):
     return render(request, "main/privacy_policy.html")
+
 
 def blog(request):
     return render(request, "main/blog.html")
@@ -184,4 +173,3 @@ def blog(request):
 
 def blog_software_testing(request):
     return render(request, "main/blog_software_testing.html")
-
