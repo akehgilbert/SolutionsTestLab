@@ -50,9 +50,9 @@ TEMPLATES = [
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
+                "django.template.context_processors.i18n",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "django.template.context_processors.i18n",
             ],
         },
     },
@@ -68,11 +68,23 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
+
+# =========================
+# LANGUAGE / INTERNATIONALIZATION
+# =========================
 
 LANGUAGE_CODE = "de"
 
@@ -83,14 +95,21 @@ LANGUAGES = [
     ("nl", _("Dutch")),
 ]
 
-TIME_ZONE = "Europe/Berlin"
-
 USE_I18N = True
-USE_TZ = True
 
 LOCALE_PATHS = [
     BASE_DIR / "locale",
 ]
+
+TIME_ZONE = "Europe/Berlin"
+USE_TZ = True
+
+# Force German as fallback/default when no language is selected
+LANGUAGE_COOKIE_NAME = "django_language"
+
+# =========================
+# STATIC / MEDIA FILES
+# =========================
 
 STATIC_URL = "/static/"
 
@@ -105,9 +124,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-
 # =========================
-# EMAIL SETTINGS - GMAIL SMTP
+# EMAIL SETTINGS
 # =========================
 
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
@@ -118,18 +136,12 @@ EMAIL_USE_SSL = False
 EMAIL_USE_TLS = True
 EMAIL_TIMEOUT = 20
 
-EMAIL_HOST_USER = os.environ.get(
-    "EMAIL_HOST_USER",
-)
-
-EMAIL_HOST_PASSWORD = os.environ.get(
-    "EMAIL_HOST_PASSWORD",
-    ""
-)
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD", "")
 
 DEFAULT_FROM_EMAIL = os.environ.get(
     "DEFAULT_FROM_EMAIL",
-    EMAIL_HOST_USER
+    EMAIL_HOST_USER,
 )
 
 SERVER_EMAIL = EMAIL_HOST_USER
