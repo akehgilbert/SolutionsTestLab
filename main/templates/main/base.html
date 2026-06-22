@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SolutionsTestLab{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=102">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=103">
 
     <style>
         :root {
@@ -22,7 +22,9 @@
             --site-font: Arial, Helvetica, sans-serif;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             font-family: var(--site-font) !important;
         }
@@ -38,11 +40,17 @@
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             letter-spacing: -0.5px;
         }
 
-        button, input, textarea, select {
+        button,
+        input,
+        textarea,
+        select {
             font-family: var(--site-font) !important;
         }
 
@@ -188,21 +196,19 @@
 
         @media (max-width: 768px) {
             .blog-hero,
-            .careers-hero,
             .qa-hero,
             .st-hero,
             .tm-hero,
             .intro-header-container {
-                padding-top: 250px !important;
+                padding-top: 220px !important;
             }
 
             .about-wrapper,
             .contact-wrapper {
-                padding-top: 250px !important;
+                padding-top: 220px !important;
             }
 
             .blog-hero h1,
-            .careers-hero h1,
             .qa-hero h1,
             .st-hero h1,
             .tm-hero h1,
