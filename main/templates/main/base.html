@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}SolutionsTestLab{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=101">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=102">
 
     <style>
         :root {
@@ -117,6 +117,10 @@
             margin-bottom: 6px;
         }
 
+        .footer-section a:hover {
+            color: #00acee;
+        }
+
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.12);
             margin-top: 25px;
@@ -151,6 +155,11 @@
             border-top: 6px solid #00acee;
         }
 
+        .cookie-modal h2 {
+            color: #0056b3;
+            margin-top: 0;
+        }
+
         .cookie-buttons {
             margin-top: 28px;
             display: flex;
@@ -177,23 +186,7 @@
             color: #1e293b;
         }
 
-        /* MOBILE FIX */
         @media (max-width: 768px) {
-            .hero-section {
-                height: auto !important;
-                min-height: 100vh !important;
-                padding-top: 235px !important;
-            }
-
-            .hero-content {
-                position: relative !important;
-                top: auto !important;
-                left: auto !important;
-                transform: none !important;
-                width: 100% !important;
-                padding: 35px 18px 90px !important;
-            }
-
             .blog-hero,
             .careers-hero,
             .qa-hero,
@@ -208,7 +201,6 @@
                 padding-top: 250px !important;
             }
 
-            .hero-content h1,
             .blog-hero h1,
             .careers-hero h1,
             .qa-hero h1,
@@ -220,7 +212,6 @@
                 line-height: 1.25 !important;
             }
 
-            .hero-content h2,
             .qa-hero h2,
             .st-hero h2,
             .tm-hero h2 {
@@ -228,7 +219,6 @@
                 line-height: 1.3 !important;
             }
 
-            .hero-content p,
             .blog-hero p,
             .qa-hero p,
             .st-hero p,
