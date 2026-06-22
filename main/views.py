@@ -1,8 +1,9 @@
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.utils.translation import gettext as _
-from django.core.mail import EmailMessage, send_mail
+from django.core.mail import EmailMessage
 from django.conf import settings
+import traceback
 
 
 def home(request):
@@ -31,17 +32,17 @@ def test_management(request):
 
 def careers(request):
     if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        position = request.POST.get("position")
-        cover_letter = request.POST.get("cover_letter")
+        name = request.POST.get("name", "").strip()
+        email = request.POST.get("email", "").strip()
+        position = request.POST.get("position", "").strip()
+        cover_letter = request.POST.get("cover_letter", "").strip()
         resume = request.FILES.get("resume")
 
         try:
             company_email = EmailMessage(
                 subject=f"New Job Application - {position}",
                 body=f"""
-New application received.
+New job application received.
 
 Name: {name}
 Email: {email}
@@ -51,8 +52,8 @@ Cover Letter:
 {cover_letter}
 """,
                 from_email=settings.DEFAULT_FROM_EMAIL,
-                to=["info@solutionstestlab.com"],
-                reply_to=[email],
+                to=[settings.DEFAULT_FROM_EMAIL],
+                reply_to=[email] if email else None,
             )
 
             if resume:
@@ -64,34 +65,17 @@ Cover Letter:
 
             company_email.send(fail_silently=False)
 
-            send_mail(
-                "Application Received | SolutionsTestLab",
-                f"""
-Dear {name},
-
-Thank you for applying to SolutionsTestLab.
-
-We have successfully received your application for the position of:
-
-{position}
-
-Our recruitment team will carefully review your profile and contact you if your qualifications match our current needs.
-
-Best regards,
-SolutionsTestLab Recruitment Team
-""",
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                fail_silently=False,
-            )
-
             messages.success(
                 request,
                 _("Your application has been submitted successfully.")
             )
 
-        except Exception as e:
-            messages.error(request, f"Email error: {e}")
+        except Exception:
+            print(traceback.format_exc())
+            messages.error(
+                request,
+                _("Email error. Please try again later or contact us directly.")
+            )
 
         return redirect("careers")
 
@@ -100,16 +84,16 @@ SolutionsTestLab Recruitment Team
 
 def contact(request):
     if request.method == "POST":
-        name = request.POST.get("name")
-        email = request.POST.get("email")
-        subject = request.POST.get("subject")
-        message = request.POST.get("message")
-        consent = request.POST.get("consent")
+        name = request.POST.get("name", "").strip()
+        email = request.POST.get("email", "").strip()
+        subject = request.POST.get("subject", "").strip()
+        message = request.POST.get("message", "").strip()
+        consent = request.POST.get("consent", "")
 
         try:
-            send_mail(
-                f"New Contact Message - {subject}",
-                f"""
+            contact_email = EmailMessage(
+                subject=f"New Contact Message - {subject}",
+                body=f"""
 New contact message received.
 
 Name: {name}
@@ -120,39 +104,24 @@ Consent: {consent}
 Message:
 {message}
 """,
-                settings.DEFAULT_FROM_EMAIL,
-                ["info@solutionstestlab.com"],
-                fail_silently=False,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.DEFAULT_FROM_EMAIL],
+                reply_to=[email] if email else None,
             )
 
-            send_mail(
-                "Message Received | SolutionsTestLab",
-                f"""
-Dear {name},
-
-Thank you for contacting SolutionsTestLab.
-
-We have successfully received your message regarding:
-
-{subject}
-
-Our team will review your inquiry and get back to you shortly.
-
-Best regards,
-SolutionsTestLab Team
-""",
-                settings.DEFAULT_FROM_EMAIL,
-                [email],
-                fail_silently=False,
-            )
+            contact_email.send(fail_silently=False)
 
             messages.success(
                 request,
                 _("Your message was sent successfully.")
             )
 
-        except Exception as e:
-            messages.error(request, f"Email error: {e}")
+        except Exception:
+            print(traceback.format_exc())
+            messages.error(
+                request,
+                _("Email error. Please try again later or contact us directly.")
+            )
 
         return redirect("contact")
 
