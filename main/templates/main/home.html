@@ -16,7 +16,10 @@ SolutionsTestLab | {% translate "Home" %}
 
     <div class="hero-content">
         <h1>SolutionsTestLab - Precision Software Testing</h1>
-        <h2>{% translate "Precision Software Testing That Protects Your Business" %}</h2>
+
+        <h2>
+            {% translate "Precision Software Testing That Protects Your Business" %}
+        </h2>
 
         <p>
             {% translate "We help companies release stable, secure, and high-performing software by detecting problems before customers do." %}
@@ -67,9 +70,11 @@ SolutionsTestLab | {% translate "Home" %}
         </div>
 
         <div class="problem-right">
-            <img src="{% static 'images/SolutionsTestLab_3.jpg' %}"
-                 alt="{% translate 'Software quality team meeting' %}"
-                 class="problem-photo">
+            <img
+                src="{% static 'images/SolutionsTestLab_3.jpg' %}"
+                alt="{% translate 'Software quality team meeting' %}"
+                class="problem-photo"
+            >
         </div>
 
     </div>
@@ -79,8 +84,10 @@ SolutionsTestLab | {% translate "Home" %}
     <div class="showcase-container">
 
         <div class="showcase-image">
-            <img src="{% static 'images/SolutionsTestLab_2.jpg' %}"
-                 alt="{% translate 'QA planning meeting' %}">
+            <img
+                src="{% static 'images/SolutionsTestLab_2.jpg' %}"
+                alt="{% translate 'QA planning meeting' %}"
+            >
         </div>
 
         <div class="showcase-text">
@@ -111,11 +118,7 @@ SolutionsTestLab | {% translate "Home" %}
             <div class="preview-card">
                 <span>01</span>
                 <h3>{% translate "Quality Assurance" %}</h3>
-
-                <p>
-                    {% translate "Build quality into every stage of software delivery through QA strategy, process improvement, defect prevention, and release readiness." %}
-                </p>
-
+                <p>{% translate "Build quality into every stage of software delivery through QA strategy, process improvement, defect prevention, and release readiness." %}</p>
                 <a href="{% url 'quality_assurance' %}" class="preview-link">
                     {% translate "Learn More" %}
                 </a>
@@ -124,11 +127,7 @@ SolutionsTestLab | {% translate "Home" %}
             <div class="preview-card">
                 <span>02</span>
                 <h3>{% translate "Software Testing" %}</h3>
-
-                <p>
-                    {% translate "Comprehensive manual and test automation services including functional, regression, exploratory, API, and user acceptance testing." %}
-                </p>
-
+                <p>{% translate "Comprehensive manual and test automation services including functional, regression, exploratory, API, and user acceptance testing." %}</p>
                 <a href="{% url 'software_testing' %}" class="preview-link">
                     {% translate "Learn More" %}
                 </a>
@@ -137,11 +136,7 @@ SolutionsTestLab | {% translate "Home" %}
             <div class="preview-card">
                 <span>03</span>
                 <h3>{% translate "Test Management" %}</h3>
-
-                <p>
-                    {% translate "Structured test planning, coordination, reporting, and quality governance to ensure successful software releases." %}
-                </p>
-
+                <p>{% translate "Structured test planning, coordination, reporting, and quality governance to ensure successful software releases." %}</p>
                 <a href="{% url 'test_management' %}" class="preview-link">
                     {% translate "Learn More" %}
                 </a>
@@ -279,42 +274,50 @@ SolutionsTestLab | {% translate "Home" %}
     .hero-section {
         position: relative;
         height: 100vh;
+        min-height: 720px;
         overflow: hidden;
     }
 
     .hero-video {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        z-index: 1;
     }
 
     .hero-overlay {
         position: absolute;
         inset: 0;
         background: rgba(0, 0, 0, 0.68);
+        z-index: 2;
     }
 
     .hero-content {
         position: absolute;
-        top: 52%;
+        top: 56%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 90%;
         max-width: 980px;
         color: #ffffff;
         text-align: center;
+        z-index: 3;
     }
 
     .hero-content h1 {
         font-size: 3.8rem;
         color: #00acee;
         margin-bottom: 20px;
+        line-height: 1.15;
     }
 
     .hero-content h2 {
         font-size: 2.4rem;
         margin-bottom: 20px;
         color: #ffffff;
+        line-height: 1.25;
     }
 
     .hero-content p {
@@ -322,15 +325,12 @@ SolutionsTestLab | {% translate "Home" %}
         line-height: 1.7;
         max-width: 850px;
         margin: 0 auto 15px;
-        text-align: left;
-        text-justify: inter-word;
-        hyphens: auto;
+        text-align: center;
     }
 
     .hero-tagline {
         font-weight: 800;
         color: #ffffff;
-        text-align: center !important;
     }
 
     .hero-buttons {
@@ -387,8 +387,6 @@ SolutionsTestLab | {% translate "Home" %}
         font-size: 1.1rem;
         line-height: 1.7;
         text-align: left;
-        text-justify: inter-word;
-        hyphens: auto;
     }
 
     .problem-section {
@@ -424,8 +422,6 @@ SolutionsTestLab | {% translate "Home" %}
         margin: 0 0 35px;
         max-width: 850px;
         text-align: left;
-        text-justify: inter-word;
-        hyphens: auto;
     }
 
     .problem-left .solution-grid {
@@ -464,6 +460,7 @@ SolutionsTestLab | {% translate "Home" %}
         margin: 0;
         text-align: left;
     }
+
     .problem-right {
         display: flex;
         justify-content: flex-end;
@@ -516,8 +513,6 @@ SolutionsTestLab | {% translate "Home" %}
         line-height: 1.8;
         margin-bottom: 18px;
         text-align: left;
-        text-justify: inter-word;
-        hyphens: auto;
     }
 
     .services-preview,
@@ -640,12 +635,7 @@ SolutionsTestLab | {% translate "Home" %}
     .cta-section {
         position: relative;
         overflow: hidden;
-        background: linear-gradient(
-            135deg,
-            #003b7a 0%,
-            #0056b3 50%,
-            #00acee 100%
-        );
+        background: linear-gradient(135deg, #003b7a 0%, #0056b3 50%, #00acee 100%);
     }
 
     .cta-section .section-container {
@@ -670,9 +660,7 @@ SolutionsTestLab | {% translate "Home" %}
         line-height: 1.8;
         max-width: 750px;
         margin: 0 auto 40px;
-        text-align: left;
-        text-justify: inter-word;
-        hyphens: auto;
+        text-align: center;
     }
 
     .cta-section .section-container a {
@@ -694,24 +682,24 @@ SolutionsTestLab | {% translate "Home" %}
         transform: translateY(-4px);
     }
 
-    .cta-section::before {
+    .cta-section::before,
+    .cta-section::after {
         content: "";
         position: absolute;
-        width: 350px;
-        height: 350px;
         border-radius: 50%;
         background: rgba(255,255,255,0.08);
+    }
+
+    .cta-section::before {
+        width: 350px;
+        height: 350px;
         top: -120px;
         left: -120px;
     }
 
     .cta-section::after {
-        content: "";
-        position: absolute;
         width: 280px;
         height: 280px;
-        border-radius: 50%;
-        background: rgba(255,255,255,0.08);
         bottom: -100px;
         right: -100px;
     }
@@ -733,11 +721,6 @@ SolutionsTestLab | {% translate "Home" %}
 
         .problem-left .solution-grid {
             grid-template-columns: 1fr;
-        }
-
-        .problem-left .solution-card {
-            text-align: left;
-            min-height: auto;
         }
 
         .problem-right {
@@ -770,17 +753,72 @@ SolutionsTestLab | {% translate "Home" %}
     }
 
     @media (max-width: 768px) {
+        .hero-section {
+            height: 100vh;
+            min-height: 780px;
+            padding-top: 0 !important;
+        }
+
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.72);
+        }
+
+        .hero-content {
+            position: absolute !important;
+            top: 58% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            width: 92% !important;
+            max-width: 420px;
+            padding: 0 14px !important;
+            z-index: 3;
+        }
+
         .hero-content h1 {
-            font-size: 2.6rem;
+            font-size: 2rem !important;
+            line-height: 1.15 !important;
+            margin-bottom: 14px;
         }
 
         .hero-content h2 {
-            font-size: 1.6rem;
+            font-size: 1.45rem !important;
+            line-height: 1.25 !important;
+            margin-bottom: 14px;
         }
 
         .hero-content p {
-            font-size: 1rem;
+            font-size: 0.95rem !important;
+            line-height: 1.55 !important;
+            text-align: center !important;
+        }
+
+        .hero-buttons {
+            margin-top: 22px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .hero-buttons a {
+            width: 90%;
+            max-width: 280px;
+            margin: 0;
             text-align: center;
+        }
+
+        .section-container {
+            padding: 65px 20px;
         }
 
         .section-container h2 {
@@ -791,10 +829,7 @@ SolutionsTestLab | {% translate "Home" %}
             font-size: 1.8rem;
         }
 
-        .problem-photo {
-            height: 230px;
-        }
-
+        .problem-photo,
         .showcase-image img {
             height: 230px;
         }
