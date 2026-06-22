@@ -3,7 +3,6 @@
 <nav class="navbar">
     <div class="nav-content">
 
-        <!-- LOGO -->
         <div class="logo">
             <a href="{% url 'home' %}">
                 <img
@@ -14,7 +13,6 @@
             </a>
         </div>
 
-        <!-- NAVIGATION -->
         <ul class="nav-links">
 
             <li>
@@ -29,7 +27,6 @@
                 </a>
             </li>
 
-            <!-- SERVICES DROPDOWN -->
             <li class="nav-dropdown">
                 <button type="button" class="nav-link-btn">
                     {% translate "Services" %} ▾
@@ -68,7 +65,6 @@
                 </a>
             </li>
 
-            <!-- LANGUAGE DROPDOWN -->
             <li class="nav-dropdown">
                 <button type="button" class="nav-link-btn">
                     🌐 {% get_current_language as CURRENT_LANGUAGE %}
@@ -76,15 +72,12 @@
                 </button>
 
                 <div class="dropdown-menu language-menu">
-
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
 
                     {% for language in languages %}
                         <form action="{% url 'set_language' %}" method="post">
                             {% csrf_token %}
-
-                            <!-- Redirect to homepage after switching language -->
                             <input type="hidden" name="next" value="/">
 
                             <button type="submit" name="language" value="{{ language.code }}">
@@ -96,11 +89,9 @@
                             </button>
                         </form>
                     {% endfor %}
-
                 </div>
             </li>
 
-            <!-- CTA BUTTON -->
             <li>
                 <a class="nav-cta" href="{% url 'contact' %}">
                     {% translate "Request QA Audit" %}
