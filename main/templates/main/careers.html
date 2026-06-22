@@ -89,19 +89,8 @@
         color: #00acee;
     }
 
-    .careers-hero-img {
-        width: 100%;
-        max-width: 1000px;
-        height: 350px;
-        object-fit: cover;
-        border-radius: 20px;
-        margin: 40px auto;
-        display: block;
-        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-    }
-
     .careers-hero {
-        padding: 40px 40px 60px;
+        padding: 35px 40px 50px;
         text-align: center;
     }
 
@@ -110,6 +99,7 @@
         color: #0056b3;
         font-weight: 800;
         margin-bottom: 20px;
+        line-height: 1.15;
     }
 
     .careers-hero p {
@@ -118,6 +108,17 @@
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.6;
+    }
+
+    .careers-hero-img {
+        width: 100%;
+        max-width: 1000px;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 20px;
+        margin: 35px auto 45px;
+        display: block;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
     }
 
     .openings-section {
@@ -235,12 +236,53 @@
             margin: 0;
         }
 
+        .back-nav {
+            padding: 125px 0 0 24px;
+        }
+
+        .careers-hero {
+            padding: 20px 22px 35px !important;
+        }
+
         .careers-hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem !important;
+            line-height: 1.2 !important;
+            margin-bottom: 16px;
+        }
+
+        .careers-hero p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .careers-hero-img {
+            height: 260px;
+            margin: 25px auto 40px;
+            border-radius: 16px;
         }
 
         .application-form-wrapper {
             padding: 35px 25px;
+            margin: 0 20px 80px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .back-nav {
+            padding: 115px 0 0 20px !important;
+        }
+
+        .careers-hero {
+            padding: 15px 20px 30px !important;
+        }
+
+        .careers-hero h1 {
+            font-size: 2rem !important;
+        }
+
+        .careers-hero-img {
+            height: 230px;
+            margin-top: 20px;
         }
     }
 </style>
