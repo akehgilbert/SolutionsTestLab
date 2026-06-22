@@ -11,7 +11,7 @@ urlpatterns = [
     # Django language switcher
     path("i18n/", include("django.conf.urls.i18n")),
 
-    # Force first visit/root URL to German
+    # First visit/root URL goes to German
     path("", RedirectView.as_view(url="/de/", permanent=False)),
 ]
 
@@ -21,7 +21,4 @@ urlpatterns += i18n_patterns(
 )
 
 if settings.DEBUG:
-    urlpatterns += static(
-        settings.MEDIA_URL,
-        document_root=settings.MEDIA_ROOT,
-    )
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
