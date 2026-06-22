@@ -1,8 +1,6 @@
-```html
 {% load static i18n %}
 
 <nav class="navbar">
-
     <div class="nav-content">
 
         <!-- LOGO -->
@@ -33,13 +31,11 @@
 
             <!-- SERVICES DROPDOWN -->
             <li class="nav-dropdown">
-
                 <button type="button" class="nav-link-btn">
                     {% translate "Services" %} ▾
                 </button>
 
                 <div class="dropdown-menu">
-
                     <a href="{% url 'quality_assurance' %}">
                         {% translate "Quality Assurance" %}
                     </a>
@@ -51,9 +47,7 @@
                     <a href="{% url 'test_management' %}">
                         {% translate "Test Management" %}
                     </a>
-
                 </div>
-
             </li>
 
             <li>
@@ -68,49 +62,42 @@
                 </a>
             </li>
 
+            <li>
+                <a href="{% url 'blog' %}">
+                    {% translate "Blog" %}
+                </a>
+            </li>
+
             <!-- LANGUAGE DROPDOWN -->
             <li class="nav-dropdown">
-
                 <button type="button" class="nav-link-btn">
-                    🌐 {% translate "Language" %} ▾
+                    🌐 {% get_current_language as CURRENT_LANGUAGE %}
+                    {{ CURRENT_LANGUAGE|upper }} ▾
                 </button>
 
                 <div class="dropdown-menu language-menu">
 
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <button type="submit" name="language" value="de">
-                            🇩🇪 Deutsch
-                        </button>
-                    </form>
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
 
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <button type="submit" name="language" value="en">
-                            🇬🇧 English
-                        </button>
-                    </form>
+                    {% for language in languages %}
+                        <form action="{% url 'set_language' %}" method="post">
+                            {% csrf_token %}
 
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <button type="submit" name="language" value="fr">
-                            🇫🇷 Français
-                        </button>
-                    </form>
+                            <!-- Redirect to homepage after switching language -->
+                            <input type="hidden" name="next" value="/">
 
-                    <form action="{% url 'set_language' %}" method="post">
-                        {% csrf_token %}
-                        <input type="hidden" name="next" value="{{ request.get_full_path }}">
-                        <button type="submit" name="language" value="nl">
-                            🇳🇱 Nederlands
-                        </button>
-                    </form>
+                            <button type="submit" name="language" value="{{ language.code }}">
+                                {% if language.code == "de" %}🇩🇪{% endif %}
+                                {% if language.code == "en" %}🇬🇧{% endif %}
+                                {% if language.code == "fr" %}🇫🇷{% endif %}
+                                {% if language.code == "nl" %}🇳🇱{% endif %}
+                                {{ language.name_local }}
+                            </button>
+                        </form>
+                    {% endfor %}
 
                 </div>
-
             </li>
 
             <!-- CTA BUTTON -->
@@ -120,29 +107,18 @@
                 </a>
             </li>
 
-            <li>
-                <a href="{% url 'blog' %}">
-                     {% translate "Blog" %}
-                </a>
-            </li>
-
         </ul>
-
     </div>
-
 </nav>
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-
     const dropdowns = document.querySelectorAll(".nav-dropdown");
 
     dropdowns.forEach(function (dropdown) {
-
         const button = dropdown.querySelector(".nav-link-btn");
 
         button.addEventListener("click", function (event) {
-
             event.preventDefault();
             event.stopPropagation();
 
@@ -153,27 +129,19 @@ document.addEventListener("DOMContentLoaded", function () {
             });
 
             dropdown.classList.toggle("open");
-
         });
-
     });
 
     document.querySelectorAll(".dropdown-menu").forEach(function (menu) {
-
         menu.addEventListener("click", function (event) {
             event.stopPropagation();
         });
-
     });
 
     document.addEventListener("click", function () {
-
         dropdowns.forEach(function (dropdown) {
             dropdown.classList.remove("open");
         });
-
     });
-
 });
 </script>
-```
