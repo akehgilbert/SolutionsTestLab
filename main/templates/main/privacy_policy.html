@@ -4,7 +4,44 @@
 {% block title %}{% translate "Privacy Policy" %}{% endblock %}
 
 {% block content %}
-<div style="max-width:1000px;margin:60px auto;padding:40px;line-height:1.8;">
+
+<style>
+    .legal-page-wrapper {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 240px 40px 80px;
+        line-height: 1.8;
+        background: #ffffff;
+    }
+
+    .legal-page-wrapper h1 {
+        color: #0056b3;
+        font-size: 2.6rem;
+        margin-bottom: 30px;
+    }
+
+    .legal-page-wrapper h2 {
+        color: #0056b3;
+        margin-top: 35px;
+    }
+
+    .legal-page-wrapper ul {
+        padding-left: 22px;
+    }
+
+    @media (max-width: 768px) {
+        .legal-page-wrapper {
+            padding: 250px 25px 70px !important;
+        }
+
+        .legal-page-wrapper h1 {
+            font-size: 2rem;
+            line-height: 1.25;
+        }
+    }
+</style>
+
+<div class="legal-page-wrapper">
 
     <h1>{% translate "Privacy Policy" %}</h1>
 
@@ -104,4 +141,5 @@
     </p>
 
 </div>
+
 {% endblock %}
