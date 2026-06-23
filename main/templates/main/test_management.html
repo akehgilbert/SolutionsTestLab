@@ -19,24 +19,26 @@
         font-size: 3.5rem;
         font-weight: 900;
         margin-bottom: 15px;
+        line-height: 1.15;
     }
 
     .tm-hero h2 {
         color: #00acee;
         font-size: 1.7rem;
         margin-bottom: 25px;
+        line-height: 1.3;
     }
 
     .tm-hero p {
-    max-width: 900px;
-    margin: auto;
-    color: #555;
-    font-size: 1.15rem;
-    line-height: 1.8;
-    text-align: left;
-    text-justify: inter-word;
-    hyphens: auto;
-}
+        max-width: 900px;
+        margin: auto;
+        color: #555;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
 
     .tm-section {
         padding: 80px 20px;
@@ -72,13 +74,13 @@
     }
 
     .tm-card p {
-    color: #444;
-    line-height: 1.7;
-    margin-bottom: 16px;
-    text-align: left;
-    text-justify: inter-word;
-    hyphens: auto;
-}
+        color: #444;
+        line-height: 1.7;
+        margin-bottom: 16px;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
 
     .tm-image-card {
         padding: 0;
@@ -154,14 +156,14 @@
     }
 
     .tm-cta p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    text-align: left;
-    text-justify: inter-word;
-    hyphens: auto;
-}
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        font-size: 1.1rem;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
 
     .tm-cta a {
         display: inline-block;
@@ -183,8 +185,23 @@
             grid-template-columns: 1fr;
         }
 
+        .tm-hero {
+            padding: 235px 20px 70px !important;
+        }
+
         .tm-hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
+            line-height: 1.2;
+        }
+
+        .tm-hero h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
+        }
+
+        .tm-hero p {
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .tm-services-list {
@@ -193,6 +210,16 @@
 
         .tm-image-card img {
             height: 230px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .tm-hero {
+            padding-top: 250px !important;
+        }
+
+        .tm-hero h1 {
+            font-size: 2rem;
         }
     }
 </style>
