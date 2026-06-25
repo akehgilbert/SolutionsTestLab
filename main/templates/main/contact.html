@@ -91,6 +91,17 @@
         gap: 60px;
     }
 
+    .form-section h2 {
+        color: #0056b3;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .form-section p {
+        color: #64748b;
+        margin-bottom: 30px;
+    }
+
     .form-group {
         margin-bottom: 25px;
     }
@@ -146,6 +157,26 @@
         transform: translateY(-2px);
     }
 
+    .checkbox-label {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        cursor: pointer;
+    }
+
+    .checkbox-label input {
+        width: 18px;
+        height: 18px;
+        margin-top: 3px;
+        flex-shrink: 0;
+    }
+
+    .checkbox-label span {
+        font-size: 0.85rem;
+        color: #64748b;
+        line-height: 1.5;
+    }
+
     .info-sidebar h4 {
         color: #0056b3;
         margin-bottom: 15px;
@@ -162,10 +193,30 @@
         line-height: 1.6;
     }
 
+    .working-hours-box {
+        background: #f1f5f9;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .working-hours-box h4 {
+        font-size: 1rem;
+    }
+
+    .working-hours-box p {
+        font-size: 0.85rem;
+    }
+
     .timeline {
         margin-top: 50px;
         padding-top: 40px;
         border-top: 1px solid #f1f5f9;
+    }
+
+    .timeline h3 {
+        text-align: center;
+        color: #0056b3;
+        margin-bottom: 40px;
     }
 
     .timeline-grid {
@@ -189,6 +240,11 @@
         justify-content: center;
         margin: 0 auto 15px;
         font-weight: 800;
+    }
+
+    .step p {
+        font-size: 0.85rem;
+        color: #64748b;
     }
 
     .messages {
@@ -217,6 +273,19 @@
     }
 
     @media (max-width: 992px) {
+        .side-pane-left,
+        .side-pane-right {
+            display: none;
+        }
+
+        .main-wrapper {
+            margin: 0;
+        }
+
+        .contact-wrapper {
+            padding: 235px 20px 80px !important;
+        }
+
         .contact-grid,
         .timeline-grid {
             grid-template-columns: 1fr;
@@ -227,17 +296,27 @@
             gap: 0;
         }
 
-        .side-pane-left,
-        .side-pane-right {
-            display: none;
+        .contact-page {
+            padding: 35px 25px;
         }
 
-        .main-wrapper {
-            margin: 0;
+        .form-section h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-wrapper {
+            padding-top: 250px !important;
         }
 
         .contact-page {
-            padding: 35px 25px;
+            padding: 30px 20px;
+        }
+
+        .form-section h2 {
+            font-size: 1.8rem;
         }
     }
 </style>
@@ -269,34 +348,32 @@
             <div class="contact-grid">
 
                 <div class="form-section">
-                    <h2 style="color: #0056b3; font-size: 2.2rem; margin-bottom: 10px;">
-                        {% translate "Get in Touch" %}
-                    </h2>
+                    <h2>{% translate "Get in Touch" %}</h2>
 
-                    <p style="color: #64748b; margin-bottom: 30px;">
+                    <p>
                         {% translate "Complete the form and our technical team will reach out shortly." %}
                     </p>
 
-                    <form method="post">
+                    <form method="post" id="contact-form">
                         {% csrf_token %}
 
                         <div class="form-row">
                             <div class="form-group" style="flex: 1;">
-                                <label>{% translate "Full Name" %} *</label>
-                                <input type="text" name="name" required placeholder="Jane Doe">
+                                <label for="name">{% translate "Full Name" %} *</label>
+                                <input id="name" type="text" name="name" required placeholder="Jane Doe">
                             </div>
 
                             <div class="form-group" style="flex: 1;">
-                                <label>{% translate "Business Email" %} *</label>
-                                <input type="email" name="email" required placeholder="jane@company.com">
+                                <label for="email">{% translate "Business Email" %} *</label>
+                                <input id="email" type="email" name="email" required placeholder="jane@company.com">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label>{% translate "Inquiry Subject" %} *</label>
-                            <select name="subject" required>
+                            <label for="subject">{% translate "Inquiry Subject" %} *</label>
+                            <select id="subject" name="subject" required>
                                 <option value="" disabled selected>{% translate "Select a category..." %}</option>
-                                <option value="Testing">{% translate "Software Testing / QA Assurance" %}</option>
+                                <option value="Software Testing / QA">{% translate "Software Testing / QA" %}</option>
                                 <option value="QA Audit">{% translate "Request QA Audit" %}</option>
                                 <option value="Partnership">{% translate "General Partnership" %}</option>
                                 <option value="Careers">{% translate "Career Inquiry" %}</option>
@@ -304,20 +381,20 @@
                         </div>
 
                         <div class="form-group">
-                            <label>{% translate "Message" %} *</label>
-                            <textarea name="message" rows="5" required placeholder="{% translate 'Tell us about your project or needs...' %}"></textarea>
+                            <label for="message">{% translate "Message" %} *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="{% translate 'Tell us about your project or needs...' %}"></textarea>
                         </div>
 
                         <div class="form-group">
-                            <label class="checkbox-label" style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
-                                <input type="checkbox" name="consent" required style="width: 18px; height: 18px; margin-top: 3px;">
-                                <span style="font-size: 0.85rem; color: #64748b;">
+                            <label for="consent" class="checkbox-label">
+                                <input id="consent" type="checkbox" name="consent" required>
+                                <span>
                                     {% translate "I agree to the processing of my data to handle this inquiry." %}
                                 </span>
                             </label>
                         </div>
 
-                        <button type="submit" class="submit-btn">
+                        <button id="send-message-btn" type="submit" class="submit-btn">
                             {% translate "Send Message" %}
                         </button>
                     </form>
@@ -335,24 +412,22 @@
                         <p>Essen, Germany<br>{% translate "Serving Global Clients" %}</p>
                     </div>
 
-                    <div class="info-item" style="background: #f1f5f9; padding: 20px; border-radius: 12px;">
-                        <h4 style="font-size: 1rem;">{% translate "Working Hours" %}</h4>
-                        <p style="font-size: 0.85rem;">Mon - Fri: 09:00 - 18:00 CET</p>
+                    <div class="info-item working-hours-box">
+                        <h4>{% translate "Working Hours" %}</h4>
+                        <p>Mon - Fri: 09:00 - 18:00 CET</p>
                     </div>
                 </div>
 
             </div>
 
             <div class="timeline">
-                <h3 style="text-align: center; color: #0056b3; margin-bottom: 40px;">
-                    {% translate "What Happens Next?" %}
-                </h3>
+                <h3>{% translate "What Happens Next?" %}</h3>
 
                 <div class="timeline-grid">
                     <div class="step">
                         <div class="step-num">1</div>
                         <h5>{% translate "Submit Inquiry" %}</h5>
-                        <p style="font-size: 0.85rem; color: #64748b;">
+                        <p>
                             {% translate "Your project details are securely sent to our team." %}
                         </p>
                     </div>
@@ -360,7 +435,7 @@
                     <div class="step">
                         <div class="step-num">2</div>
                         <h5>{% translate "Expert Review" %}</h5>
-                        <p style="font-size: 0.85rem; color: #64748b;">
+                        <p>
                             {% translate "Our engineers analyze your technical requirements." %}
                         </p>
                     </div>
@@ -368,7 +443,7 @@
                     <div class="step">
                         <div class="step-num">3</div>
                         <h5>{% translate "Consultation" %}</h5>
-                        <p style="font-size: 0.85rem; color: #64748b;">
+                        <p>
                             {% translate "We schedule a discovery call and recommend the next steps." %}
                         </p>
                     </div>
