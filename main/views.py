@@ -109,6 +109,10 @@ Message:
                 reply_to=[email] if email else None,
             )
 
+            print("EMAIL_HOST_USER =", repr(settings.EMAIL_HOST_USER))
+            print("EMAIL_HOST_PASSWORD =", repr(settings.EMAIL_HOST_PASSWORD))
+            print("DEFAULT_FROM_EMAIL =", repr(settings.DEFAULT_FROM_EMAIL))
+
             contact_email.send(fail_silently=False)
 
             messages.success(
