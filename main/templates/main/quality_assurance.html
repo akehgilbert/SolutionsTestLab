@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block title %}
-{% translate "Quality Assurance" %} | SolutionsTestLab
+Qualitätssicherung | SolutionsTestLab
 {% endblock %}
 
 {% block content %}
@@ -200,7 +200,7 @@
         background: #0056b3;
         color: #ffffff;
     }
-
+	
     @media (max-width: 900px) {
         .qa-grid,
         .qa-compare-grid {
@@ -247,11 +247,11 @@
 </style>
 
 <section class="qa-hero">
-    <h1>{% translate "Quality Assurance" %}</h1>
-    <h2>{% translate "Build Quality Into Every Stage of Software Delivery." %}</h2>
+    <h1>Qualitätssicherung</h1>
+    <h2>Qualität in jede Phase der Softwareentwicklung integrieren.</h2>
 
     <p>
-        {% translate "Quality Assurance is more than finding bugs. It is a structured approach to preventing defects, improving development processes, reducing release risks, and ensuring that software meets business, technical, and user expectations. At SolutionsTestLab, we genuinely care about the quality of your software. By integrating quality into every stage of development, we help you reduce risk, accelerate delivery, and create products your users can trust." %}
+        Qualitätssicherung ist mehr als das Finden von Fehlern. Es ist ein strukturierter Ansatz zur Vermeidung von Qualitätsproblemen, zur Verbesserung von Entwicklungsprozessen und zur Reduzierung von Release-Risiken. Qualitätssicherung stellt sicher, dass Software geschäftliche, technische und Nutzeranforderungen erfüllt. Unser Auftrag bei SolutionsTestLab ist die Qualität Ihrer Software. Durch die Integration von QA-Prozessen in jede Entwicklungsphase helfen wir Ihnen, Risiken zu reduzieren, die Liefergeschwindigkeit zu erhöhen und Softwareprodukte zu entwickeln, denen Ihre Nutzer vertrauen können.
     </p>
 </section>
 
@@ -259,59 +259,59 @@
     <div class="qa-grid">
 
         <div class="qa-card">
-            <h3>{% translate "What is Quality Assurance?" %}</h3>
+            <h3>Was ist Qualitätssicherung?</h3>
 
             <p>
-                {% translate "Quality Assurance is the process of defining, monitoring, and improving the activities used to build and deliver software." %}
+                Qualitätssicherung ist der Prozess der Definition, Überwachung und Verbesserung flankierender QA-Maßnahmen während der Entwicklung und Bereitstellung von Software.
             </p>
 
             <p>
-                {% translate "Unlike software testing, which focuses on finding defects in the product, Quality Assurance focuses on improving the process that creates the product." %}
+                Im Gegensatz zum Software Testing, das sich auf das Finden von Fehlern konzentriert, fokussiert sich QA auf die Verbesserung von Prozessen.
             </p>
 
             <ul class="qa-list">
-                <li>{% translate "Clear quality standards" %}</li>
-                <li>{% translate "Strong testing processes" %}</li>
-                <li>{% translate "Early risk detection" %}</li>
-                <li>{% translate "Better communication" %}</li>
-                <li>{% translate "Reliable release decisions" %}</li>
-                <li>{% translate "Continuous improvement" %}</li>
+                <li>Klare Qualitätsstandards</li>
+                <li>Optimale Testprozesse</li>
+                <li>Frühe Risikoerkennung</li>
+                <li>Bessere Kommunikation</li>
+                <li>Fundierte Release-Entscheidungen</li>
+                <li>Kontinuierliche Verbesserung</li>
             </ul>
         </div>
 
         <div class="qa-card">
-            <h3>{% translate "Quality Assurance vs Software Testing" %}</h3>
+            <h3>Qualitätssicherung vs. Software Testing</h3>
 
             <p>
-                {% translate "Quality Assurance and Software Testing are connected, but they are not the same." %}
+                Qualitätssicherung und Software Testing sind miteinander verbunden, aber nicht dasselbe.
             </p>
 
             <div class="qa-compare-grid">
                 <div class="qa-mini-card">
-                    <h4>{% translate "Quality Assurance" %}</h4>
+                    <h4>Qualitätssicherung</h4>
                     <p>
-                        {% translate "QA focuses on preventing problems before they happen by improving processes, standards, planning, and quality controls." %}
+                        QA konzentriert sich darauf, Probleme zu verhindern, bevor sie entstehen, und zwar durch bessere Prozesse, Standards und Planung.
                     </p>
                     <ul class="qa-list">
-                        <li>{% translate "Process improvement" %}</li>
-                        <li>{% translate "Quality standards" %}</li>
-                        <li>{% translate "Test strategy" %}</li>
-                        <li>{% translate "Risk prevention" %}</li>
-                        <li>{% translate "Release governance" %}</li>
+                        <li>Prozessverbesserung</li>
+                        <li>Qualitätsstandards</li>
+                        <li>Teststrategie</li>
+                        <li>Risikovermeidung</li>
+                        <li>Release-Governance</li>
                     </ul>
                 </div>
 
                 <div class="qa-mini-card">
-                    <h4>{% translate "Software Testing" %}</h4>
+                    <h4>Software Testing</h4>
                     <p>
-                        {% translate "Testing focuses on detecting problems in the application by executing tests and reporting defects." %}
+                        Testing konzentriert sich auf das Erkennen von Problemen durch Testausführung und Fehlerberichte.
                     </p>
                     <ul class="qa-list">
-                        <li>{% translate "Test execution" %}</li>
-                        <li>{% translate "Defect discovery" %}</li>
-                        <li>{% translate "Functional validation" %}</li>
-                        <li>{% translate "Retesting" %}</li>
-                        <li>{% translate "Test reports" %}</li>
+                        <li>Testausführung</li>
+                        <li>Fehlererkennung</li>
+                        <li>Funktionale Validierung</li>
+                        <li>Retesting</li>
+                        <li>Testberichte</li>
                     </ul>
                 </div>
             </div>
@@ -319,143 +319,143 @@
 
         <div class="qa-card qa-image-card">
             <img src="{% static 'images/SolutionsTestLab_4.jpg' %}"
-                 alt="{% translate 'Quality Assurance Strategy Meeting' %}">
+                 alt="Strategiemeeting zur Qualitätssicherung">
 
             <div class="qa-image-content">
-                <h3>{% translate "Why Quality Assurance?" %}</h3>
+                <h3>Warum Qualitätssicherung?</h3>
 
                 <p>
-                    {% translate "Without proper QA, companies often face unstable releases, unclear requirements, repeated defects, poor communication, and expensive production fixes." %}
+                    Ohne geeignete QA stehen Unternehmen oft vor instabilen Releases, unklaren Anforderungen, immer wiederkehrenden Fehlern, schlechtem Teamwork und teuren Produktionsproblemen.
                 </p>
 
                 <p>
-                    {% translate "Quality Assurance helps organizations build reliable software by introducing structure, visibility, and control into the development lifecycle." %}
+                    Qualitätssicherung hilft Organisationen, zuverlässige Software zu entwickeln, indem sie Struktur, Transparenz und Kontrolle in den Entwicklungsprozess bringt.
                 </p>
 
                 <ul class="qa-list">
-                    <li>{% translate "Reduce software defects" %}</li>
-                    <li>{% translate "Prevent repeated mistakes" %}</li>
-                    <li>{% translate "Improve team collaboration" %}</li>
-                    <li>{% translate "Increase release confidence" %}</li>
-                    <li>{% translate "Lower the cost of fixing issues" %}</li>
-                    <li>{% translate "Build trust with users and stakeholders" %}</li>
+                    <li>Softwarefehler reduzieren</li>
+                    <li>Wiederholte Fehler vermeiden</li>
+                    <li>Teamzusammenarbeit verbessern</li>
+                    <li>Release-Sicherheit erhöhen</li>
+                    <li>Fehlerkosten senken</li>
+                    <li>Vertrauen aufbauen</li>
                 </ul>
             </div>
         </div>
 
         <div class="qa-card">
-            <h3>{% translate "QA Strategy & Planning" %}</h3>
+            <h3>QA-Strategie & Planung</h3>
 
             <p>
-                {% translate "A strong QA process begins with a clear strategy. We help define how quality will be managed across your project, including what needs to be tested, how testing will be performed, who is responsible, and when the software is ready for release." %}
+                Ein guter QA-Prozess beginnt mit einer klaren Strategie. Wir helfen dabei, Qualität zu managen.
             </p>
 
             <ul class="qa-list">
-                <li>{% translate "QA strategy definition" %}</li>
-                <li>{% translate "Test planning" %}</li>
-                <li>{% translate "Risk-based testing approach" %}</li>
-                <li>{% translate "Entry and exit criteria" %}</li>
-                <li>{% translate "Test coverage planning" %}</li>
-                <li>{% translate "Release quality goals" %}</li>
+                <li>QA-Strategiedefinition</li>
+                <li>Testplanung</li>
+                <li>Risiko-basierter Ansatz</li>
+                <li>Quality Gates</li>
+                <li>Testabdeckung</li>
+                <li>Release-Ziele</li>
             </ul>
         </div>
 
         <div class="qa-card qa-image-card">
             <img src="{% static 'images/SolutionsTestLab_5.jpg' %}"
-                 alt="{% translate 'QA Process Improvement Workflow' %}">
+                 alt="QA-Prozessverbesserung Workflow">
 
             <div class="qa-image-content">
-                <h3>{% translate "QA Process Improvement" %}</h3>
+                <h3>QA-Prozessverbesserung</h3>
 
                 <p>
-                    {% translate "Quality Assurance is not only about one release. It is about improving how your organization builds software over time." %}
+                    QA ist nicht nur eine Aktivität für ein einzelnes Release, sondern hat eine kontinuierliche Verbesserung der Softwareentwicklung als Ziel.
                 </p>
 
                 <p>
-                    {% translate "We assess existing QA practices, identify gaps, and recommend practical improvements that increase efficiency, visibility, and product reliability." %}
+                    Wir analysieren bestehende Prozesse und verbessern Effizienz, Transparenz und Qualität.
                 </p>
 
                 <ul class="qa-list">
-                    <li>{% translate "QA process assessment" %}</li>
-                    <li>{% translate "Gap analysis" %}</li>
-                    <li>{% translate "Workflow improvement" %}</li>
-                    <li>{% translate "Defect prevention practices" %}</li>
-                    <li>{% translate "Quality metrics" %}</li>
-                    <li>{% translate "Continuous improvement roadmap" %}</li>
+                    <li>QA-Prozessanalyse</li>
+                    <li>Lückenanalyse</li>
+                    <li>Workflow-Optimierung</li>
+                    <li>Fehlerprävention</li>
+                    <li>Qualitätsmetriken</li>
+                    <li>Verbesserungs-Roadmap</li>
                 </ul>
             </div>
         </div>
 
         <div class="qa-card">
-            <h3>{% translate "Defect Prevention & Quality Control" %}</h3>
+            <h3>Fehlerprävention & Qualitätskontrolle</h3>
 
             <p>
-                {% translate "Good QA helps prevent defects before they reach testing or production. We support teams with structured reviews, better requirements validation, improved test coverage, and quality checkpoints throughout the software lifecycle." %}
+                Gute QA verhindert Fehler bereits vor der Test- oder Produktionsphase.
             </p>
 
             <ul class="qa-list">
-                <li>{% translate "Requirement review" %}</li>
-                <li>{% translate "Acceptance criteria review" %}</li>
-                <li>{% translate "Test case review" %}</li>
-                <li>{% translate "Quality checkpoints" %}</li>
-                <li>{% translate "Defect trend analysis" %}</li>
-                <li>{% translate "Root cause analysis" %}</li>
+                <li>Anforderungsprüfung</li>
+                <li>Review der Akzeptanzkriterien</li>
+                <li>Testfall-Review</li>
+                <li>Qualitätsprüfpunkte</li>
+                <li>Fehlertrendanalyse</li>
+                <li>Ursachenanalyse</li>
             </ul>
         </div>
 
         <div class="qa-card">
-            <h3>{% translate "Release Readiness & Quality Reporting" %}</h3>
+            <h3>Release-Bereitschaft & Reporting</h3>
 
             <p>
-                {% translate "Before software is released, business leaders need clear answers: Is the product stable? What risks remain? Are defects under control? Is the release ready?" %}
+                Vor jedem Release braucht es klare Entscheidungen über Qualität und Risiko.
             </p>
 
             <p>
-                {% translate "We provide transparent quality reporting and release readiness insights to support informed go/no-go decisions." %}
+                {% translate "Wir bewerten die Release-Readiness und unterstützen beim Treffen fundierter go/no-go-Entscheidungen}
             </p>
 
             <ul class="qa-list">
-                <li>{% translate "Release readiness assessment" %}</li>
-                <li>{% translate "Quality dashboards" %}</li>
-                <li>{% translate "Defect summary reports" %}</li>
-                <li>{% translate "Test coverage reports" %}</li>
-                <li>{% translate "Risk status reporting" %}</li>
-                <li>{% translate "Go / No-Go recommendations" %}</li>
+                <li>Release-Readiness-Check</li>
+                <li>Qualitäts-Dashboards</li>
+                <li>Fehlerberichte</li>
+                <li>Testabdeckung</li>
+                <li>Risikoanalyse</li>
+                <li>Go/No-Go Empfehlungen</li>
             </ul>
         </div>
 
         <div class="qa-card">
-            <h3>{% translate "Our Quality Assurance Services" %}</h3>
+            <h3>Unsere QA-Services</h3>
 
             <p>
-                {% translate "SolutionsTestLab provides practical QA consulting and process support for organizations that want stronger quality control across their software lifecycle." %}
+                SolutionsTestLab bietet umfassende QA-Beratung und Prozessunterstützung.
             </p>
 
             <ul class="qa-services-list">
-                <li>{% translate "QA Strategy & Planning" %}</li>
-                <li>{% translate "QA Process Assessment" %}</li>
-                <li>{% translate "Test Strategy Development" %}</li>
-                <li>{% translate "Quality Governance" %}</li>
-                <li>{% translate "Release Readiness Assessment" %}</li>
-                <li>{% translate "Defect Management Process" %}</li>
-                <li>{% translate "Requirements Review" %}</li>
-                <li>{% translate "Test Coverage Analysis" %}</li>
-                <li>{% translate "Quality Metrics & Reporting" %}</li>
-                <li>{% translate "QA Process Improvement Consulting" %}</li>
+                <li>QA-Strategie & Planung</li>
+                <li>QA-Prozessanalyse</li>
+                <li>Teststrategie-Entwicklung</li>
+                <li>Qualitäts-Governance</li>
+                <li>Release-Readiness</li>
+                <li>Fehlermanagement</li>
+                <li>Anforderungsprüfung</li>
+                <li>Testabdeckung</li>
+                <li>Qualitätsmetriken</li>
+                <li>QA-Optimierung</li>
             </ul>
         </div>
 
     </div>
 
     <div class="qa-cta">
-        <h2>{% translate "Need a Stronger QA Process?" %}</h2>
+        <h2>Benötigen Sie einen besseren QA-Prozess?</h2>
 
         <p>
-            {% translate "SolutionsTestLab helps you prevent defects, improve software delivery processes, and release products with greater confidence." %}
+            SolutionsTestLab hilft Ihnen, Fehler zu vermeiden, Prozesse zu verbessern und Software mit hoher Qualität auszuliefern.
         </p>
 
         <a href="{% url 'contact' %}">
-            {% translate "Request a QA Consultation" %}
+            QA-Beratung anfordern
         </a>
     </div>
 </section>

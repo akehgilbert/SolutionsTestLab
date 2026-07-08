@@ -7,7 +7,7 @@
             <a href="{% url 'home' %}">
                 <img
                     src="{% static 'images/Logo_new.png' %}"
-                    alt="{% translate 'SolutionsTestLab Logo' %}"
+                    alt="SolutionsTestLab Logo"
                     class="navbar-logo"
                 >
             </a>
@@ -17,51 +17,51 @@
 
             <li>
                 <a href="{% url 'home' %}">
-                    {% translate "Home" %}
+                    Startseite
                 </a>
             </li>
 
             <li>
                 <a href="{% url 'about' %}">
-                    {% translate "About" %}
+                    Über uns
                 </a>
             </li>
 
             <li class="nav-dropdown">
                 <button type="button" class="nav-link-btn">
-                    {% translate "Services" %} ▾
+                    Leistungen ▾
                 </button>
 
                 <div class="dropdown-menu">
                     <a href="{% url 'quality_assurance' %}">
-                        {% translate "Quality Assurance" %}
+                        Qualitätssicherung
                     </a>
 
                     <a href="{% url 'software_testing' %}">
-                        {% translate "Software Testing" %}
+                        Softwaretests
                     </a>
 
                     <a href="{% url 'test_management' %}">
-                        {% translate "Test Management" %}
+                        Testmanagement
                     </a>
                 </div>
             </li>
 
             <li>
                 <a href="{% url 'careers' %}">
-                    {% translate "Careers" %}
+                    Karriere
                 </a>
             </li>
 
             <li>
                 <a href="{% url 'contact' %}">
-                    {% translate "Contact" %}
+                    Kontakt
                 </a>
             </li>
 
             <li>
                 <a href="{% url 'blog' %}">
-                    {% translate "Blog" %}
+                    Blog
                 </a>
             </li>
 
@@ -85,7 +85,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="next" value="/en/">
                         <button type="submit" name="language" value="en">
-                            🇬🇧 English
+                            🇬🇧 Englisch
                         </button>
                     </form>
 
@@ -93,7 +93,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="next" value="/fr/">
                         <button type="submit" name="language" value="fr">
-                            🇫🇷 Français
+                            🇫🇷 Französisch
                         </button>
                     </form>
 
@@ -101,7 +101,7 @@
                         {% csrf_token %}
                         <input type="hidden" name="next" value="/nl/">
                         <button type="submit" name="language" value="nl">
-                            🇳🇱 Nederlands
+                            🇳🇱 Niederländisch
                         </button>
                     </form>
 
@@ -110,7 +110,7 @@
 
             <li>
                 <a class="nav-cta" href="{% url 'contact' %}">
-                    {% translate "Request QA Audit" %}
+                    QA-Audit anfordern
                 </a>
             </li>
 

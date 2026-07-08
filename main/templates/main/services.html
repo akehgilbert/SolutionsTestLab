@@ -1,9 +1,9 @@
-```html
+HTML
 {% extends "main/base.html" %}
 {% load static i18n %}
 
 {% block title %}
-{% translate "Services" %} | SolutionsTestLab
+Dienstleistungen | SolutionsTestLab
 {% endblock %}
 
 {% block content %}
@@ -189,11 +189,11 @@
     }
 
     .content-toggle:checked ~ .read-more-btn::before {
-        content: "{% translate 'Read Less' %}";
+        content: "Weniger";
     }
 
     .content-toggle:not(:checked) ~ .read-more-btn::before {
-        content: "{% translate 'Read More' %}";
+        content: "Mehr";
     }
 
     .test-management-section {
@@ -435,65 +435,65 @@
 <div class="main-wrapper">
 
     <div class="intro-header-container">
-        <h1>{% translate "Our Services" %}</h1>
+        <h1>Unsere Dienstleistungen</h1>
         <p>
-            {% translate "At SolutionsTestLab, we combine eagle-eye precision with technical excellence to build, test, and perfect reliable software solutions." %}
+            Bei SolutionsTestLab verbinden wir höchste Präzision mit technischer Exzellenz, um zuverlässige Softwarelösungen zu entwickeln, zu testen und zu perfektionieren.
         </p>
     </div>
 
     <div class="services-grid">
 
         <div class="service-card" id="development">
-            <h2>{% translate "Software Development" %}</h2>
+            <h2>Softwareentwicklung</h2>
 
             <input type="checkbox" id="dev-toggle" class="content-toggle">
 
             <div class="card-content">
                 <p>
-                    {% translate "At SolutionsTestLab, we do not view software development as a simple linear task. We see it as a high-stakes engineering process where every line of code impacts the reliability, usability, and security of your business." %}
+                    Bei SolutionsTestLab betrachten wir die Softwareentwicklung nicht als einfache lineare Aufgabe. Wir sehen sie als einen hochentwickelten Engineering-Prozess, bei dem jede Zeile Code Auswirkungen auf die Zuverlässigkeit, Benutzerfreundlichkeit und Sicherheit Ihrer Unternehmenssoftware hat.
                 </p>
 
-                <h3>{% translate "Core Pillars" %}</h3>
+                <h3>Kernpfeiler</h3>
 
-                <p><strong>1. {% translate "Requirements:" %}</strong> {% translate "We bridge business goals and technical reality." %}</p>
-                <p><strong>2. {% translate "Architecture:" %}</strong> {% translate "We design robust digital foundations built for longevity." %}</p>
-                <p><strong>3. {% translate "Implementation:" %}</strong> {% translate "We follow clean-code principles to reduce technical debt." %}</p>
-                <p><strong>4. {% translate "Integrated QA:" %}</strong> {% translate "We apply shift-left testing from day one." %}</p>
-                <p><strong>5. {% translate "DevOps:" %}</strong> {% translate "We support CI/CD pipelines for reliable deployment." %}</p>
-                <p><strong>6. {% translate "Evolution:" %}</strong> {% translate "We support maintenance, security patching, and scaling." %}</p>
+                <p><strong>1. Anforderungen:</strong> Wir schlagen die Brücke zwischen geschäftlichen Anforderungen und technischer Realisierbarkeit.</p>
+                <p><strong>2. Architektur:</strong> Wir entwerfen robuste digitale Lösungen, die auf Langlebigkeit ausgelegt sind.</p>
+                <p><strong>3. Implementierung:</strong> Wir folgen Clean-Code-Prinzipien, um technische Schulden zu reduzieren.</p>
+                <p><strong>4. Integrierte QS:</strong> Wir setzen vom ersten Tag an auf Shift-Left-Testing.</p>
+                <p><strong>5. DevOps:</strong> Wir unterstützen CI/CD-Pipelines für eine zuverlässige Bereitstellung.</p>
+                <p><strong>6. Evolution:</strong> Wir unterstützen Wartung, Sicherheits-Patches und Skalierung.</p>
             </div>
 
             <label for="dev-toggle" class="read-more-btn"></label>
         </div>
 
         <div class="service-card" id="testing" style="border-top-color: #00acee;">
-            <h2>{% translate "Software Testing" %}</h2>
+            <h2>Softwaretests</h2>
 
             <input type="checkbox" id="test-toggle" class="content-toggle">
 
             <div class="card-content">
                 <p>
-                    {% translate "Software testing is a core consulting discipline designed to ensure reliability, performance, and confidence in every solution we support." %}
+                    Softwaretests sind unsere zentrale Beratungskompetenz, die darauf ausgelegt ist, Zuverlässigkeit, Leistung und Vertrauen in jede von uns unterstützte Lösung zu gewährleisten.
                 </p>
 
                 <p>
-                    {% translate "Our consultants apply a structured, risk-based testing approach to identify defects early, validate business requirements, and safeguard system stability throughout the development lifecycle." %}
+                    Unsere Berater wenden einen strukturierten, risikobasierten Testansatz an, um Fehler frühzeitig zu identifizieren, geschäftliche Anforderungen zu validieren und die Systemstabilität über den gesamten Entwicklungslebenszyklus hinweg zu sichern.
                 </p>
 
-                <h3>{% translate "Testing Services Include" %}</h3>
+                <h3>Unsere Testdienstleistungen umfassen</h3>
                 <ul>
-                    <li>{% translate "Functional testing" %}</li>
-                    <li>{% translate "Regression testing" %}</li>
-                    <li>{% translate "Manual testing" %}</li>
-                    <li>{% translate "User acceptance testing" %}</li>
-                    <li>{% translate "Cross-browser testing" %}</li>
-                    <li>{% translate "Mobile and web application testing" %}</li>
-                    <li>{% translate "API testing" %}</li>
-                    <li>{% translate "Bug reporting and retesting" %}</li>
+                    <li>Funktionale Tests</li>
+                    <li>Regressionstests</li>
+                    <li>Manuelle Tests</li>
+                    <li>Benutzerakzeptanztests (UAT)</li>
+                    <li>Browserübergreifende Tests</li>
+                    <li>Tests von Mobil- und Webanwendungen</li>
+                    <li>API-Tests</li>
+                    <li>Fehlerberichterstattung und Nachtests</li>
                 </ul>
 
                 <p>
-                    {% translate "By integrating testing into agile delivery models and CI/CD pipelines, we help organizations reduce defects, improve software quality, and accelerate time-to-market." %}
+                    Durch die Integration von Tests in agile Bereitstellungsmodelle und CI/CD-Pipelines helfen wir Unternehmen dabei, Fehler zu reduzieren, die Softwarequalität zu verbessern und die Markteinführung zu beschleunigen.
                 </p>
             </div>
 
@@ -501,31 +501,31 @@
         </div>
 
         <div class="service-card" id="qa">
-            <h2>{% translate "Quality Assurance" %}</h2>
+            <h2>Qualitätssicherung</h2>
 
             <input type="checkbox" id="qa-toggle" class="content-toggle">
 
             <div class="card-content">
                 <p>
-                    {% translate "Quality Assurance is more than testing — it is a strategic consulting service embedded throughout the entire software lifecycle." %}
+                    Qualitätssicherung ist mehr als nur Testen – es ist eine strategische Beratungsdienstleistung, die in den gesamten Softwarelebenszyklus eingebettet ist.
                 </p>
 
                 <p>
-                    {% translate "Our QA consultants apply an eagle-eye approach to identify risks early, establish robust processes, and ensure software quality is built in from day one." %}
+                    Unsere QS-Berater nutzen einen präzisen Ansatz („Eagle-Eye“), um Risiken frühzeitig zu erkennen, robuste Prozesse zu etablieren und sicherzustellen, dass Softwarequalität vom ersten Tag im Rahmen der Software-Entwicklung berücksichtigt wird.
                 </p>
 
-                <h3>{% translate "QA Support Includes" %}</h3>
+                <h3>Unsere QS-Unterstützung umfasst</h3>
                 <ul>
-                    <li>{% translate "QA strategy and planning" %}</li>
-                    <li>{% translate "Test case design" %}</li>
-                    <li>{% translate "Defect management process" %}</li>
-                    <li>{% translate "Quality metrics and reporting" %}</li>
-                    <li>{% translate "Release readiness assessment" %}</li>
-                    <li>{% translate "Process improvement consulting" %}</li>
+                    <li>QS-Strategie und -Planung</li>
+                    <li>Testfalldesign</li>
+                    <li>Fehlermanagementprozess</li>
+                    <li>Qualitätsmetriken und Berichterstattung</li>
+                    <li>Bewertung der Release-Readiness</li>
+                    <li>Beratung zur Prozessverbesserung</li>
                 </ul>
 
                 <p>
-                    {% translate "We define clear defect management processes, oversee test execution quality, and provide transparent reporting that enables data-driven decisions for business growth." %}
+                    Wir definieren klare Fehlermanagementprozesse, überwachen die Qualität der Testausführung und bieten ein transparentes Reporting, das datengestützte Entscheidungen ermöglicht.
                 </p>
             </div>
 
@@ -537,12 +537,12 @@
     <section class="test-management-section" id="test-management">
 
         <div class="test-management-header">
-            <div class="test-management-label">{% translate "Test Management" %}</div>
+            <div class="test-management-label">Testmanagement</div>
 
-            <h2>{% translate "Plan. Coordinate. Deliver Quality." %}</h2>
+            <h2>Planen. Koordinieren. Qualität liefern.</h2>
 
             <p>
-                {% translate "We help organizations establish structured testing processes that improve visibility, reduce risks, and ensure successful software releases. Our Test Management services provide planning, coordination, reporting, and quality governance across the entire testing lifecycle." %}
+                Wir helfen Unternehmen dabei, strukturierte Testprozesse zu etablieren, die die Sichtbarkeit verbessern, Risiken reduzieren und erfolgreiche Software-Releases gewährleisten. Unsere Testmanagement-Services bieten Planung, Koordination, Reporting und Qualitäts-Governance über den gesamten Testlebenszyklus hinweg.
             </p>
         </div>
 
@@ -550,83 +550,83 @@
 
             <div class="tm-card tm-card-image">
                 <img src="{% static 'images/test_management.png' %}"
-                     alt="{% translate 'Test Management Overview' %}">
+                     alt="Testmanagement-Übersicht">
 
                 <div class="tm-card-image-content">
-                    <h3>{% translate "What is Test Management?" %}</h3>
+                    <h3>Was ist Testmanagement?</h3>
 
                     <p>
-                        {% translate "Planning and controlling the entire software testing process to ensure quality, efficiency, and successful releases." %}
+                        Die Planung und Steuerung des gesamten Softwaretestprozesses, um Qualität, Effizienz und erfolgreiche Releases zu gewährleisten.
                     </p>
 
                     <p>
-                        {% translate "We organize testing activities, coordinate teams, manage test cases and defects, and provide clear visibility into the quality of your software throughout the development lifecycle." %}
+                        Wir organisieren Testaktivitäten, koordinieren Teams, verwalten Testfälle sowie Fehler und sorgen für eine klare Transparenz bezogen auf die Qualität Ihrer Software während des gesamten Entwicklungslebenszyklus.
                     </p>
 
                     <ul class="tm-list">
-                        <li>{% translate "Test Strategy" %}</li>
-                        <li>{% translate "Test Planning" %}</li>
-                        <li>{% translate "Test Coordination" %}</li>
-                        <li>{% translate "Test Monitoring" %}</li>
-                        <li>{% translate "Quality Reporting" %}</li>
+                        <li>Teststrategie</li>
+                        <li>Testplanung</li>
+                        <li>Testkoordination</li>
+                        <li>Testüberwachung</li>
+                        <li>Reporting</li>
                     </ul>
                 </div>
             </div>
 
             <div class="tm-card">
-                <h3>{% translate "Why Test Management?" %}</h3>
+                <h3>Warum Testmanagement?</h3>
 
                 <p>
-                    {% translate "Without proper test management, projects often suffer from missed defects, unclear responsibilities, delayed releases, and increased costs." %}
+                    Ohne strukturiertes Testmanagement leiden Projekte häufig unter unentdeckten Fehlern, unklaren Verantwortlichkeiten, verzögerten Releases und erhöhten Kosten.
                 </p>
 
-                <p><strong>{% translate "Our Test Management service helps you:" %}</strong></p>
+                <p><strong>Unser Testmanagement-Service hilft Ihnen dabei:</strong></p>
 
                 <ul class="tm-list">
-                    <li>{% translate "Reduce project risks" %}</li>
-                    <li>{% translate "Improve software quality" %}</li>
-                    <li>{% translate "Increase release confidence" %}</li>
-                    <li>{% translate "Enhance collaboration between developers and testers" %}</li>
-                    <li>{% translate "Deliver projects on time and within budget" %}</li>
+                    <li>Projektrisiken zu reduzieren</li>
+                    <li>Die Softwarequalität zu verbessern</li>
+                    <li>Das Vertrauen in die Software zu stärken</li>
+                    <li>Die Zusammenarbeit zwischen Entwicklern und Testern zu verbessern</li>
+                    <li>Projekte pünktlich und im Rahmen des Budgets bereitzustellen</li>
                 </ul>
             </div>
 
             <div class="tm-card">
-                <h3>{% translate "Responsibilities of a Test Manager" %}</h3>
+                <h3>Aufgaben eines Testmanagers</h3>
 
                 <p>
-                    {% translate "A Test Manager ensures that testing activities are properly planned, executed, and monitored." %}
+                    Ein Testmanager stellt sicher, dass Testaktivitäten strukturiert geplant, ausgeführt und überwacht werden.
                 </p>
 
                 <ul class="tm-list">
-                    <li>{% translate "Developing the test strategy" %}</li>
-                    <li>{% translate "Creating test plans" %}</li>
-                    <li>{% translate "Managing testing schedules" %}</li>
-                    <li>{% translate "Coordinating QA teams" %}</li>
-                    <li>{% translate "Monitoring test execution" %}</li>
-                    <li>{% translate "Managing defects and bug triage" %}</li>
-                    <li>{% translate "Reporting quality metrics" %}</li>
-                    <li>{% translate "Supporting release decisions" %}</li>
+                    <li>Entwicklung der Teststrategie</li>
+                    <li>Erstellung von Testplänen</li>
+                    <li>Verwaltung von Zeitplänen für Tests</li>
+                    <li>Steuerung von Testteams</li>
+                    <li>Überwachung der Testausführung</li>
+                    <li>Fehlermanagement und Bug-Management</li>
+                    <li>Reporting von Qualitätsmetriken</li>
+                    <li>Unterstützung bei Release-Entscheidungen</li>
                 </ul>
             </div>
 
             <div class="tm-card">
-                <h3>{% translate "Our Test Management Services" %}</h3>
+                <h3>Unsere Testmanagement-Services</h3>
 
                 <p>
-                    {% translate "SolutionsTestLab provides end-to-end Test Management support for organizations of all sizes." %}
+                    SolutionsTestLab bietet eine durchgängige Testmanagement-Unterstützung für Unternehmen jeder Größe.
                 </p>
 
                 <ul class="tm-services-list">
-                    <li>{% translate "Test Strategy & Planning" %}</li>
-                    <li>{% translate "Test Case Management" %}</li>
-                    <li>{% translate "Defect & Bug Management" %}</li>
-                    <li>{% translate "QA Governance" %}</li>
-                    <li>{% translate "Release Readiness Assessment" %}</li>
-                    <li>{% translate "Risk-Based Testing" %}</li>
-                    <li>{% translate "Requirements Traceability" %}</li>
-                    <li>{% translate "Test Reporting & Dashboards" %}</li>
-                    <li>{% translate "Jira, Azure DevOps & TestRail Administration" %}</li>
+                    <li>Teststrategie & -planung</li>
+                    <li>Testfallmanagement</li>
+                    <li>Fehler- & Bugmanagement</li>
+                    <li>QS-Governance</li>
+                    <li>Bewertung der Release-Readiness</li>
+                    <li>Risikobasiertes Testen</li>
+                    <li>Rückverfolgbarkeit von Anforderungen</li>
+                    <li>Testberichte & Dashboards</li>
+                    <li>Administration von Jira, Azure DevOps & TestRail</li>
                 </ul>
             </div>
 
@@ -634,26 +634,25 @@
 
         <div class="tm-cta-card">
             <div>
-                <h3>{% translate "Need a Dedicated Test Manager?" %}</h3>
+                <h3>Benötigen Sie einen dedizierten Testmanager?</h3>
                 <p>
-                    {% translate "Many organizations have development teams but lack dedicated QA leadership. SolutionsTestLab can act as your external Test Management partner, helping you establish structured QA processes and deliver software with confidence." %}
+                    Viele Unternehmen verfügen zwar über Entwicklungsteams, aber es fehlt ihnen an einem dedizierten Testmanagement. SolutionsTestLab kann als Ihr externer Testmanagement-Partner fungieren und Ihnen dabei helfen, strukturierte QS-Prozesse zu etablieren und Software mit hoher Qualität auszuliefern.
                 </p>
             </div>
 
             <a href="{% url 'contact' %}">
-                {% translate "Request a Test Management Consultation" %}
+                Testmanagement-Beratung anfordern
             </a>
         </div>
 
     </section>
 
     <div class="cta-area">
-        <h2 style="color:#0056b3;">{% translate "Need a Custom QA Plan?" %}</h2>
-        <p>{% translate "Tell us about your software and we will recommend the right testing approach." %}</p>
-        <a href="{% url 'contact' %}">{% translate "Request a Consultation" %}</a>
+        <h2 style="color:#0056b3;">Benötigen Sie einen maßgeschneiderten QS-Plan?</h2>
+        <p>Erzählen Sie uns von Ihrer Software, und wir empfehlen Ihnen den passenden Testansatz.</p>
+        <a href="{% url 'contact' %}">Beratung anfordern</a>
     </div>
 
 </div>
 
-{% endblock %}
-```
+{% endblock %

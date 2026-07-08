@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block title %}
-SolutionsTestLab | {% translate "Home" %}
+SolutionsTestLab | Startseite
 {% endblock %}
 
 {% block content %}
@@ -15,27 +15,27 @@ SolutionsTestLab | {% translate "Home" %}
     <div class="hero-overlay"></div>
 
     <div class="hero-content">
-        <h1>SolutionsTestLab - Precision Software Testing</h1>
+        <h1>SolutionsTestLab - Präzises Software Testing</h1>
 
         <h2>
-            {% translate "Precision Software Testing That Protects Your Business" %}
+            Präzises Software Testing, das Ihr Unternehmen schützt
         </h2>
 
         <p>
-            {% translate "We help companies release stable, secure, and high-performing software by detecting problems before customers do." %}
+            Wir helfen Unternehmen dabei, qualitativ hochwertige Software zu entwickeln, indem wir Probleme erkennen, bevor Kunden sie sehen.
         </p>
 
         <p class="hero-tagline">
-            {% translate "Eagle-Eye Precision in every line of code." %}
+            Adleraugen-Präzision mit jeder Codezeile.
         </p>
 
         <div class="hero-buttons">
             <a href="{% url 'contact' %}" class="btn-primary">
-                {% translate "Book a Free Consultation" %}
+                Kostenlose Beratung buchen
             </a>
 
             <a href="{% url 'software_testing' %}" class="btn-secondary">
-                {% translate "Explore Services" %}
+                Services entdecken
             </a>
         </div>
     </div>
@@ -45,26 +45,26 @@ SolutionsTestLab | {% translate "Home" %}
     <div class="problem-container">
 
         <div class="problem-left">
-            <h2>{% translate "We Solve the Software Quality Problems Companies Cannot Afford" %}</h2>
+            <h2>Wir lösen Software-Qualitätsprobleme</h2>
 
             <p class="problem-intro">
-                {% translate "Bugs, unstable releases, poor performance, and weak user experience can damage trust. SolutionsTestLab helps you reduce risk, improve reliability, and launch with confidence." %}
+                Fehler, instabile Releases, schlechte Performance und schlechte User Experience können Vertrauen zerstören. SolutionsTestLab hilft Ihnen, Risiken zu reduzieren und mit hoher Qualität in Produktion zu gehen.
             </p>
 
             <div class="solution-grid">
                 <div class="solution-card">
-                    <h3>{% translate "Find Bugs Early" %}</h3>
-                    <p>{% translate "We detect issues before they reach your customers, saving time, money, and brand reputation." %}</p>
+                    <h3>Fehler früh finden</h3>
+                    <p>Wir erkennen Probleme, bevor sie Ihre Kunden erkennen, und sparen so Zeit, Geld und schützen Ihre Marke.</p>
                 </div>
 
                 <div class="solution-card">
-                    <h3>{% translate "Release Faster" %}</h3>
-                    <p>{% translate "Structured QA helps your development team move faster without sacrificing software quality." %}</p>
+                    <h3>Schneller live gehen</h3>
+                    <p>Strukturiertes Testen hilft Ihrem Entwicklungsteam, schneller zu arbeiten, ohne die Softwarequalität zu beeinträchtigen.</p>
                 </div>
 
                 <div class="solution-card">
-                    <h3>{% translate "Protect Your Brand" %}</h3>
-                    <p>{% translate "Reliable software creates better customer trust, fewer complaints, and stronger digital experiences." %}</p>
+                    <h3>Marke schützen</h3>
+                    <p>Zuverlässige Software schafft mehr Vertrauen, weniger Probleme und bessere digitale Erlebnisse.</p>
                 </div>
             </div>
         </div>
@@ -72,7 +72,7 @@ SolutionsTestLab | {% translate "Home" %}
         <div class="problem-right">
             <img
                 src="{% static 'images/SolutionsTestLab_3.jpg' %}"
-                alt="{% translate 'Software quality team meeting' %}"
+                alt="Team für Softwarequalität im Meeting"
                 class="problem-photo"
             >
         </div>
@@ -86,19 +86,19 @@ SolutionsTestLab | {% translate "Home" %}
         <div class="showcase-image">
             <img
                 src="{% static 'images/SolutionsTestLab_2.jpg' %}"
-                alt="{% translate 'QA planning meeting' %}"
+                alt="QA-Planungsmeeting"
             >
         </div>
 
         <div class="showcase-text">
-            <h2>{% translate "Quality Through Collaboration" %}</h2>
+            <h2>Qualität durch Zusammenarbeit</h2>
 
             <p>
-                {% translate "Successful software quality is built through strong collaboration between testers, developers, business stakeholders, and project managers. At SolutionsTestLab, we help organizations create structured testing processes that improve communication, reduce risks, and deliver reliable software products." %}
+                Erfolgreiche Softwarequalität entsteht durch gute Zusammenarbeit zwischen Testern, Entwicklern, Business-Stakeholdern und Projektmanagern. Bei SolutionsTestLab helfen wir Unternehmen dabei, strukturierte Testprozesse aufzubauen, die Kommunikation im Team zu verbessern, Risiken zu reduzieren und zuverlässige Softwareprodukte zu liefern.
             </p>
 
             <p>
-                {% translate "Our approach combines Quality Assurance, Software Testing, and Test Management to ensure that every release meets business goals and user expectations." %}
+                Unser Ansatz kombiniert Quality Assurance, Software Testing und Testmanagement, um sicherzustellen, dass jedes Release sowohl die Geschäftsziele als auch die Nutzererwartungen erfüllt.
             </p>
         </div>
 
@@ -107,38 +107,38 @@ SolutionsTestLab | {% translate "Home" %}
 
 <section class="services-preview">
     <div class="section-container">
-        <h2>{% translate "Our Core QA Services" %}</h2>
+        <h2>Unsere Kern-QA-Services</h2>
 
         <p class="section-intro">
-            {% translate "From quality strategy to test execution and governance, SolutionsTestLab provides end-to-end software quality services that help organizations release with confidence." %}
+            Von Qualitätsstrategie bis Testausführung und Governance bietet SolutionsTestLab End-to-End-Software-Qualitätsservices, die Unternehmen helfen, mit ihrer Software mit einem guten Gefühl in Produktion zu gehen.
         </p>
 
         <div class="preview-grid">
 
             <div class="preview-card">
                 <span>01</span>
-                <h3>{% translate "Quality Assurance" %}</h3>
-                <p>{% translate "Build quality into every stage of software delivery through QA strategy, process improvement, defect prevention, and release readiness." %}</p>
+                <h3>Quality Assurance</h3>
+                <p>Qualität in jede Phase der Softwareentwicklung integrieren durch QA-Strategie, Prozessverbesserung, Fehlervermeidung und Erhöhung der Release-Readiness.</p>
                 <a href="{% url 'quality_assurance' %}" class="preview-link">
-                    {% translate "Learn More" %}
+                    Mehr erfahren
                 </a>
             </div>
 
             <div class="preview-card">
                 <span>02</span>
-                <h3>{% translate "Software Testing" %}</h3>
-                <p>{% translate "Comprehensive manual and test automation services including functional, regression, exploratory, API, and user acceptance testing." %}</p>
+                <h3>Software Testing</h3>
+                <p>Umfassende manuelle und automatisierte Tests einschließlich funktionaler, Regressions-, Explorations-, API- und Abnahmetests.</p>
                 <a href="{% url 'software_testing' %}" class="preview-link">
-                    {% translate "Learn More" %}
+                    Mehr erfahren
                 </a>
             </div>
 
             <div class="preview-card">
                 <span>03</span>
-                <h3>{% translate "Test Management" %}</h3>
-                <p>{% translate "Structured test planning, coordination, reporting, and quality governance to ensure successful software releases." %}</p>
+                <h3>Testmanagement</h3>
+                <p>Strukturierte Testplanung, Koordination, Reporting und Qualitätssteuerung für erfolgreiche Software-Releases.</p>
                 <a href="{% url 'test_management' %}" class="preview-link">
-                    {% translate "Learn More" %}
+                    Mehr erfahren
                 </a>
             </div>
 
@@ -148,37 +148,37 @@ SolutionsTestLab | {% translate "Home" %}
 
 <section class="process-section">
     <div class="section-container">
-        <h2>{% translate "Our QA Process" %}</h2>
+        <h2>Unser QA-Prozess</h2>
 
         <div class="process-grid">
             <div class="process-step">
                 <div>1</div>
-                <h4>{% translate "Analyze" %}</h4>
-                <p>{% translate "We understand your business goals, requirements, and risk areas." %}</p>
+                <h4>Analysieren</h4>
+                <p>Wir verstehen Ihre Geschäftsziele, Anforderungen und Risikobereiche.</p>
             </div>
 
             <div class="process-step">
                 <div>2</div>
-                <h4>{% translate "Plan" %}</h4>
-                <p>{% translate "We define the test strategy, scope, timeline, and quality priorities." %}</p>
+                <h4>Planen</h4>
+                <p>Wir definieren Teststrategie, Testumfang, Zeitplan und Qualitätsprioritäten.</p>
             </div>
 
             <div class="process-step">
                 <div>3</div>
-                <h4>{% translate "Test" %}</h4>
-                <p>{% translate "We execute structured tests and identify defects with precision." %}</p>
+                <h4>Testen</h4>
+                <p>Wir führen strukturierte Tests aus und identifizieren Fehler.</p>
             </div>
 
             <div class="process-step">
                 <div>4</div>
-                <h4>{% translate "Report" %}</h4>
-                <p>{% translate "We provide clear, actionable bug reports and quality insights." %}</p>
+                <h4>Berichten</h4>
+                <p>Wir liefern klare, umsetzbare Fehlerberichte und Qualitätsanalysen.</p>
             </div>
 
             <div class="process-step">
                 <div>5</div>
-                <h4>{% translate "Validate" %}</h4>
-                <p>{% translate "We retest fixes and confirm your software is ready for release." %}</p>
+                <h4>Validieren</h4>
+                <p>Wir testen Fixes erneut und stellen sicher, dass die Software bereit für das Release ist.</p>
             </div>
         </div>
     </div>
@@ -186,38 +186,38 @@ SolutionsTestLab | {% translate "Home" %}
 
 <section class="competitive-edge-section">
     <div class="section-container">
-        <h2>{% translate "Why Businesses Choose SolutionsTestLab" %}</h2>
+        <h2>Warum SolutionsTestLab wählen</h2>
 
         <p class="section-intro">
-            {% translate "We combine software testing, quality assurance, and test management expertise to help organizations release reliable software with confidence." %}
+            Wir kombinieren Software Testing und Testmanagement-Expertise, um Unternehmen dabei zu helfen, qualitativ hochwertige Software auszuliefern.
         </p>
 
         <div class="edge-grid">
             <div class="edge-card">
                 <div class="edge-icon">🔍</div>
-                <h3>{% translate "Free QA Assessment" %}</h3>
-                <p>{% translate "Receive a complimentary assessment of your testing practices, quality risks, and release readiness." %}</p>
+                <h3>Kostenlose QA-Bewertung</h3>
+                <p>Erhalten Sie eine kostenlose Analyse Ihrer Testprozesse, von Qualitätsrisiken und der Release-Readiness.</p>
                 <a href="{% url 'contact' %}">
-                    {% translate "Request Free Assessment" %}
+                    Kostenlose Bewertung anfordern
                 </a>
             </div>
 
             <div class="edge-card">
                 <div class="edge-icon">🦅</div>
-                <h3>{% translate "Eagle-Eye Precision Framework™" %}</h3>
-                <p>{% translate "Our proprietary framework helps discover risks early, strengthen quality processes, and improve release confidence." %}</p>
+                <h3>Eagle-Eye Precision Framework™</h3>
+                <p>Unser proprietäres Framework hilft dabei, Risiken früh zu erkennen, Prozesse zu verbessern und die Release-Sicherheit zu erhöhen.</p>
             </div>
 
             <div class="edge-card">
                 <div class="edge-icon">📊</div>
-                <h3>{% translate "QA Audit Service" %}</h3>
-                <p>{% translate "We evaluate your QA maturity, test coverage, automation readiness, defect management process, and release quality." %}</p>
+                <h3>QA-Audit-Service</h3>
+                <p>Wir bewerten QA-Reifegrad, Testabdeckung, Automatisierbarkeit, Fehlermanagement und Release-Readiness.</p>
             </div>
 
             <div class="edge-card">
                 <div class="edge-icon">🏢</div>
-                <h3>{% translate "Industry-Specific Testing" %}</h3>
-                <p>{% translate "Specialized quality assurance services for FinTech, Healthcare, SaaS, E-Commerce, Education, and Enterprise platforms." %}</p>
+                <h3>Branchen-spezifisches Testing</h3>
+                <p>Spezialisierte QA-Services für FinTech, Healthcare, SaaS, E-Commerce, Bildung und Enterprise-Plattformen.</p>
             </div>
         </div>
     </div>
@@ -225,31 +225,31 @@ SolutionsTestLab | {% translate "Home" %}
 
 <section class="tech-section">
     <div class="section-container">
-        <h2>{% translate "Our QA Tech Ecosystem" %}</h2>
+        <h2>Unser QA-Tech-Ökosystem</h2>
 
         <div class="tech-grid">
             <div class="tech-card">
-                <h3>{% translate "Test Automation" %}</h3>
+                <h3>Testautomatisierung</h3>
                 <p>Selenium, Playwright, Cypress, Cucumber, TOSCA, Pytest</p>
             </div>
 
             <div class="tech-card">
-                <h3>{% translate "API Testing" %}</h3>
+                <h3>API-Testing</h3>
                 <p>Postman, REST Assured, Swagger, FastAPI</p>
             </div>
 
             <div class="tech-card">
-                <h3>{% translate "Test Management" %}</h3>
-                <p>Jira, TestRail, Xray, Zephyr, and many more</p>
+                <h3>Testmanagement</h3>
+                <p>Jira, TestRail, Xray, Zephyr und viele Tools mehr</p>
             </div>
 
             <div class="tech-card">
-                <h3>{% translate "Manual Testing" %}</h3>
-                <p>Exploratory Testing, UAT, Regression Testing, Usability Testing</p>
+                <h3>Manuelles Testing</h3>
+                <p>Exploratives Testen, UAT, Regressionstests, Usability Tests</p>
             </div>
 
             <div class="tech-card">
-                <h3>{% translate "CI/CD Pipeline" %}</h3>
+                <h3>CI/CD Pipeline</h3>
                 <p>GitHub Actions, Jenkins, GitLab CI</p>
             </div>
         </div>
@@ -258,14 +258,14 @@ SolutionsTestLab | {% translate "Home" %}
 
 <section class="cta-section">
     <div class="section-container">
-        <h2>{% translate "Ready to Improve Your Software Quality?" %}</h2>
+        <h2>Bereit, Ihre Softwarequalität zu verbessern?</h2>
 
         <p>
-            {% translate "Let us help you release software with confidence, stability, and precision." %}
+            Lassen Sie uns Ihnen dabei helfen, qualitativ hochwertige Software zu entwickeln.
         </p>
 
         <a href="{% url 'contact' %}">
-            {% translate "Request a QA Consultation" %}
+            QA-Beratung anfordern
         </a>
     </div>
 </section>

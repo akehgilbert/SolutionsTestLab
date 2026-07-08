@@ -2,7 +2,7 @@
 {% load static i18n %}
 
 {% block title %}
-{% translate "Contact Us" %} | SolutionsTestLab
+Kontakt | SolutionsTestLab
 {% endblock %}
 
 {% block content %}
@@ -246,7 +246,7 @@
         font-size: 0.85rem;
         color: #64748b;
     }
-
+	
     .messages {
         margin-bottom: 30px;
         padding: 0;
@@ -348,10 +348,10 @@
             <div class="contact-grid">
 
                 <div class="form-section">
-                    <h2>{% translate "Get in Touch" %}</h2>
+                    <h2>Kontakt aufnehmen</h2>
 
                     <p>
-                        {% translate "Complete the form and our technical team will reach out shortly." %}
+                        Füllen Sie das Formular aus, und unser Team wird sich in Kürze mit Ihnen in Verbindung setzen.
                     </p>
 
                     <form method="post" id="contact-form">
@@ -359,62 +359,62 @@
 
                         <div class="form-row">
                             <div class="form-group" style="flex: 1;">
-                                <label for="name">{% translate "Full Name" %} *</label>
+                                <label for="name">Vollständiger Name *</label>
                                 <input id="name" type="text" name="name" required placeholder="Jane Doe">
                             </div>
 
                             <div class="form-group" style="flex: 1;">
-                                <label for="email">{% translate "Business Email" %} *</label>
+                                <label for="email">E-Mail *</label>
                                 <input id="email" type="email" name="email" required placeholder="jane@company.com">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label for="subject">{% translate "Inquiry Subject" %} *</label>
+                            <label for="subject">Betreff der Anfrage *</label>
                             <select id="subject" name="subject" required>
-                                <option value="" disabled selected>{% translate "Select a category..." %}</option>
-                                <option value="Software Testing / QA">{% translate "Software Testing / QA" %}</option>
-                                <option value="QA Audit">{% translate "Request QA Audit" %}</option>
-                                <option value="Partnership">{% translate "General Partnership" %}</option>
-                                <option value="Careers">{% translate "Career Inquiry" %}</option>
+                                <option value="" disabled selected>Kategorie auswählen...</option>
+                                <option value="Software Testing / QA">Softwaretests / QA</option>
+                                <option value="QA Audit">QA-Audit anfordern</option>
+                                <option value="Partnership">Partner werden</option>
+                                <option value="Careers">Jobanfrage</option>
                             </select>
                         </div>
 
                         <div class="form-group">
-                            <label for="message">{% translate "Message" %} *</label>
-                            <textarea id="message" name="message" rows="5" required placeholder="{% translate 'Tell us about your project or needs...' %}"></textarea>
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="Erzählen Sie uns von Ihrem Projekt oder Ihren Anforderungen..."></textarea>
                         </div>
 
                         <div class="form-group">
                             <label for="consent" class="checkbox-label">
                                 <input id="consent" type="checkbox" name="consent" required>
                                 <span>
-                                    {% translate "I agree to the processing of my data to handle this inquiry." %}
+                                    Ich stimme der Verarbeitung meiner Daten zur Bearbeitung dieser Anfrage zu.
                                 </span>
                             </label>
                         </div>
 
                         <button id="send-message-btn" type="submit" class="submit-btn">
-                            {% translate "Send Message" %}
+                            Nachricht senden
                         </button>
                     </form>
                 </div>
 
                 <div class="info-sidebar">
                     <div class="info-item">
-                        <h4>{% translate "Direct Contact" %}</h4>
+                        <h4>Kontakt</h4>
                         <p><strong>Email:</strong> info@solutionstestlab.com</p>
-                        <p><strong>{% translate "Careers" %}:</strong> careers@solutionstestlab.com</p>
+                        <p><strong>Karriere:</strong> careers@solutionstestlab.com</p>
                     </div>
 
                     <div class="info-item">
-                        <h4>{% translate "Location" %}</h4>
+                        <h4>Standort</h4>
                         <p>Breslauer Straße 19<br>
-                           45145 Essen, Germany<br>{% translate "Serving Global Clients" %}</p>
+                           45145 Essen, Germany<br>Betreuung globaler Kunden</p>
                     </div>
 
                     <div class="info-item working-hours-box">
-                        <h4>{% translate "Working Hours" %}</h4>
+                        <h4>Öffnungszeiten</h4>
                         <p>Mon - Fri: 09:00 - 18:00 CET</p>
                     </div>
                 </div>
@@ -422,31 +422,31 @@
             </div>
 
             <div class="timeline">
-                <h3>{% translate "What Happens Next?" %}</h3>
+                <h3>Was passiert als Nächstes?</h3>
 
                 <div class="timeline-grid">
                     <div class="step">
                         <div class="step-num">1</div>
-                        <h5>{% translate "Submit Inquiry" %}</h5>
+                        <h5>Anfrage absenden</h5>
                         <p>
-                            {% translate "Your project details are securely sent to our team." %}
-                        </p>
+							Ihre Anfrage wird sicher an unser Team gesendet.
+						</p>
                     </div>
 
                     <div class="step">
                         <div class="step-num">2</div>
-                        <h5>{% translate "Expert Review" %}</h5>
+                        <h5>Fachliche Prüfung</h5>
                         <p>
-                            {% translate "Our engineers analyze your technical requirements." %}
-                        </p>
+						Unsere Experten analysieren Ihre Anfrage.
+						</p>
                     </div>
 
                     <div class="step">
                         <div class="step-num">3</div>
-                        <h5>{% translate "Consultation" %}</h5>
+                        <h5>Beratung</h5>
                         <p>
-                            {% translate "We schedule a discovery call and recommend the next steps." %}
-                        </p>
+						Wir vereinbaren ein Erstgespräch und empfehlen die nächsten Schritte.
+						</p>
                     </div>
                 </div>
             </div>

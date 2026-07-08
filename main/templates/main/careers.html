@@ -1,8 +1,8 @@
 {% extends "main/base.html" %}
-{% load static i18n %}
+{% load static i18n%}
 
 {% block title %}
-{% translate "Careers" %} | SolutionsTestLab
+Karriere | SolutionsTestLab
 {% endblock %}
 
 {% block content %}
@@ -313,14 +313,14 @@
 
     <div class="back-nav">
         <a href="{% url 'home' %}" class="btn-back">
-            ← {% translate "Back to Lab" %}
+            ← Zurück zum Testlabor
         </a>
     </div>
 
     <section class="careers-hero">
-        <h1>{% translate "Careers at SolutionsTestLab" %}</h1>
+        <h1>Karriere bei SolutionsTestLab</h1>
         <p>
-            {% translate "Join a team that values quality, precision, and continuous improvement. Help us build and test software that businesses can trust." %}
+            Werden Sie Teil eines Teams, das Qualität, Präzision und kontinuierliche Verbesserung lebt. Helfen Sie uns dabei, Software zu entwickeln und zu testen, der Unternehmen vertrauen können.
         </p>
     </section>
 
@@ -336,66 +336,66 @@
 
     <section class="openings-section">
         <h2 style="color: #0056b3; margin-bottom: 40px; text-align: center;">
-            {% translate "Current Openings" %}
+            Aktuelle Stellenangebote
         </h2>
 
         <div class="job-card">
-            <h3>{% translate "QA Engineer / Software Tester" %}</h3>
-            <p>{% translate "We are looking for detail-oriented testers with experience in manual testing, Selenium, Playwright, Cypress, or structured QA processes." %}</p>
+            <h3>QA-Ingenieur / Softwaretester</h3>
+            <p>Wir suchen detailorientierte Tester mit Erfahrung in manuellem Testen und Kenntnissen in Selenium, Playwright und Cypress.</p>
         </div>
 
         <div class="job-card">
-            <h3>{% translate "Full-Stack Developer (Python/Django)" %}</h3>
-            <p>{% translate "We are looking for developers who value clean code, reliable architecture, and high-performance applications." %}</p>
+            <h3>Full-Stack-Entwickler (Python/Django)</h3>
+            <p>Wir suchen Entwickler, die Wert auf hochwertigen Code, zuverlässige Architektur und leistungsstarke Anwendungen legen.</p>
         </div>
 
         <div class="job-card">
-            <h3>{% translate "Initiative Application" %}</h3>
-            <p>{% translate "Do you believe you can contribute to our mission? Send us your profile and tell us how you can help." %}</p>
+            <h3>Initiativbewerbung</h3>
+            <p>Glauben Sie, dass Sie zu unserer Mission beitragen können? Senden Sie uns Ihr Profil und erzählen Sie uns, wie Sie uns unterstützen können.</p>
         </div>
     </section>
 
     <section class="application-form-wrapper">
         <h2 style="text-align: center; color: #0056b3; margin-bottom: 30px;">
-            {% translate "Quick Application" %}
+            Schnellbewerbung
         </h2>
 
         <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
 
             <div class="form-group">
-                <label>{% translate "Full Name" %}</label>
+                <label>Vollständiger Name</label>
                 <input type="text" name="name" required class="form-control" placeholder="Jane Doe">
             </div>
 
             <div class="form-group">
-                <label>{% translate "Email Address" %}</label>
+                <label>E-Mail-Adresse</label>
                 <input type="email" name="email" required class="form-control" placeholder="jane.doe@example.com">
             </div>
 
             <div class="form-group">
-                <label>{% translate "Position" %}</label>
+                <label>Position</label>
                 <select name="position" required class="form-control">
-                    <option value="QA Engineer">{% translate "QA Engineer" %}</option>
-                    <option value="Software Tester">{% translate "Software Tester" %}</option>
-                    <option value="Full-Stack Developer">{% translate "Full-Stack Developer" %}</option>
-                    <option value="Backend Developer">{% translate "Backend Developer" %}</option>
-                    <option value="Initiative Application">{% translate "Initiative Application" %}</option>
+                    <option value="QA Engineer">QA-Ingenieur</option>
+                    <option value="Software Tester">Softwaretester</option>
+                    <option value="Full-Stack Developer">Full-Stack-Entwickler</option>
+                    <option value="Backend Developer">Backend-Entwickler</option>
+                    <option value="Initiative Application">Initiativbewerbung</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label>{% translate "Cover Letter" %} ({% translate "Optional" %})</label>
+                <label>Anschreiben (Optional)</label>
                 <textarea name="cover_letter" class="form-control" placeholder="{% translate 'Tell us why you are a great fit for SolutionsTestLab...' %}"></textarea>
             </div>
 
             <div class="form-group">
-                <label>{% translate "Upload CV" %}</label>
+                <label>Lebenslauf hochladen</label>
                 <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
             </div>
 
             <button type="submit" class="submit-btn">
-                {% translate "Submit Application" %}
+                Bewerbung absenden
             </button>
         </form>
     </section>

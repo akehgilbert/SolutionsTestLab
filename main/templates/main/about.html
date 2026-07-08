@@ -2,472 +2,335 @@
 {% load static i18n %}
 
 {% block title %}
-{% translate "About Us" %} | SolutionsTestLab
+{Testmanagement} | SolutionsTestLab
 {% endblock %}
 
 {% block content %}
 
 <style>
-    body {
-        background-color: #ffffff;
-        overflow-x: hidden;
-    }
-
-    .side-pane-left {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 60px;
-        height: 100vh;
-        background: linear-gradient(180deg, #0056b3 0%, #00acee 100%);
-        z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .side-pane-left .vertical-text {
-        transform: rotate(-90deg);
-        color: rgba(255,255,255,0.65);
-        font-weight: 800;
-        letter-spacing: 4px;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        white-space: nowrap;
-    }
-
-    .side-pane-right {
-        position: fixed;
-        right: 0;
-        top: 0;
-        width: 60px;
-        height: 100vh;
-        border-left: 1px solid #eeeeee;
-        background: #ffffff;
-        z-index: 100;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-    }
-
-    .dot {
-        width: 6px;
-        height: 6px;
-        background: #d1d5db;
-        border-radius: 50%;
-    }
-
-    .dot.active {
-        background: #00acee;
-        transform: scale(1.5);
-    }
-
-    .main-wrapper {
-        margin: 0 60px;
-        min-height: 100vh;
-        background: #ffffff;
-    }
-
-    .about-wrapper {
-        max-width: 1200px;
-        margin: auto;
-        padding: 180px 40px 80px;
-    }
-
-    h1,
-    h2 {
-        color: #0056b3;
-    }
-
-    h1 {
-        font-size: 3rem;
+    .tm-hero {
+        padding: 170px 20px 80px;
+        background: #f8fbff;
         text-align: center;
-        margin-bottom: 35px;
+    }
+
+    .tm-hero h1 {
+        color: #0056b3;
+        font-size: 3.5rem;
+        font-weight: 900;
+        margin-bottom: 15px;
         line-height: 1.15;
     }
 
-    h2 {
-        font-size: 2.2rem;
-        text-align: center;
-        margin: 70px 0 30px;
-        line-height: 1.2;
+    .tm-hero h2 {
+        color: #00acee;
+        font-size: 1.7rem;
+        margin-bottom: 25px;
+        line-height: 1.3;
     }
 
-    p {
-        color: #334155;
-        font-size: 1.05rem;
+    .tm-hero p {
+        max-width: 900px;
+        margin: auto;
+        color: #555;
+        font-size: 1.15rem;
         line-height: 1.8;
+        text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
+    }
+
+    .tm-section {
+        padding: 80px 20px;
+        background: #ffffff;
+    }
+
+    .tm-grid {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .tm-card {
+        background: #ffffff;
+        border-radius: 22px;
+        padding: 35px;
+        box-shadow: 0 12px 35px rgba(0,86,179,0.09);
+        border-top: 6px solid #00acee;
+        transition: 0.3s;
+    }
+
+    .tm-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0,86,179,0.14);
+    }
+
+    .tm-card h3 {
+        color: #0056b3;
+        font-size: 1.6rem;
         margin-bottom: 18px;
     }
 
-    .lead-text {
-        max-width: 900px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        line-height: 1.9;
-        color: #334155;
-    }
-
-    .leadership-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
-        margin-top: 40px;
-    }
-
-    .executive-card {
-        background: #ffffff;
-        border: 1px solid #e5e7eb;
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-        transition: 0.3s ease;
-    }
-
-    .executive-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 16px 40px rgba(0,86,179,0.12);
-    }
-
-    .executive-image {
-        width: 100%;
-        height: 430px;
-        background: #ffffff;
-        overflow: hidden;
-    }
-
-    .executive-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-    }
-
-    .executive-content {
-        background: #ffffff;
-        padding: 32px 34px 36px;
-        text-align: left;
-    }
-
-    .executive-content h3 {
-        color: #0056b3;
-        font-size: 1.75rem;
-        margin: 0 0 8px;
-        font-weight: 800;
-    }
-
-    .executive-title {
-        display: block;
-        color: #00acee;
-        font-size: 0.9rem;
-        font-weight: 800;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-        margin-bottom: 24px;
-    }
-
-    .executive-content p {
-        color: #475569;
-        font-size: 0.95rem;
-        line-height: 1.8;
+    .tm-card p {
+        color: #444;
+        line-height: 1.7;
         margin-bottom: 16px;
         text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
     }
 
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 25px;
-        margin-top: 30px;
+    .tm-image-card {
+        padding: 0;
+        overflow: hidden;
     }
 
-    .card {
-        background: #ffffff;
-        padding: 25px;
-        border-radius: 14px;
-        border-top: 4px solid #00acee;
-        box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-        transition: transform 0.3s ease;
+    .tm-image-card img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
     }
 
-    .card:hover {
-        transform: translateY(-6px);
+    .tm-image-content {
+        padding: 35px;
     }
 
-    .card h3 {
+    .tm-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+    }
+
+    .tm-list li {
+        color: #1e293b;
         margin-bottom: 12px;
-        color: #0056b3;
+        line-height: 1.5;
+        font-weight: 600;
     }
 
-    .card p {
+    .tm-list li::before {
+        content: "✓";
+        color: #00acee;
+        font-weight: 900;
+        margin-right: 8px;
+    }
+
+    .tm-services-list {
+        list-style: none;
+        padding: 0;
+        margin: 18px 0 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px 20px;
+    }
+
+    .tm-services-list li {
+        color: #1e293b;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .tm-services-list li::before {
+        content: "◆";
+        color: #00acee;
+        font-size: 0.75rem;
+        margin-right: 8px;
+    }
+
+    .tm-cta {
+        max-width: 1100px;
+        margin: 70px auto 0;
+        background: linear-gradient(135deg, #0056b3, #00acee);
+        color: white;
+        padding: 55px 35px;
+        border-radius: 26px;
+        text-align: center;
+    }
+
+    .tm-cta h2 {
+        font-size: 2.3rem;
+        margin-bottom: 15px;
+    }
+
+    .tm-cta p {
+        max-width: 800px;
+        margin: 0 auto 30px;
+        line-height: 1.8;
+        font-size: 1.1rem;
         text-align: left;
+        text-justify: inter-word;
+        hyphens: auto;
     }
 
-    ul {
-        padding-left: 20px;
-    }
-
-    li {
-        margin-bottom: 8px;
-    }
-
-    .cta-link {
+    .tm-cta a {
         display: inline-block;
-        margin-top: 20px;
-        padding: 14px 28px;
+        background: #ffffff;
+        color: #0056b3;
+        padding: 15px 34px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 800;
+    }
+
+    .tm-cta a:hover {
         background: #0056b3;
         color: #ffffff;
-        border-radius: 10px;
-        text-decoration: none;
-        font-weight: 700;
     }
 
-    .cta-link:hover {
-        background: #00acee;
-    }
-
-    @media (max-width: 992px) {
-        .side-pane-left,
-        .side-pane-right {
-            display: none;
+    @media (max-width: 900px) {
+        .tm-grid {
+            grid-template-columns: 1fr;
         }
 
-        .main-wrapper {
-            margin: 0;
+        .tm-hero {
+            padding: 235px 20px 70px !important;
         }
 
-        .about-wrapper {
-            padding: 235px 24px 70px !important;
-        }
-
-        h1 {
+        .tm-hero h1 {
             font-size: 2.3rem;
             line-height: 1.2;
         }
 
-        h2 {
-            font-size: 1.9rem;
+        .tm-hero h2 {
+            font-size: 1.35rem;
+            line-height: 1.3;
         }
 
-        .leadership-grid {
+        .tm-hero p {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .tm-services-list {
             grid-template-columns: 1fr;
         }
 
-        .executive-image {
-            height: 390px;
+        .tm-image-card img {
+            height: 230px;
         }
     }
 
-    @media (max-width: 600px) {
-        .about-wrapper {
-            padding: 250px 18px 60px !important;
+    @media (max-width: 480px) {
+        .tm-hero {
+            padding-top: 250px !important;
         }
 
-        h1 {
+        .tm-hero h1 {
             font-size: 2rem;
-            line-height: 1.25;
-        }
-
-        h2 {
-            font-size: 1.65rem;
-        }
-
-        .executive-image {
-            height: 320px;
-        }
-
-        .executive-content {
-            padding: 24px;
-        }
-
-        .executive-content h3 {
-            font-size: 1.45rem;
         }
     }
 </style>
 
-<div class="side-pane-left">
-    <div class="vertical-text">SolutionsTestLab — Precision Engineering</div>
-</div>
+<section class="tm-hero">
+    <h1>{Testmanagement}</h1>
+    <h2>{Planen. Koordinieren. Qualität liefern.}</h2>
 
-<div class="side-pane-right">
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-</div>
+    <p>
+        {Wir unterstützen Unternehmen beim Aufbau strukturierter Testprozesse, die Transparenz schaffen, Risiken reduzieren und erfolgreiche Software-Releases sicherstellen. Unsere Testmanagement-Services bieten Planung, Koordination, Testdurchführung und Reporting über den gesamten Software-Lebenszyklus.}
+    </p>
+</section>
 
-<div class="main-wrapper">
-    <div class="about-wrapper">
+<section class="tm-section">
+    <div class="tm-grid">
 
-        <h1>{% translate "About SolutionsTestLab" %}</h1>
+        <div class="tm-card tm-image-card">
+            <img src="{% static 'images/test_management.png' %}"
+                 alt="{'Überblick Testmanagement'}">
 
-        <p class="lead-text">
-            {% translate "SolutionsTestLab is a specialized Quality Assurance, Software Testing, and Test Management company committed to delivering reliable, secure, and scalable software solutions." %}
-        </p>
+            <div class="tm-image-content">
+                <h3>{Was ist Testmanagement?}</h3>
 
-        <p class="lead-text">
-            {% translate "Our team of qualified Software Testers, Quality Assurance Engineers, Test Analysts, and QA Consultants combines technical expertise with industry best practices to help organizations achieve measurable improvements in software quality." %}
-        </p>
+                <p>
+                    {Testmanagement umfasst die Planung, Überwachung und Steuerung von Testaktivitäten, um Softwarequalität und erfolgreiche Releases sicherzustellen.}
+                </p>
 
-        <p class="lead-text">
-            {% translate "We help companies prevent costly software failures by identifying hidden defects, improving system reliability, reducing operational risk, and strengthening quality throughout the entire software development lifecycle." %}
-        </p>
+                <p>
+                    {Wir organisieren Testaktivitäten, koordinieren Teams, verwalten Testfälle und Software-Fehler und schaffen Transparenz bezogen auf die Softwarequalität während des gesamten Entwicklungszyklus.}
+                </p>
 
-        <h2>{% translate "Our Mission" %}</h2>
-
-        <p class="lead-text">
-            {% translate "To help businesses release software with confidence through precision-driven testing, reliable development practices, and quality assurance expertise." %}
-        </p>
-
-        <h2>{% translate "Leadership Team" %}</h2>
-
-        <div class="leadership-grid">
-
-            <div class="executive-card">
-                <div class="executive-image">
-                    <img
-                        src="{% static 'images/Gilbert_Akeh_SolutionsTestLab_1.jpg' %}"
-                        alt="Gilbert Esambili Akeh">
-                </div>
-
-                <div class="executive-content">
-                    <h3>Gilbert Esambili Akeh</h3>
-
-                    <span class="executive-title">
-                        {% translate "Managing Director & Founder" %}
-                    </span>
-
-                    <p>
-                        {% translate "Gilbert Esambili Akeh is an experienced Software Engineer with a strong track record of delivering reliable, secure, and scalable software solutions. His expertise spans the entire Software Development Lifecycle, combining software engineering, quality assurance, and DevOps practices to help organizations build high-performing digital products." %}
-                    </p>
-
-                    <p>
-                        {% translate "As a Certified Python Programmer and skilled DevOps Engineer, Gilbert specializes in software quality, automation, CI/CD pipeline optimization, and modern development practices. His focus is on ensuring that software is not only innovative but also maintainable, stable, and production-ready." %}
-                    </p>
-
-                    <p>
-                        {% translate "By bridging the gap between development, testing, and operations, he helps organizations accelerate delivery while maintaining high standards of quality, security, and operational excellence." %}
-                    </p>
-                </div>
-            </div>
-
-            <div class="executive-card">
-                <div class="executive-image">
-                    <img
-                        src="{% static 'images/Jan_sickinger.jpg' %}"
-                        alt="Jan Wolfgang Sickinger">
-                </div>
-
-                <div class="executive-content">
-                    <h3>Jan Wolfgang Sickinger</h3>
-
-                    <span class="executive-title">
-                        {% translate "Managing Director" %}
-                    </span>
-
-                    <p>
-                        {% translate "Jan Wolfgang Sickinger has been active in software testing and quality assurance since 2007. Throughout his career, he has worked as a Test Analyst and Test Consultant on national and international projects for leading consulting firms across the public sector, telecommunications, manufacturing, and healthcare industries." %}
-                    </p>
-
-                    <p>
-                        {% translate "His expertise lies in analysing, structuring, and continuously improving testing processes to achieve measurable increases in software quality. Through his extensive practical experience and methodological expertise, he helps organizations establish sustainable quality assurance frameworks." %}
-                    </p>
-
-                    <p>
-                        {% translate "Jan holds multiple ISTQB certifications and is also certified in Requirements Engineering through IREB. His holistic perspective on processes, business requirements, technology, and stakeholder collaboration enables him to deliver lasting improvements in software quality and project success." %}
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <h2>{% translate "Why SolutionsTestLab?" %}</h2>
-
-        <div class="grid">
-            <div class="card">
-                <h3>{% translate "Quality-First Culture" %}</h3>
-                <p>{% translate "Quality is embedded in every decision, not added at the end." %}</p>
-            </div>
-
-            <div class="card">
-                <h3>{% translate "Consulting Mindset" %}</h3>
-                <p>{% translate "We act as advisors and partners, not just implementers." %}</p>
-            </div>
-
-            <div class="card">
-                <h3>{% translate "Early Risk Detection" %}</h3>
-                <p>{% translate "We identify performance, security, usability, and design risks before they reach production." %}</p>
-            </div>
-        </div>
-
-        <h2>{% translate "Our Core Values" %}</h2>
-
-        <div class="grid">
-            <div class="card">
-                <strong>{% translate "Precision" %}</strong><br>
-                {% translate "Attention to detail drives quality." %}
-            </div>
-
-            <div class="card">
-                <strong>{% translate "Accountability" %}</strong><br>
-                {% translate "We stand behind our work." %}
-            </div>
-
-            <div class="card">
-                <strong>{% translate "Transparency" %}</strong><br>
-                {% translate "Clear communication at all times." %}
-            </div>
-
-            <div class="card">
-                <strong>{% translate "Continuous Improvement" %}</strong><br>
-                {% translate "We evolve with technology." %}
-            </div>
-        </div>
-
-        <h2>{% translate "Industries We Support" %}</h2>
-
-        <div class="grid">
-            <div class="card">FinTech</div>
-            <div class="card">Healthcare</div>
-            <div class="card">SaaS & Startups</div>
-            <div class="card">E-Commerce</div>
-            <div class="card">Enterprise Applications</div>
-            <div class="card">Education Technology</div>
-        </div>
-
-        <h2>{% translate "Standards & Best Practices" %}</h2>
-
-        <div class="grid">
-            <div class="card">
-                <ul>
-                    <li>ISTQB-aligned QA principles</li>
-                    <li>Agile / Scrum / Kanban</li>
-                    <li>OWASP security best practices</li>
-                    <li>CI/CD & DevOps pipelines</li>
-                    <li>ISO-inspired quality processes</li>
+                <ul class="tm-list">
+                    <li>{Teststrategie}</li>
+                    <li>{Testplanung}</li>
+                    <li>{Testkoordination}</li>
+                    <li>{Testüberwachung}</li>
+                    <li>{Reporting}</li>
                 </ul>
             </div>
         </div>
 
-        <h2>{% translate "Let’s Build Quality Together" %}</h2>
+        <div class="tm-card">
+            <h3>{Warum Testmanagement?}</h3>
 
-        <p style="text-align:center;">
-            {% translate "Whether you need Software Testing support, Quality Assurance consulting or Test Management services — SolutionsTestLab is ready." %}
-        </p>
+            <p>
+                {Ohne professionelles Testmanagement leiden Projekte häufig unter übersehenen Fehlern, unklaren Verantwortlichkeiten, verzögerten Releases und höheren Kosten.}
+            </p>
 
-        <p style="text-align:center;">
-            <a href="{% url 'contact' %}" class="cta-link">
-                {% translate "Contact Our Experts" %}
-            </a>
-        </p>
+            <p><strong>{Unser Testmanagement unterstützt Sie dabei:}</strong></p>
+
+            <ul class="tm-list">
+                <li>{Projektrisiken zu reduzieren}</li>
+                <li>{Die Softwarequalität zu verbessern}</li>
+                <li>{Mehr Sicherheit bei Releases zu gewinnen}</li>
+                <li>{Die Zusammenarbeit zwischen Entwicklern und Testern zu verbessern}</li>
+                <li>{Projekte termingerecht und im Budget abschließen}</li>
+            </ul>
+        </div>
+
+        <div class="tm-card">
+            <h3>{Aufgaben eines Testmanagers}</h3>
+
+            <p>
+                {Ein Testmanager stellt sicher, dass Testaktivitäten sinnvoll geplant, durchgeführt, überwacht und an den Geschäftszielen ausgerichtet werden.}
+            </p>
+
+            <ul class="tm-list">
+                <li>{Entwicklung der Teststrategie}</li>
+                <li>{Erstellung von Testplänen}</li>
+                <li>{Verwaltung der Testpläne}</li>
+                <li>{Koordination des QA-Teams}</li>
+                <li>{Überwachung der Testdurchführung}</li>
+                <li>{Fehler-Management}</li>
+                <li>{Berichterstattung über Qualitätskennzahlen}</li>
+                <li>{Unterstützung von Release-Entscheidungen}</li>
+            </ul>
+        </div>
+
+        <div class="tm-card">
+            <h3>{Unsere Testmanagement-Services}</h3>
+
+            <p>
+                {SolutionsTestLab bietet umfassende Testmanagement-Unterstützung für Unternehmen, die Struktur und Transparenz in ihrem Testprozess benötigen.}
+            </p>
+
+            <ul class="tm-services-list">
+                <li>{Teststrategie & Planung}</li>
+                <li>{Testfallmanagement}</li>
+                <li>{Fehlermanagement}</li>
+                <li>{QA-Governance}</li>
+                <li>{Bewertung der Release-Readiness}</li>
+                <li>{Risikobasiertes Testen}</li>
+                <li>{Anforderungsrückverfolgbarkeit}</li>
+                <li>{Testberichte & Dashboards}</li>
+                <li>{Administration von Jira, Azure DevOps & TestRail}</li>
+            </ul>
+        </div>
 
     </div>
-</div>
+
+    <div class="tm-cta">
+        <h2>{Benötigen Sie einen dedizierten Testmanager?}</h2>
+
+        <p>
+            {Viele Unternehmen verfügen über Entwicklungsteams, jedoch nicht über eine dedizierte QA-Leitung. SolutionsTestLab unterstützt Sie als externer Testmanagement-Partner beim Aufbau strukturierter QA-Prozesse.}
+        </p>
+
+        <a href="{% url 'contact' %}">
+            {Testmanagement-Beratung anfragen}
+        </a>
+    </div>
+</section>
 
 {% endblock %}

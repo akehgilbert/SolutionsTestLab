@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Menu Dropdown Example{% endblock %}</title>
+    <title>{% block title %}Dropdown-Menü Beispiel{% endblock %}</title>
     <style>
         /* Your CSS from the original code goes here */
     </style>
@@ -12,27 +12,29 @@
 
     <nav>
         <ul>
-            <li class="menu-item"><a href="#">{% trans "Accueil" %}</a></li>
-            <li class="menu-item"><a href="#">{% trans "À propos" %}</a></li>
+            <li class="menu-item"><a href="#">Startseite</a></li>
+            <li class="menu-item"><a href="#">Über uns</a></li>
+
             <li class="menu-item services">
-                <a href="#">{% trans "Services" %}</a>
+                <a href="#">Leistungen</a>
                 <div class="dropdown-menu">
-                    <a href="#">{% trans "Software development" %}</a>
-                    <a href="#">{% trans "Software testing" %}</a>
-                    <a href="#">{% trans "Quality assurance" %}</a>
+                    <a href="#">Softwareentwicklung</a>
+                    <a href="#">Softwaretests</a>
+                    <a href="#">Qualitätssicherung</a>
                 </div>
             </li>
-            <li class="menu-item"><a href="#">{% trans "Carrières" %}</a></li>
-            <li class="menu-item"><a href="#">{% trans "Contact" %}</a></li>
+
+            <li class="menu-item"><a href="#">Karriere</a></li>
+            <li class="menu-item"><a href="#">Kontakt</a></li>
 
             <!-- Language Dropdown -->
             <li class="menu-item language-dropdown">
-                <a href="javascript:void(0);">{% trans "Language" %}</a>
+                <a href="javascript:void(0);">Sprache</a>
                 <div class="dropdown-menu">
-                    <a href="{% url 'set_language' %}?language=de">{% trans "Deutsch" %}</a>
-                    <a href="{% url 'set_language' %}?language=en">{% trans "English" %}</a>
-                    <a href="{% url 'set_language' %}?language=fr">{% trans "Français" %}</a>
-                    <a href="{% url 'set_language' %}?language=nl">{% trans "Nederlands" %}</a>
+                    <a href="{% url 'set_language' %}?language=de">Deutsch</a>
+                    <a href="{% url 'set_language' %}?language=en">Englisch</a>
+                    <a href="{% url 'set_language' %}?language=fr">Französisch</a>
+                    <a href="{% url 'set_language' %}?language=nl">Niederländisch</a>
                 </div>
             </li>
         </ul>
