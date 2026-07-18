@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 from django.views.generic import RedirectView
 from django.contrib.sitemaps.views import sitemap
-from solutionstestlab.main.sitemaps import StaticViewSitemap
+from .sitemaps import StaticViewSitemap
 
 
 sitemaps = {
