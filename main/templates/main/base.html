@@ -1,12 +1,63 @@
 {% load static i18n %}
+
 <!DOCTYPE html>
 <html lang="{{ LANGUAGE_CODE|default:'de' }}">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}SolutionsTestLab{% endblock %}</title>
 
-    <link rel="stylesheet" href="{% static 'css/navbar.css' %}?v=104">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {% block title %}
+            SolutionsTestLab
+        {% endblock %}
+    </title>
+
+    <!-- Canonical URL: bevorzugte URL der aktuellen Seite -->
+    <link
+        rel="canonical"
+        href="https://solutionstestlab.com{{ request.path }}"
+    >
+
+    <!-- Alternative Sprachversionen der aktuellen Seite -->
+    <link
+        rel="alternate"
+        hreflang="de"
+        href="https://solutionstestlab.com/de{{ request.path|slice:'3:' }}"
+    >
+
+    <link
+        rel="alternate"
+        hreflang="en"
+        href="https://solutionstestlab.com/en{{ request.path|slice:'3:' }}"
+    >
+
+    <link
+        rel="alternate"
+        hreflang="fr"
+        href="https://solutionstestlab.com/fr{{ request.path|slice:'3:' }}"
+    >
+
+    <link
+        rel="alternate"
+        hreflang="nl"
+        href="https://solutionstestlab.com/nl{{ request.path|slice:'3:' }}"
+    >
+
+    <link
+        rel="alternate"
+        hreflang="x-default"
+        href="https://solutionstestlab.com/de{{ request.path|slice:'3:' }}"
+    >
+
+    <link
+        rel="stylesheet"
+        href="{% static 'css/navbar.css' %}?v=104"
+    >
 
     <style>
         :root {
@@ -22,7 +73,9 @@
             --site-font: Arial, Helvetica, sans-serif;
         }
 
-        *, *::before, *::after {
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             font-family: var(--site-font) !important;
         }
@@ -34,23 +87,41 @@
         body {
             margin: 0;
             color: var(--text-dark);
-            background: linear-gradient(180deg, #ffffff 0%, #f4f9ff 100%);
+            background: linear-gradient(
+                180deg,
+                #ffffff 0%,
+                #f4f9ff 100%
+            );
             overflow-x: hidden;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             letter-spacing: -0.5px;
         }
 
-        button, input, textarea, select {
+        button,
+        input,
+        textarea,
+        select {
             font-family: var(--site-font) !important;
         }
 
         .main-content-area {
             min-height: 70vh;
             background:
-                radial-gradient(circle at top right, rgba(0,172,238,0.10), transparent 30%),
-                radial-gradient(circle at bottom left, rgba(0,86,179,0.08), transparent 35%);
+                radial-gradient(
+                    circle at top right,
+                    rgba(0, 172, 238, 0.10),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at bottom left,
+                    rgba(0, 86, 179, 0.08),
+                    transparent 35%
+                );
         }
 
         .card,
@@ -72,12 +143,22 @@
         .cta-area a,
         .cta-section a,
         .nav-cta {
-            background: linear-gradient(135deg, var(--primary-blue), var(--sky-blue)) !important;
+            background: linear-gradient(
+                135deg,
+                var(--primary-blue),
+                var(--sky-blue)
+            ) !important;
+
             box-shadow: 0 10px 25px rgba(0, 86, 179, 0.25);
         }
 
         .site-footer {
-            background: linear-gradient(135deg, #071827, #001f3f);
+            background: linear-gradient(
+                135deg,
+                #071827,
+                #001f3f
+            );
+
             color: #ffffff;
             padding: 45px 40px 18px;
             border-top: 4px solid #00acee;
@@ -95,10 +176,10 @@
         .footer-section {
             flex: 1;
             min-width: 220px;
-            background: rgba(255,255,255,0.04);
+            background: rgba(255, 255, 255, 0.04);
             padding: 22px;
             border-radius: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .footer-section h4 {
@@ -122,7 +203,7 @@
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
             margin-top: 25px;
             padding-top: 14px;
             text-align: center;
@@ -133,7 +214,7 @@
         .cookie-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.65);
+            background: rgba(0, 0, 0, 0.65);
             display: none;
             justify-content: center;
             align-items: center;
@@ -151,7 +232,7 @@
             max-width: 720px;
             border-radius: 22px;
             padding: 35px;
-            box-shadow: 0 25px 60px rgba(0,0,0,0.30);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.30);
             border-top: 6px solid #00acee;
         }
 
@@ -177,7 +258,12 @@
         }
 
         .cookie-btn-primary {
-            background: linear-gradient(135deg,#0056b3,#00acee);
+            background: linear-gradient(
+                135deg,
+                #0056b3,
+                #00acee
+            );
+
             color: white;
         }
 
@@ -241,138 +327,256 @@
             }
         }
     </style>
+
+    {% block extra_head %}
+    {% endblock %}
 </head>
 
 <body>
 
-{% include "main/navbar.html" %}
+    {% include "main/navbar.html" %}
 
-<main class="main-content-area">
-    {% block content %}
+    <main class="main-content-area">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h4>Kontakt</h4>
+
+                <p>
+                    <strong>SolutionsTestLab</strong>
+                </p>
+
+                <p>Essen, Deutschland</p>
+
+                <p>
+                    <strong>E-Mail:</strong>
+                    info@solutionstestlab.com
+                </p>
+
+                <p>
+                    <strong>Karriere:</strong>
+                    careers@solutionstestlab.com
+                </p>
+            </div>
+
+            <div class="footer-section">
+                <h4>Schnellnavigation</h4>
+
+                <a href="{% url 'home' %}">
+                    Startseite
+                </a>
+
+                <a href="{% url 'about' %}">
+                    Über uns
+                </a>
+
+                <a href="{% url 'services' %}">
+                    Dienstleistungen
+                </a>
+
+                <a href="{% url 'careers' %}">
+                    Karriere
+                </a>
+
+                <a href="{% url 'contact' %}">
+                    Kontakt
+                </a>
+
+                <a href="{% url 'impressum' %}">
+                    Impressum
+                </a>
+
+                <a href="{% url 'privacy_policy' %}">
+                    Datenschutzerklärung
+                </a>
+            </div>
+
+            <div class="footer-section">
+                <h4>Unser Versprechen</h4>
+
+                <p>
+                    Wir helfen Unternehmen, qualitativ hochwertige und
+                    zuverlässige Software zu entwickeln.
+                </p>
+
+                <p>
+                    <strong>
+                        Präzision mit Adlerblick in jeder Codezeile.
+                    </strong>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 SolutionsTestLab.
+                Präzision. Qualität garantiert.
+            </p>
+        </div>
+    </footer>
+
+    <div
+        id="cookie-overlay"
+        class="cookie-overlay"
+    >
+        <div class="cookie-modal">
+
+            <h2>Cookie-Einstellungen</h2>
+
+            <p>
+                Wir verwenden Cookies, um die ordnungsgemäße Funktion
+                unserer Website sicherzustellen und Ihr Nutzererlebnis
+                zu verbessern. Sie können auswählen, welche Cookies Sie
+                zulassen.
+            </p>
+
+            <div>
+                <label>
+                    <input
+                        type="checkbox"
+                        checked
+                        disabled
+                    >
+
+                    <strong>Notwendige Cookies</strong>
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input
+                        type="checkbox"
+                        id="analytics-cookies"
+                    >
+
+                    <strong>Analyse-Cookies</strong>
+                </label>
+            </div>
+
+            <div>
+                <label>
+                    <input
+                        type="checkbox"
+                        id="marketing-cookies"
+                    >
+
+                    <strong>Marketing-Cookies</strong>
+                </label>
+            </div>
+
+            <div class="cookie-buttons">
+
+                <button
+                    type="button"
+                    id="reject-cookies"
+                    class="cookie-btn-secondary"
+                >
+                    Nicht notwendige Cookies ablehnen
+                </button>
+
+                <button
+                    type="button"
+                    id="save-cookies"
+                    class="cookie-btn-secondary"
+                >
+                    Einstellungen speichern
+                </button>
+
+                <button
+                    type="button"
+                    id="accept-cookies"
+                    class="cookie-btn-primary"
+                >
+                    Alle akzeptieren
+                </button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const overlay = document.getElementById(
+                "cookie-overlay"
+            );
+
+            const acceptButton = document.getElementById(
+                "accept-cookies"
+            );
+
+            const rejectButton = document.getElementById(
+                "reject-cookies"
+            );
+
+            const saveButton = document.getElementById(
+                "save-cookies"
+            );
+
+            const analyticsCheckbox = document.getElementById(
+                "analytics-cookies"
+            );
+
+            const marketingCheckbox = document.getElementById(
+                "marketing-cookies"
+            );
+
+            const consent = localStorage.getItem(
+                "solutionstestlabCookieConsent"
+            );
+
+            if (!consent) {
+                overlay.classList.add("show");
+            }
+
+            acceptButton.addEventListener("click", function () {
+                localStorage.setItem(
+                    "solutionstestlabCookieConsent",
+                    JSON.stringify({
+                        essential: true,
+                        analytics: true,
+                        marketing: true
+                    })
+                );
+
+                overlay.classList.remove("show");
+            });
+
+            rejectButton.addEventListener("click", function () {
+                localStorage.setItem(
+                    "solutionstestlabCookieConsent",
+                    JSON.stringify({
+                        essential: true,
+                        analytics: false,
+                        marketing: false
+                    })
+                );
+
+                overlay.classList.remove("show");
+            });
+
+            saveButton.addEventListener("click", function () {
+                localStorage.setItem(
+                    "solutionstestlabCookieConsent",
+                    JSON.stringify({
+                        essential: true,
+                        analytics: analyticsCheckbox.checked,
+                        marketing: marketingCheckbox.checked
+                    })
+                );
+
+                overlay.classList.remove("show");
+            });
+        });
+    </script>
+
+    {% block extra_scripts %}
     {% endblock %}
-</main>
-
-<footer class="site-footer">
-    <div class="footer-container">
-        <div class="footer-section">
-            <h4>Kontakt</h4>
-            <p><strong>SolutionsTestLab</strong></p>
-            <p>Essen, Deutschland</p>
-            <p><strong>E-Mail:</strong> info@solutionstestlab.com</p>
-            <p><strong>Karriere:</strong> careers@solutionstestlab.com</p>
-        </div>
-
-        <div class="footer-section">
-            <h4>Schnellnavigation</h4>
-            <a href="{% url 'home' %}">Startseite</a>
-            <a href="{% url 'about' %}">Über uns</a>
-            <a href="{% url 'services' %}">Dienstleistungen</a>
-            <a href="{% url 'careers' %}">Karriere</a>
-            <a href="{% url 'contact' %}">Kontakt</a>
-            <a href="{% url 'impressum' %}">Impressum</a>
-            <a href="{% url 'privacy_policy' %}">Datenschutzerklärung</a>
-        </div>
-
-        <div class="footer-section">
-            <h4>Unser Versprechen</h4>
-            <p>Wir helfen Unternehmen, qualitativ hochwertige und zuverlässige Software zu entwickeln.</p>
-            <p><strong>Präzision mit Adlerblick in jeder Codezeile.</strong></p>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 SolutionsTestLab. Präzision. Qualität garantiert.</p>
-    </div>
-</footer>
-
-<div id="cookie-overlay" class="cookie-overlay">
-    <div class="cookie-modal">
-        <h2>Cookie-Einstellungen</h2>
-
-        <p>
-            Wir verwenden Cookies, um die ordnungsgemäße Funktion unserer Website sicherzustellen und Ihr Nutzererlebnis zu verbessern. Sie können auswählen, welche Cookies Sie zulassen.
-        </p>
-
-        <div>
-            <label>
-                <input type="checkbox" checked disabled>
-                <strong>Notwendige Cookies</strong>
-            </label>
-        </div>
-
-        <div>
-            <label>
-                <input type="checkbox" id="analytics-cookies">
-                <strong>Analyse-Cookies</strong>
-            </label>
-        </div>
-
-        <div>
-            <label>
-                <input type="checkbox" id="marketing-cookies">
-                <strong>Marketing-Cookies</strong>
-            </label>
-        </div>
-
-        <div class="cookie-buttons">
-            <button type="button" id="reject-cookies" class="cookie-btn-secondary">
-                Nicht notwendige Cookies ablehnen
-            </button>
-
-            <button type="button" id="save-cookies" class="cookie-btn-secondary">
-                Einstellungen speichern
-            </button>
-
-            <button type="button" id="accept-cookies" class="cookie-btn-primary">
-                Alle akzeptieren
-            </button>
-        </div>
-    </div>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const overlay = document.getElementById("cookie-overlay");
-    const acceptButton = document.getElementById("accept-cookies");
-    const rejectButton = document.getElementById("reject-cookies");
-    const saveButton = document.getElementById("save-cookies");
-    const analyticsCheckbox = document.getElementById("analytics-cookies");
-    const marketingCheckbox = document.getElementById("marketing-cookies");
-
-    const consent = localStorage.getItem("solutionstestlabCookieConsent");
-
-    if (!consent) {
-        overlay.classList.add("show");
-    }
-
-    acceptButton.addEventListener("click", function () {
-        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
-            essential: true,
-            analytics: true,
-            marketing: true
-        }));
-        overlay.classList.remove("show");
-    });
-
-    rejectButton.addEventListener("click", function () {
-        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
-            essential: true,
-            analytics: false,
-            marketing: false
-        }));
-        overlay.classList.remove("show");
-    });
-
-    saveButton.addEventListener("click", function () {
-        localStorage.setItem("solutionstestlabCookieConsent", JSON.stringify({
-            essential: true,
-            analytics: analyticsCheckbox.checked,
-            marketing: marketingCheckbox.checked
-        }));
-        overlay.classList.remove("show");
-    });
-});
-</script>
 
 </body>
 </html>
